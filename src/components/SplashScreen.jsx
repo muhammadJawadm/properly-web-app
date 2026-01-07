@@ -1,5 +1,5 @@
 import SplashBg from "../assets/SplashBg.png";
-import SplashLogo from "../assets/splashLogo3.png";
+import SplashLogo from "../assets/Splashlogo3.png";
 import { FaArrowRight } from "react-icons/fa";
 
 const SplashScreen = () => {
