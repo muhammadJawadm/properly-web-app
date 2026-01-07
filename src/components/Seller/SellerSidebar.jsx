@@ -27,8 +27,8 @@ const SellerSidebar = () => {
     const menuItems = [
         { icon: FaHome, label: 'Dashboard', path: '/seller/dashboard' },
         { icon: FaList, label: 'My Listing', path: '/seller/listings' },
-        { icon: FaGavel, label: 'Offers', path: '/seller/offers' },
-        { icon: FaBalanceScale, label: 'Attorney', path: '/seller/attorney' },
+        { icon: FaGavel, label: 'Analytics', path: '/seller/analytics' },
+        { icon: FaBalanceScale, label: 'Enquiries', path: '/seller/enquiries' },
         { icon: FaLock, label: 'Vault', path: '/seller/vault' }
     ];
 
