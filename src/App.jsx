@@ -13,6 +13,7 @@ import SellerDashboard from "./pages/seller/dashboard/SellerDashboard"
 import PropertyListings from "./pages/seller/dashboard/PropertyListings"
 import Analytics from "./pages/seller/dashboard/Analytics"
 import Enquiries from "./pages/seller/dashboard/Enquiries"
+import CreateListing from "./pages/seller/create-listing/CreateListing"
 
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/seller/listings" element={<PropertyListings />} />
         <Route path="/seller/analytics" element={<Analytics />} />
         <Route path="/seller/enquiries" element={<Enquiries />} />
+        <Route path="/seller/create-listing" element={<CreateListing />} />
 
       </Routes>
     </BrowserRouter>

@@ -44,16 +44,16 @@ const Enquiries = () => {
                     onNotificationClick={() => setShowNotifications(!showNotifications)}
                 />
 
-                <div className="p-8 h-[calc(100vh-88px)] flex gap-6">
+                <div className="p-8 min-h-[calc(100vh-88px)] flex gap-6">
                     {/* Left Side - Enquiries List */}
-                    <div className="w-2/3 flex flex-col">
+                    <div className="w-2/3 flex flex-col gap-6 h-full">
                         {/* Tabs */}
                         <div className="flex gap-6 mb-6 border-b border-gray-700">
                             {tabs.map((tab) => (
                                 <button
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
-                                    className={`pb-3 font-medium transition-all ${activeTab === tab
+                                    className={`pb-3 pl-3 pr-3 font-medium transition-all ${activeTab === tab
                                         ? 'text-amber-500 border-b-2 border-amber-500'
                                         : 'text-gray-400 hover:text-white'
                                         }`}
@@ -83,19 +83,19 @@ const Enquiries = () => {
                         <h4 className="text-white font-semibold mb-4">3 bedroom Apartment</h4>
 
                         {/* Inquiry Card */}
-                        <div className="bg-gray-800/40 backdrop-blur-lg rounded-2xl p-6 flex-1 overflow-y-auto">
+                        <div className="bg-gray-800/40 backdrop-blur-lg border border-amber-700 rounded-2xl p-6 flex-1 overflow-y-auto">
                             <div className="flex items-start justify-between mb-4">
-                                <div>
+                                <div className='flex gap-2'>
                                     <span className="text-gray-400 text-sm">Inquired by:</span>
-                                    <h5 className="text-white font-semibold text-lg">John D.</h5>
+                                    <h5 className="text-white font-semibold text-sm">John D.</h5>
                                 </div>
                                 <span className="text-gray-400 text-sm">Just Now</span>
                             </div>
 
                             {/* Property Details */}
-                            <div className="flex gap-4 mb-4">
+                            <div className="flex gap-4 mb-4 bg-gray-800/70 backdrop-blur-lg rounded-xl p-4">
                                 <img
-                                    src="https://via.placeholder.com/150x100"
+                                    src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?cs=srgb&dl=pexels-binyaminmellish-106399.jpg&fm=jpg"
                                     alt="Property"
                                     className="w-32 h-24 rounded-lg object-cover"
                                 />
@@ -131,86 +131,105 @@ const Enquiries = () => {
                         </div>
                     </div>
 
-                    {/* Right Side - Chat Interface */}
-                    <div className="w-1/3 bg-gray-800/40 backdrop-blur-lg rounded-2xl flex flex-col">
+                    {/* Right Side - Enhanced Chat Interface */}
+                    <div className="w-1/3 h-full bg-gray-700/70 backdrop-blur-lg rounded-2xl flex flex-col">
                         {/* Buyer Profile Header */}
                         <div className="p-6 border-b border-gray-700">
-                            <div className="flex items-start gap-4 mb-4">
-                                <div className="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center text-white font-semibold">
+                            <div className="flex items-center gap-4 mb-4">
+                                {/* Avatar */}
+                                <div className="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center text-white font-semibold text-lg">
                                     JD
                                 </div>
                                 <div className="flex-1">
-                                    <h4 className="text-white font-semibold text-lg">John D.</h4>
-                                    <span className="text-gray-400 text-sm">10:45AM</span>
+                                    <h3 className="text-white font-semibold text-lg">John D.</h3>
+                                    <span className="text-gray-400 text-xs">10:45AM</span>
                                 </div>
                             </div>
 
-                            {/* Buyer Info */}
-                            <div className="grid grid-cols-2 gap-4 mb-4">
-                                <div className="flex items-center gap-2 text-sm">
-                                    <FaCheckCircle className="text-green-500" size={14} />
+                            {/* Status Badges Row 1 */}
+                            <div className="grid grid-cols-2 gap-3 mb-3">
+                                <div className="flex items-center gap-2 text-xs">
+                                    <FaCheckCircle className="text-green-400" size={14} />
                                     <span className="text-gray-300">Verified Contact</span>
                                 </div>
-                                <div className="flex items-center gap-2 text-sm">
-                                    <FaEnvelope className="text-gray-400" size={14} />
+                                <div className="flex items-center gap-2 text-xs">
+                                    <FaEnvelope className="text-blue-400" size={14} />
                                     <span className="text-gray-300">Email Confirmed</span>
                                 </div>
-                                <div className="flex items-center gap-2 text-sm">
+                            </div>
+
+                            {/* Status Badges Row 2 */}
+                            <div className="grid grid-cols-2 gap-3 mb-4">
+                                <div className="flex items-center gap-2 text-xs">
                                     <FaCalendar className="text-gray-400" size={14} />
                                     <span className="text-gray-300">12 November 2025</span>
                                 </div>
-                                <div className="flex items-center gap-2 text-sm">
+                                <div className="flex items-center gap-2 text-xs">
                                     <FaHashtag className="text-gray-400" size={14} />
                                     <span className="text-gray-300">ENQ-2801-1466</span>
                                 </div>
                             </div>
 
-                            {/* Document Status */}
-                            <div className="flex items-center justify-between p-3 bg-gray-700/30 rounded-lg">
+                            {/* Proof of Funds Alert */}
+                            <div className="bg-gray-800/60 rounded-lg p-3 flex items-center justify-between">
                                 <div className="flex items-center gap-2">
                                     <FaFileAlt className="text-gray-400" size={16} />
-                                    <span className="text-gray-300 text-sm">Proof of Funds/Pre-Approval</span>
+                                    <span className="text-gray-300 text-sm">Proof of funds/Pre-Approval</span>
                                 </div>
-                                <span className="px-2 py-1 bg-red-500/20 text-red-500 text-xs rounded">Missing</span>
+                                <span className="text-red-400 text-xs font-semibold">Missing</span>
                             </div>
                         </div>
 
-                        {/* Chat Messages */}
-                        <div className="flex-1 p-6 overflow-y-auto">
-                            <div className="space-y-4">
-                                {/* User Message */}
-                                <div className="bg-gray-700/30 rounded-lg p-3 ml-auto max-w-[80%]">
-                                    <p className="text-gray-300 text-sm mb-1">Your message</p>
-                                    <p className="text-white text-sm">Hi, is the property still available?</p>
-                                </div>
+                        {/* Schedule Viewing Section */}
+                        <div className="p-6 border-b border-gray-700">
+                            <p className="text-gray-300 text-sm mb-4">Buyer requested to schedule a viewing.</p>
 
-                                {/* Seller Response */}
-                                <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3 max-w-[80%]">
-                                    <p className="text-amber-600 text-sm mb-1">Seller message</p>
-                                    <p className="text-gray-200 text-sm">
-                                        Yes, the property is still available. Please upload all the required documents so that I can schedule viewing.
-                                    </p>
-                                </div>
+                            <h4 className="text-white font-semibold mb-3">Schedule Viewing</h4>
+
+                            {/* Time and Date Selectors */}
+                            <div className="grid grid-cols-2 gap-3 mb-4">
+                                <button className="flex items-center gap-2 px-3 py-2 bg-gray-800/60 rounded-lg text-gray-300 text-sm hover:bg-gray-800 transition-colors">
+                                    <FaCalendar className="text-amber-500" size={14} />
+                                    <span>Select time</span>
+                                </button>
+                                <button className="flex items-center gap-2 px-3 py-2 bg-gray-800/60 rounded-lg text-gray-300 text-sm hover:bg-gray-800 transition-colors">
+                                    <FaCalendar className="text-amber-500" size={14} />
+                                    <span>Select date</span>
+                                </button>
                             </div>
+
+                            {/* Additional Notes */}
+                            <textarea
+                                placeholder="Additional Notes..."
+                                className="w-full px-3 py-3 bg-gray-800/60 border border-gray-600 rounded-lg text-white placeholder-gray-500 text-sm resize-none focus:outline-none focus:border-amber-500"
+                                rows="3"
+                            ></textarea>
+
+                            {/* Create Viewing Invite Button */}
+                            <button className="w-full mt-3 py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity">
+                                Create Viewing Invite
+                            </button>
                         </div>
 
                         {/* Message Input */}
-                        <div className="p-6 border-t border-gray-700">
-                            <div className="relative mb-4">
+                        <div className="p-4 mt-auto">
+                            <div className="relative">
                                 <input
                                     type="text"
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
                                     placeholder="Write Message..."
-                                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 pr-12"
+                                    className="w-full px-4 py-3 bg-gray-800/60 border border-gray-600 rounded-lg text-white placeholder-gray-500 pr-12 focus:outline-none focus:border-amber-500"
                                 />
-                                <button className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white">
+                                <button className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-amber-500 transition-colors">
                                     <FaPaperPlane size={18} />
                                 </button>
                             </div>
+                        </div>
 
-                            {/* Agree to Proceed Button */}
-                            <button className="w-full px-6 py-3 bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded-full transition-all duration-300 hover:scale-105">
+                        {/* Agree to Proceed Button */}
+                        <div className="p-4 pt-0">
+                            <button className="w-full py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity">
                                 Agree to Proceed
                             </button>
                         </div>

@@ -1,6 +1,7 @@
 import SplashBg from "../assets/SplashBg.png";
 import SplashLogo from "../assets/Splashlogo3.png";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SplashScreen = () => {
     return (
@@ -18,9 +19,9 @@ const SplashScreen = () => {
                         className="flex items-center gap-2 px-8 py-3 rounded-full text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 uppercase text-sm"
                         style={{ backgroundColor: '#EDBF6D' }}
                     >
-                        <a href="/user">
+                        <Link to="/user">
                             SELL PROPERTY
-                        </a>
+                        </Link>
                         <FaArrowRight className="w-4 h-4" />
                     </button>
 
@@ -29,9 +30,9 @@ const SplashScreen = () => {
                         className="flex items-center gap-2 px-8 py-3 rounded-full text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 uppercase text-sm"
                         style={{ backgroundColor: '#EDBF6D' }}
                     >
-                        <a href="/user">
+                        <Link to="/user">
                             BUY PROPERTY
-                        </a>
+                        </Link>
                         <FaArrowRight className="w-4 h-4" />
                     </button>
                 </div>

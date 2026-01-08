@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { FaUsers, FaFire, FaHeart, FaEye, FaTimes } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
 import SellerHeader from '../../../components/Seller/SellerHeader';
+import { FaTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa';
 import StatsCard from '../../../components/Seller/StatsCard';
 
 const Analytics = () => {
@@ -25,10 +26,10 @@ const Analytics = () => {
     ];
 
     const recentPosts = [
-        { platform: 'PropertyXX', listing: '12 Maple Street', interactions: '2.3K', views: 156, shares: 89, engagement: '4.2%', posted: '2 hours ago' },
-        { platform: 'Twitter', listing: '12 Maple Street', interactions: '890', views: 45, shares: 234, engagement: '3.8%', posted: '4 hours ago' },
-        { platform: 'Private Property', listing: '12 Maple Street', interactions: '1.5K', views: 78, shares: 123, engagement: '5.1%', posted: '6 hours ago' },
-        { platform: 'LinkedIn', listing: '12 Maple Street', interactions: '456', views: 23, shares: 67, engagement: '2.9%', posted: '1 day ago' }
+        { icon: FaFacebook, platform: 'PropertyXX', listing: '12 Maple Street', interactions: '2.3K', views: 156, shares: 89, engagement: '4.2%', posted: '2 hours ago' },
+        { icon: FaTwitter, platform: 'Twitter', listing: '12 Maple Street', interactions: '890', views: 45, shares: 234, engagement: '3.8%', posted: '4 hours ago' },
+        { icon: FaLinkedin, platform: 'Private Property', listing: '12 Maple Street', interactions: '1.5K', views: 78, shares: 123, engagement: '5.1%', posted: '6 hours ago' },
+        { icon: FaLinkedin, platform: 'LinkedIn', listing: '12 Maple Street', interactions: '456', views: 23, shares: 67, engagement: '2.9%', posted: '1 day ago' }
     ];
 
     return (
@@ -56,7 +57,7 @@ const Analytics = () => {
                         <StatsCard
                             label="Accounts Reached"
                             value="40k"
-                            icon={<FaUsers className="text-amber-500" size={20} />}
+                            icon={<FaUsers className="text-white" size={20} />}
                             trend="+8.4k this week"
                             highlighted={true}
                         />
@@ -91,15 +92,41 @@ const Analytics = () => {
                             <div className="mb-4">
                                 <div className="text-3xl font-bold text-white mb-2">4,224</div>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-blue-400 text-sm font-semibold">84%</span>
-                                    <span className="text-blue-400 text-xs">-8.0%</span>
+                                    <span className="text-pink-400 text-sm font-semibold">-8.0%</span>
                                 </div>
                             </div>
-                            {/* Simple chart visualization */}
-                            <div className="h-24 flex items-end justify-between gap-1">
-                                {[30, 45, 35, 50, 40, 55, 45, 60, 50].map((height, i) => (
-                                    <div key={i} className="flex-1 bg-blue-500/30 rounded-t" style={{ height: `${height}%` }}></div>
-                                ))}
+                            {/* SVG Line Chart with Gradient */}
+                            <div className="h-32 relative">
+                                <svg width="100%" height="100%" viewBox="0 0 300 120" preserveAspectRatio="none">
+                                    <defs>
+                                        <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stopColor="#ec4899" stopOpacity="0.3" />
+                                            <stop offset="100%" stopColor="#ec4899" stopOpacity="0.05" />
+                                        </linearGradient>
+                                    </defs>
+                                    {/* Area fill */}
+                                    <path
+                                        d="M0,60 Q75,40 150,50 T300,30 L300,120 L0,120 Z"
+                                        fill="url(#lineGradient1)"
+                                    />
+                                    {/* Line */}
+                                    <path
+                                        d="M0,60 Q75,40 150,50 T300,30"
+                                        stroke="#ec4899"
+                                        strokeWidth="2.5"
+                                        fill="none"
+                                    />
+                                    {/* Dot at peak */}
+                                    <circle cx="150" cy="50" r="4" fill="#ec4899" stroke="#1f2937" strokeWidth="2" />
+                                </svg>
+                                {/* Month labels */}
+                                <div className="flex justify-between text-xs text-gray-500 mt-2">
+                                    <span>Jan</span>
+                                    <span>Mar</span>
+                                    <span>May</span>
+                                    <span>Jul</span>
+                                    <span>Sep</span>
+                                </div>
                             </div>
                         </div>
 
@@ -132,15 +159,39 @@ const Analytics = () => {
                             <div className="mb-4">
                                 <div className="text-3xl font-bold text-white mb-2">4,224</div>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-pink-400 text-sm font-semibold">84%</span>
-                                    <span className="text-pink-400 text-xs">-8.0%</span>
+                                    <span className="text-blue-400 text-sm font-semibold">-8.0%</span>
                                 </div>
                             </div>
-                            {/* Line chart visualization */}
-                            <div className="h-24 flex items-end justify-between gap-1">
-                                {[50, 55, 45, 60, 55, 65, 60, 70, 65].map((height, i) => (
-                                    <div key={i} className="flex-1 bg-pink-500/30 rounded-t" style={{ height: `${height}%` }}></div>
-                                ))}
+                            {/* SVG Line Chart */}
+                            <div className="h-32 relative">
+                                <svg width="100%" height="100%" viewBox="0 0 300 120" preserveAspectRatio="none">
+                                    <defs>
+                                        <linearGradient id="lineGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.3" />
+                                            <stop offset="100%" stopColor="#60a5fa" stopOpacity="0.05" />
+                                        </linearGradient>
+                                    </defs>
+                                    {/* Area fill */}
+                                    <path
+                                        d="M0,80 Q75,70 150,55 T300,40 L300,120 L0,120 Z"
+                                        fill="url(#lineGradient3)"
+                                    />
+                                    {/* Line */}
+                                    <path
+                                        d="M0,80 Q75,70 150,55 T300,40"
+                                        stroke="#60a5fa"
+                                        strokeWidth="2.5"
+                                        fill="none"
+                                    />
+                                    <circle cx="20" cy="78" r="4" fill="#60a5fa" stroke="#1f2937" strokeWidth="2" />
+                                </svg>
+                                <div className="flex justify-between text-xs text-gray-500 mt-2">
+                                    <span>Jan</span>
+                                    <span>Mar</span>
+                                    <span>May</span>
+                                    <span>Jul</span>
+                                    <span>Sep</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -154,36 +205,42 @@ const Analytics = () => {
                         <div className="overflow-x-auto">
                             <table className="w-full">
                                 <thead>
-                                    <tr className="border-b border-gray-700">
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-400">Platform</th>
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-400">Listing</th>
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-400">Interactions</th>
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-400">Views</th>
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-400">Shares</th>
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-400">Engagement</th>
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-400">Posted</th>
+                                    <tr className="border-b border-gray-700 bg-gray-800">
+                                        <th className="px-6 py-4 text-left text-sm font-semibold text-white">Platform</th>
+                                        <th className="px-6 py-4 text-left text-sm font-semibold text-white">Listing</th>
+                                        <th className="px-6 py-4 text-left text-sm font-semibold text-white">Interactions</th>
+                                        <th className="px-6 py-4 text-left text-sm font-semibold text-white">Views</th>
+                                        <th className="px-6 py-4 text-left text-sm font-semibold text-white">Shares</th>
+                                        <th className="px-6 py-4 text-left text-sm font-semibold text-white">Engagement</th>
+                                        <th className="px-6 py-4 text-left text-sm font-semibold text-white">Posted</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {recentPosts.map((post, index) => (
-                                        <tr key={index} className="border-b border-gray-700/50 hover:bg-gray-700/20 transition-colors">
-                                            <td className="px-6 py-4">
-                                                <span className={`px-3 py-1 rounded text-sm font-medium ${post.platform === 'PropertyXX' ? 'bg-red-500/20 text-red-400' :
-                                                    post.platform === 'Twitter' ? 'bg-blue-500/20 text-blue-400' :
-                                                        post.platform === 'Private Property' ? 'bg-pink-500/20 text-pink-400' :
-                                                            'bg-blue-600/20 text-blue-400'
-                                                    }`}>
-                                                    {post.platform}
-                                                </span>
-                                            </td>
-                                            <td className="px-6 py-4 text-white">{post.listing}</td>
-                                            <td className="px-6 py-4 text-white">{post.interactions}</td>
-                                            <td className="px-6 py-4 text-white">{post.views}</td>
-                                            <td className="px-6 py-4 text-white">{post.shares}</td>
-                                            <td className="px-6 py-4 text-white">{post.engagement}</td>
-                                            <td className="px-6 py-4 text-gray-400">{post.posted}</td>
-                                        </tr>
-                                    ))}
+                                    {recentPosts.map((post, index) => {
+                                        const Icon = post.icon;
+                                        return (
+                                            <tr key={index} className="border-b border-gray-700/50 hover:bg-gray-700/20 transition-colors">
+                                                <td className="px-6 py-4">
+                                                    <div className="flex items-center gap-3">
+                                                        {Icon && <Icon className="text-white" size={20} />}
+                                                        <span className={`px-3 py-1 rounded text-sm font-medium ${post.platform === 'PropertyXX' ? 'bg-red-500/20 text-red-400' :
+                                                            post.platform === 'Twitter' ? 'bg-blue-500/20 text-blue-400' :
+                                                                post.platform === 'Private Property' ? 'bg-pink-500/20 text-pink-400' :
+                                                                    'bg-blue-600/20 text-blue-400'
+                                                            }`}>
+                                                            {post.platform}
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                                <td className="px-6 py-4 text-white">{post.listing}</td>
+                                                <td className="px-6 py-4 text-white">{post.interactions}</td>
+                                                <td className="px-6 py-4 text-white">{post.views}</td>
+                                                <td className="px-6 py-4 text-white">{post.shares}</td>
+                                                <td className="px-6 py-4 text-white">{post.engagement}</td>
+                                                <td className="px-6 py-4 text-gray-400">{post.posted}</td>
+                                            </tr>
+                                        );
+                                    })}
                                 </tbody>
                             </table>
                         </div>

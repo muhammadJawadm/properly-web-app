@@ -1,5 +1,6 @@
 import SplashBg from "../assets/SplashBg.png";
 import SplashLogo from "../assets/splashLogo2.png";
+import { Link } from "react-router-dom";
 
 const SignUpMethod = () => {
     return (
@@ -39,9 +40,9 @@ const SignUpMethod = () => {
                             className="w-2/3 py-4 px-8 rounded-full font-semibold text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                             style={{ backgroundColor: '#012688' }}
                         >
-                            <a href="/signin">
+                            <Link to="/signin">
                                 Login
-                            </a>
+                            </Link>
                         </button>
 
                         {/* I am Buyer Button */}
@@ -49,9 +50,9 @@ const SignUpMethod = () => {
                             className="w-2/3 py-4 px-8 rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                             style={{ backgroundColor: '#EDBF6D' }}
                         >
-                            <a href="/signup">
+                            <Link to="/signup">
                                 Sign Up
-                            </a>
+                            </Link>
                         </button>
 
                     </div>

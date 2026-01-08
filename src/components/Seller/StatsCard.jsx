@@ -5,7 +5,7 @@ const StatsCard = ({ label, value, icon, trend, highlighted = false }) => {
             : 'bg-gray-800/60 backdrop-blur-lg'
             }`}>
             <div className="flex items-center justify-between mb-3">
-                <span className={`text-sm ${highlighted ? 'text-white' : 'text-gray-400'}`}>
+                <span className={`text-sm ${highlighted ? 'text-white' : 'text-white'}`}>
                     {label}
                 </span>
                 {icon && (

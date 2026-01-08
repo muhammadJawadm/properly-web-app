@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import SplashBg from "../../assets/SplashBg.png";
 import SplashLogo from "../../assets/phone.png";
 
@@ -105,14 +106,14 @@ const RecoverPassword = () => {
                             className="w-[80%] ml-[10%] py-4 px-4 rounded-full font-semibold text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                             style={{ backgroundColor: '#012688' }}
                         >
-                            <a href="/recoverpassword2">
+                            <Link to="/recoverpassword2">
                                 Continue
-                            </a>
+                            </Link>
                         </button>
                     </form>
                     <div className="text-center mt-16">
                         <span className="text-white">
-                            I remember it! <a className="text-amber-400" href="/signin">SIGN IN</a>
+                            I remember it! <Link className="text-amber-400" to="/signin">SIGN IN</Link>
                         </span>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
@@ -112,9 +113,9 @@ const SignIn = () => {
                             className="w-full text-white py-4 px-8 rounded-full font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                             style={{ backgroundColor: '#012688' }}
                         >
-                            <a href="/recoverpassword">
+                            <Link to="/recoverpassword">
                                 Sign In
-                            </a>
+                            </Link>
                         </button>
                     </form>
                 </div>

@@ -1,4 +1,5 @@
 import SplashBg from "../assets/SplashBg.png";
+import { Link } from "react-router-dom";
 
 const UserScreen = () => {
     return (
@@ -32,9 +33,9 @@ const UserScreen = () => {
                             className="w-2/3 py-4 px-8 rounded-full font-semibold text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                             style={{ backgroundColor: '#012688' }}
                         >
-                            <a href="/signupmethod">
+                            <Link to="/signupmethod">
                                 I am a Seller
-                            </a>
+                            </Link>
                         </button>
 
                         {/* I am Buyer Button */}
@@ -42,14 +43,18 @@ const UserScreen = () => {
                             className="w-2/3 py-4 px-8 rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                             style={{ backgroundColor: '#EDBF6D' }}
                         >
-                            I am Buyer
+                            <Link to="/signupmethod">
+                                I am Buyer
+                            </Link>
                         </button>
 
                         {/* I am Attorney Button */}
                         <button
                             className="w-2/3 py-4 px-8 rounded-full font-semibold text-black bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-95"
                         >
-                            I am Attorney
+                            <Link to="/signupmethod">
+                                I am Attorney
+                            </Link>
                         </button>
                     </div>
 

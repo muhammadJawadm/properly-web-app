@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
@@ -135,9 +136,9 @@ const SignUp = () => {
                             className="w-full py-4 px-8 rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110 mt-6"
                             style={{ backgroundColor: '#EDBF6D' }}
                         >
-                            <a href="/verification">
+                            <Link to="/verification">
                                 Sign Up
-                            </a>
+                            </Link>
                         </button>
                     </form>
                 </div>

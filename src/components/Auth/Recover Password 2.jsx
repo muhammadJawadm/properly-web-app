@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import SplashBg from "../../assets/SplashBg.png";
@@ -87,7 +88,7 @@ const RecoverPassword2 = () => {
                     </form>
                     <div className="text-center mt-16">
                         <span className="text-white">
-                            I remember it! <a className="text-amber-400" href="/signin">SIGN IN</a>
+                            I remember it! <Link className="text-amber-400" to="/signin">SIGN IN</Link>
                         </span>
                     </div>
                 </div>
