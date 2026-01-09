@@ -381,7 +381,9 @@ const KycVerification = () => {
                                             className="w-full sm:w-2/3 mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-3 text-sm sm:text-base rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
                                             style={{ backgroundColor: '#EDBF6D' }}
                                         >
-                                            Submit for Verification
+                                            <Link to="/seller/dashboard">
+                                                Submit for Verification
+                                            </Link>
                                         </button>
                                     </div>
                                 </div>

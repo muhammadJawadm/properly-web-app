@@ -85,7 +85,7 @@ const RecoverPassword2 = () => {
                                 className="w-full sm:w-[80%] sm:mx-auto block py-3 sm:py-4 px-4 rounded-full font-semibold text-white text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                                 style={{ backgroundColor: '#012688' }}
                             >
-                                Reset password
+                                <Link to="/sellerkyc">Reset password</Link>
                             </button>
                         </form>
 

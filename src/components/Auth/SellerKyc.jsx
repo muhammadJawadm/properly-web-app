@@ -206,7 +206,9 @@ const SellerKyc = () => {
                                 className="w-full sm:w-[80%] sm:mx-auto block py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold text-black text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                                 style={{ backgroundColor: '#EDBF6D' }}
                             >
-                                Submit Documents
+                                <Link to="/kycverification">
+                                    Submit Documents
+                                </Link>
                             </button>
                         </form>
                     </div>

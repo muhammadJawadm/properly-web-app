@@ -133,7 +133,9 @@ const Verification = () => {
                                 className="w-full py-3 sm:py-4 px-6 rounded-full font-semibold text-black text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                                 style={{ backgroundColor: '#EDBF6D' }}
                             >
-                                Sign Up
+                                <Link to="/sellerkyc">
+                                    Sign Up
+                                </Link>
                             </button>
                         </form>
                     </div>
