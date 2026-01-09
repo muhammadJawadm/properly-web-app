@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import SplashBg from "../../assets/SplashBg.png";
+import { Link } from "react-router-dom";
 import SplashLogo from "../../assets/phone.png";
 
 const Verification = () => {

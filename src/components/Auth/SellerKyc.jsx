@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaArrowLeft, FaFileAlt, FaUpload, FaTimes } from "react-icons/fa";
 import SplashBg from "../../assets/SplashBg.png";
-
+import { Link } from "react-router-dom";
 const SellerKyc = () => {
     const [sellerType, setSellerType] = useState("trust");
     const [uploadedFiles, setUploadedFiles] = useState({});
