@@ -74,17 +74,17 @@ const KycVerification = () => {
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex flex-col">
 
             {/* Header */}
-            <div className="flex items-center justify-between px-8 py-6 bg-black bg-opacity-50">
+            <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 py-4 sm:py-6 bg-black bg-opacity-50">
                 {/* Spacer to balance the button on the right */}
                 <div className="w-6"></div>
 
-                <h1 className="text-white text-xl font-semibold text-center flex-1">Seller KYC & Ownership Verification</h1>
+                <h1 className="text-white text-sm sm:text-lg md:text-xl font-semibold text-center flex-1">Seller KYC & Ownership Verification</h1>
 
                 <button
                     onClick={() => setShowHelp(!showHelp)}
                     className="text-white hover:text-amber-500 transition-colors"
                 >
-                    <FaQuestionCircle size={24} />
+                    <FaQuestionCircle size={20} className="sm:w-6 sm:h-6" />
                 </button>
 
             </div>
@@ -98,35 +98,35 @@ const KycVerification = () => {
                 />
             </div>
             {/* Main Content */}
-            <div className="flex-1 flex items-center justify-center">
+            <div className="flex-1 flex items-center justify-center p-4 overflow-y-auto">
                 {/* Step 0: Welcome/Overview */}
                 {currentStep === 0 && (
-                    <div className="w-3/4">
-                        <div className="bg-gray-800 bg-opacity-60 backdrop-blur-lg rounded-3xl p-8 shadow-2xl">
+                    <div className="w-full max-w-4xl">
+                        <div className="bg-gray-800 bg-opacity-60 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl">
                             {/* Logo */}
-                            <div className="flex justify-center mb-6 mr-8">
-                                <img src={SplashLogo} alt="Properly Logo" className="w-64 h-auto" />
+                            <div className="flex justify-center mb-6">
+                                <img src={SplashLogo} alt="Properly Logo" className="w-40 sm:w-52 md:w-64 h-auto" />
                             </div>
 
                             {/* Steps Overview */}
-                            <div className="flex justify-center items-center gap-12 mb-8">
+                            <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 md:gap-12 mb-6 sm:mb-8">
                                 {steps.map((step, index) => (
-                                    <div key={step.number} className="flex items-center gap-8">
+                                    <div key={step.number} className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
                                         <div className="flex flex-col items-center">
                                             {/* Icon */}
-                                            <div className="w-24 h-24 rounded-2xl bg-gray-700 border-2 border-amber-500 flex items-center justify-center mb-4">
-                                                <span className="text-4xl">{step.icon}</span>
+                                            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl sm:rounded-2xl bg-gray-700 border-2 border-amber-500 flex items-center justify-center mb-3 sm:mb-4">
+                                                <span className="text-3xl sm:text-4xl">{step.icon}</span>
                                             </div>
                                             {/* Step Info */}
                                             <div className="flex items-center gap-2 text-gray-400">
-                                                <span className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-sm">
+                                                <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-700 flex items-center justify-center text-xs sm:text-sm">
                                                     {step.number}
                                                 </span>
-                                                <span className="text-sm">{step.label}</span>
+                                                <span className="text-xs sm:text-sm">{step.label}</span>
                                             </div>
                                         </div>
                                         {index < steps.length - 1 && (
-                                            <div className="w-40 h-0.5 bg-gray-700 mt-28" style={{ borderStyle: 'dashed' }} />
+                                            <div className="hidden sm:block w-24 md:w-40 h-0.5 bg-gray-700 mt-16 md:mt-28" style={{ borderStyle: 'dashed' }} />
                                         )}
                                     </div>
                                 ))}
@@ -135,10 +135,10 @@ const KycVerification = () => {
                             {/* Start Button */}
 
                         </div>
-                        <div className="flex justify-center mt-8">
+                        <div className="flex justify-center mt-6 sm:mt-8">
                             <button
                                 onClick={handleStartVerification}
-                                className="px-16 py-4 rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                                className="px-10 sm:px-12 md:px-16 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
                                 style={{ backgroundColor: '#EDBF6D' }}
                             >
                                 Start KYC Verification
@@ -151,7 +151,7 @@ const KycVerification = () => {
                 {currentStep === 1 && (
                     <div className="w-3/4">
                         {/* Steps Progress */}
-                        <div className="flex justify-center items-center gap-8 mb-16">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mb-16">
                             {steps.map((step, index) => (
                                 <div key={step.number} className="flex items-center gap-8">
                                     <div className="flex items-center gap-2">
@@ -168,16 +168,16 @@ const KycVerification = () => {
                                         </span>
                                     </div>
                                     {index < steps.length - 1 && (
-                                        <div className="w-32 h-0.5 bg-gray-700" />
+                                        <div className=" lg:w-32 sm:w-0 h-0.5 bg-gray-700" />
                                     )}
                                 </div>
                             ))}
                         </div>
 
-                        <div className="bg-gray-800 bg-opacity-60 backdrop-blur-lg rounded-3xl p-16 shadow-2xl">
-                            <div className="flex items-center gap-24">
-                                {/* Left: Illustration */}
-                                <div className="w-1/2 flex justify-center">
+                        <div className="bg-black bg-opacity-80 backdrop-blur-sm rounded-2xl sm:rounded-3xl px-6 sm:px-12 md:px-16 py-10 sm:py-16 shadow-2xl">
+                            <div className="flex flex-col lg:flex-row items-center gap-12 sm:gap-16 md:gap-24">
+                                {/* Left: Illustration - Hidden on mobile */}
+                                <div className="hidden lg:flex lg:w-1/2 justify-center">
                                     <div className="w-64 h-64 rounded-full bg-gray-700 flex items-center justify-center">
                                         <div className="w-48 h-64 bg-gray-600 rounded-2xl flex items-center justify-center relative">
                                             <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-500 rounded-full" />
@@ -194,9 +194,9 @@ const KycVerification = () => {
                                 </div>
 
                                 {/* Right: Upload Form */}
-                                <div className="w-1/2">
-                                    <h2 className="text-2xl text-center font-bold text-white mb-2">Upload Government ID.</h2>
-                                    <p className="text-gray-400 text-sm mb-8 text-center">National Identity Card or Passport</p>
+                                <div className="w-full lg:w-1/2">
+                                    <h2 className="text-xl sm:text-2xl text-center font-bold text-white mb-2">Upload Government ID.</h2>
+                                    <p className="text-gray-400 text-xs sm:text-sm mb-6 sm:mb-8 text-center">National Identity Card or Passport</p>
 
                                     <div className="space-y-4">
                                         {/* Upload Front */}
@@ -225,10 +225,10 @@ const KycVerification = () => {
                                     </div>
 
                                     {/* Next Button */}
-                                    <div className="flex justify-center mt-16">
+                                    <div className="flex justify-center mt-12 sm:mt-16">
                                         <button
                                             onClick={handleNext}
-                                            className="w-2/3 px-8 py-3 rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                                            className="w-full sm:w-2/3 px-6 sm:px-8 py-3 text-sm sm:text-base rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
                                             style={{ backgroundColor: '#EDBF6D' }}
                                         >
                                             Next
@@ -244,7 +244,7 @@ const KycVerification = () => {
                 {currentStep === 2 && (
                     <div className="w-3/4">
                         {/* Steps Progress */}
-                        <div className="flex justify-center items-center gap-8 mb-16">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mb-16">
                             {steps.map((step, index) => (
                                 <div key={step.number} className="flex items-center gap-8">
                                     <div className="flex items-center gap-2">
@@ -261,7 +261,7 @@ const KycVerification = () => {
                                         </span>
                                     </div>
                                     {index < steps.length - 1 && (
-                                        <div className="w-32 h-0.5 bg-gray-700" />
+                                        <div className="lg:w-32 sm:w-0 h-0.5 bg-gray-700" />
                                     )}
                                 </div>
                             ))}
@@ -269,8 +269,8 @@ const KycVerification = () => {
 
                         <div className="bg-gray-800 bg-opacity-60 backdrop-blur-lg rounded-3xl p-16 shadow-2xl">
                             <div className="flex items-center gap-12">
-                                {/* Left: Illustration */}
-                                <div className="w-1/2 flex justify-center">
+                                {/* Left: Illustration - Hidden on mobile */}
+                                <div className="hidden lg:flex lg:w-1/2 justify-center">
                                     <div className="w-64 h-64 rounded-full bg-gray-700 flex items-center justify-center">
                                         <div className="w-48 h-64 bg-gray-600 rounded-2xl flex flex-col items-center justify-center relative">
                                             <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-500 rounded-full" />
@@ -283,8 +283,8 @@ const KycVerification = () => {
                                 </div>
 
                                 {/* Right: Upload Form */}
-                                <div className="w-1/2">
-                                    <h2 className="text-2xl text-center font-bold text-white mb-24">Upload Photo</h2>
+                                <div className="w-full lg:w-1/2">
+                                    <h2 className="text-xl sm:text-2xl text-center font-bold text-white mb-12 sm:mb-16 md:mb-24">Upload Photo</h2>
 
                                     <div className="space-y-4">
                                         {/* Upload Photo */}
@@ -301,10 +301,10 @@ const KycVerification = () => {
                                     </div>
 
                                     {/* Next Button */}
-                                    <div className="flex justify-center mt-24">
+                                    <div className="flex justify-center mt-12 sm:mt-16 md:mt-24">
                                         <button
                                             onClick={handleNext}
-                                            className="w-2/3 px-8 py-3 rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                                            className="w-full sm:w-2/3 px-6 sm:px-8 py-3 text-sm sm:text-base rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
                                             style={{ backgroundColor: '#EDBF6D' }}
                                         >
                                             Next
@@ -320,7 +320,7 @@ const KycVerification = () => {
                 {currentStep === 3 && (
                     <div className="w-3/4">
                         {/* Steps Progress */}
-                        <div className="flex justify-center items-center gap-8 mb-16">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mb-16">
                             {steps.map((step, index) => (
                                 <div key={step.number} className="flex items-center gap-8">
                                     <div className="flex items-center gap-2">
@@ -337,7 +337,7 @@ const KycVerification = () => {
                                         </span>
                                     </div>
                                     {index < steps.length - 1 && (
-                                        <div className="w-32 h-0.5 bg-gray-700" />
+                                        <div className="lg:w-32 sm:w-0 h-0.5 bg-gray-700" />
                                     )}
                                 </div>
                             ))}
@@ -345,8 +345,8 @@ const KycVerification = () => {
 
                         <div className="bg-gray-800 bg-opacity-60 backdrop-blur-lg rounded-3xl p-16 shadow-2xl">
                             <div className="flex items-center gap-12">
-                                {/* Left: Illustration */}
-                                <div className="w-1/2 flex justify-center">
+                                {/* Left: Illustration - Hidden on mobile */}
+                                <div className="hidden lg:flex lg:w-1/2 justify-center">
                                     <div className="w-64 h-64 rounded-full bg-gray-700 flex items-center justify-center">
                                         <div className="w-48 h-64 bg-gray-600 rounded-2xl flex items-center justify-center relative">
                                             <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-500 rounded-full" />
@@ -356,9 +356,9 @@ const KycVerification = () => {
                                 </div>
 
                                 {/* Right: Upload Form */}
-                                <div className="w-1/2">
-                                    <h2 className="text-2xl font-bold text-white mb-2 text-center">Proof of Residence</h2>
-                                    <p className="text-gray-400 text-sm mb-16 text-center">Upload Utility Bill or Official document</p>
+                                <div className="w-full lg:w-1/2">
+                                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-2 text-center">Proof of Residence</h2>
+                                    <p className="text-gray-400 text-xs sm:text-sm mb-10 sm:mb-12 md:mb-16 text-center">Upload Utility Bill or Official document</p>
 
                                     <div className="space-y-4">
                                         {/* Upload Photo */}
@@ -375,10 +375,10 @@ const KycVerification = () => {
                                     </div>
 
                                     {/* Submit Button */}
-                                    <div className="flex justify-center mt-24">
+                                    <div className="flex justify-center mt-12 sm:mt-16 md:mt-24">
                                         <button
                                             onClick={handleSubmitForVerification}
-                                            className="w-2/3 mt-8 px-8 py-3 rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                                            className="w-full sm:w-2/3 mt-4 sm:mt-6 md:mt-8 px-6 sm:px-8 py-3 text-sm sm:text-base rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
                                             style={{ backgroundColor: '#EDBF6D' }}
                                         >
                                             Submit for Verification
@@ -393,8 +393,8 @@ const KycVerification = () => {
 
             {/* Verification in Progress Modal */}
             {showVerificationModal && (
-                <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-                    <div className="bg-gray-800 rounded-2xl p-24 max-w-xl shadow-2xl relative">
+                <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
+                    <div className="bg-gray-800 rounded-2xl p-8 sm:p-12 md:p-24 max-w-xl w-full shadow-2xl relative">
                         <button
                             onClick={() => setShowVerificationModal(false)}
                             className="absolute top-4 right-4 text-gray-400 hover:text-white"
@@ -430,8 +430,8 @@ const KycVerification = () => {
 
             {/* Results Modal */}
             {showResultsModal && (
-                <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-                    <div className="bg-gray-800 rounded-2xl p-24 max-w-xl shadow-2xl relative">
+                <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
+                    <div className="bg-gray-800 rounded-2xl p-8 sm:p-12 md:p-24 max-w-xl w-full shadow-2xl relative">
                         <button
                             onClick={() => setShowResultsModal(false)}
                             className="absolute top-4 right-4 text-gray-400 hover:text-white"

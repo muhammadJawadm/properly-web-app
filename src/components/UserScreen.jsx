@@ -11,56 +11,56 @@ const UserScreen = () => {
 
             {/* Main Content Card */}
             <div className="relative z-10 w-full max-w-2xl">
-                <div className="bg-black bg-opacity-80 backdrop-blur-sm rounded-3xl px-16 py-14 shadow-2xl relative">
+                <div className="bg-black bg-opacity-80 backdrop-blur-sm rounded-2xl sm:rounded-3xl px-6 py-8 sm:px-12 md:px-16 sm:py-12 md:py-14 shadow-2xl relative">
                     {/* Welcome Title */}
-                    <div className="text-center mb-16">
-                        <h1 className="text-4xl font-bold text-white mb-4 tracking-wide">
+                    <div className="text-center mb-8 sm:mb-12 md:mb-16">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 tracking-wide">
                             Welcome TO PROPERLY
                         </h1>
-                        <p className="text-gray-300 text-base leading-relaxed">
+                        <p className="text-gray-300 text-sm sm:text-base leading-relaxed px-2">
                             Where Every Listing Gets the Spotlight It Deserves
                         </p>
                     </div>
 
                     {/* Role Selection */}
-                    <div className="flex flex-col items-center space-y-5 mb-20">
-                        <p className="text-center text-gray-300 text-sm mb-2">
+                    <div className="flex flex-col items-center space-y-4 sm:space-y-5 mb-16 sm:mb-20">
+                        <p className="text-center text-gray-300 text-xs sm:text-sm mb-1 sm:mb-2">
                             Please select your role
                         </p>
 
                         {/* I am a Seller Button */}
-                        <button
-                            className="w-2/3 py-4 px-8 rounded-full font-semibold text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
-                            style={{ backgroundColor: '#012688' }}
-                        >
-                            <Link to="/signupmethod">
+                        <Link to="/signupmethod" className="w-full sm:w-2/3">
+                            <button
+                                className="w-full py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold text-white text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
+                                style={{ backgroundColor: '#012688' }}
+                            >
                                 I am a Seller
-                            </Link>
-                        </button>
+                            </button>
+                        </Link>
 
                         {/* I am Buyer Button */}
-                        <button
-                            className="w-2/3 py-4 px-8 rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
-                            style={{ backgroundColor: '#EDBF6D' }}
-                        >
-                            <Link to="/signupmethod">
+                        <Link to="/signupmethod" className="w-full sm:w-2/3">
+                            <button
+                                className="w-full py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold text-black text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
+                                style={{ backgroundColor: '#EDBF6D' }}
+                            >
                                 I am Buyer
-                            </Link>
-                        </button>
+                            </button>
+                        </Link>
 
                         {/* I am Attorney Button */}
-                        <button
-                            className="w-2/3 py-4 px-8 rounded-full font-semibold text-black bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-95"
-                        >
-                            <Link to="/signupmethod">
+                        <Link to="/signupmethod" className="w-full sm:w-2/3">
+                            <button
+                                className="w-full py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold text-black text-sm sm:text-base bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-95"
+                            >
                                 I am Attorney
-                            </Link>
-                        </button>
+                            </button>
+                        </Link>
                     </div>
 
                     {/* Footer Links */}
-                    <div className="absolute bottom-8 left-0 right-0">
-                        <div className="flex items-center justify-center gap-8 text-sm text-gray-400">
+                    <div className="mt-8 sm:mt-0 sm:absolute sm:bottom-8 left-0 right-0">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8 text-xs sm:text-sm text-gray-400">
                             <a href="#" className="hover:text-white transition-colors duration-200 hover:underline">
                                 Privacy Policy
                             </a>

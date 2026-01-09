@@ -110,7 +110,7 @@ const SellerKyc = () => {
     };
 
     return (
-        <div className="min-h-screen relative overflow-hidden flex items-center justify-center p-8">
+        <div className="min-h-screen relative overflow-hidden flex items-center justify-center p-4 sm:p-6 md:p-8">
             {/* Background Image */}
             <div className="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${SplashBg})` }}>
@@ -118,19 +118,19 @@ const SellerKyc = () => {
 
             {/* Back Button */}
             <button
-                className="absolute top-8 left-8 z-20 text-white hover:text-gray-300 transition-colors"
+                className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20 text-white hover:text-gray-300 transition-colors"
                 onClick={() => window.history.back()}
             >
-                <FaArrowLeft className="w-6 h-6" />
+                <FaArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             {/* Main Content Container */}
-            <div className="relative z-10 w-full max-w-7xl flex gap-8">
+            <div className="relative z-10 w-full max-w-7xl flex flex-col lg:flex-row gap-6 sm:gap-8">
                 {/* Left Panel - Seller Type & Mandatory Documents */}
-                <div className="w-1/2 space-y-6">
+                <div className="w-full lg:w-1/2 space-y-4 sm:space-y-6">
                     {/* Seller Type Selection */}
-                    <div className="bg-black bg-opacity-80 backdrop-blur-sm rounded-3xl px-8 py-6 shadow-2xl">
-                        <h2 className="text-2xl font-bold text-white mb-6">Select your seller Type</h2>
+                    <div className="bg-black bg-opacity-80 backdrop-blur-sm rounded-2xl sm:rounded-3xl px-6 sm:px-8 py-6 shadow-2xl">
+                        <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Select your seller Type</h2>
                         <div className="space-y-4">
                             <label className="flex items-center gap-3 cursor-pointer group">
                                 <input
@@ -142,7 +142,7 @@ const SellerKyc = () => {
                                     className="w-5 h-5 accent-amber-500"
                                     style={{ accentColor: '#EDBF6D' }}
                                 />
-                                <span className="text-white text-base group-hover:text-amber-400 transition-colors">Trust</span>
+                                <span className="text-white text-sm sm:text-base group-hover:text-amber-400 transition-colors">Trust</span>
                             </label>
 
                             <label className="flex items-center gap-3 cursor-pointer group">
@@ -155,7 +155,7 @@ const SellerKyc = () => {
                                     className="w-5 h-5 accent-amber-500"
                                     style={{ accentColor: '#EDBF6D' }}
                                 />
-                                <span className="text-white text-base group-hover:text-amber-400 transition-colors">
+                                <span className="text-white text-sm sm:text-base group-hover:text-amber-400 transition-colors">
                                     Individual Seller (Natural Person)
                                 </span>
                             </label>
@@ -170,13 +170,13 @@ const SellerKyc = () => {
                                     className="w-5 h-5 accent-amber-500"
                                     style={{ accentColor: '#EDBF6D' }}
                                 />
-                                <span className="text-white text-base group-hover:text-amber-400 transition-colors">
+                                <span className="text-white text-sm sm:text-base group-hover:text-amber-400 transition-colors">
                                     Company / Close Corporation
                                 </span>
                             </label>
                         </div>
 
-                        <h2 className="text-xl font-bold text-white mt-24">Mandatory Documents</h2>
+                        <h2 className="text-lg sm:text-xl font-bold text-white mt-12 sm:mt-16 md:mt-24">Mandatory Documents</h2>
                         <div className="mt-4">
                             {mandatoryDocs.map((doc) => (
                                 <DocumentUploadRow key={doc.id} doc={doc} category="mandatory" />
@@ -187,9 +187,9 @@ const SellerKyc = () => {
                 </div>
 
                 {/* Right Panel - Type-Specific Documents */}
-                <div className="w-1/2 ">
-                    <div className="bg-black bg-opacity-80 backdrop-blur-sm rounded-3xl px-8 py-8 shadow-2xl">
-                        <h2 className="text-2xl font-bold text-white mb-6">
+                <div className="w-full lg:w-1/2">
+                    <div className="bg-black bg-opacity-80 backdrop-blur-sm rounded-2xl sm:rounded-3xl px-6 sm:px-8 py-6 sm:py-8 shadow-2xl">
+                        <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
                             {typeSpecificDocs[sellerType].title}
                         </h2>
 
@@ -203,7 +203,7 @@ const SellerKyc = () => {
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                className="w-[80%] ml-[10%] py-4 px-8 rounded-full font-semibold text-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
+                                className="w-full sm:w-[80%] sm:mx-auto block py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold text-black text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                                 style={{ backgroundColor: '#EDBF6D' }}
                             >
                                 Submit Documents

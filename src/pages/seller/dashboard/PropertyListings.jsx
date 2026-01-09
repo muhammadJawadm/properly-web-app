@@ -58,7 +58,7 @@ const PropertyListings = () => {
             {/* Main Content */}
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: sidebarCollapsed ? '6rem' : '16rem' }}
+                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0' }}
             >
                 <SellerHeader
                     title="Property Listing"
@@ -66,20 +66,20 @@ const PropertyListings = () => {
                     onNotificationClick={() => setShowNotifications(!showNotifications)}
                 />
 
-                <div className="p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                     {/* Header with Create Button */}
-                    <div className="flex items-center justify-between mb-8">
-                        <h2 className="text-xl font-semibold text-white">Property Listings Overview</h2>
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 sm:mb-8">
+                        <h2 className="text-lg sm:text-xl font-semibold text-white">Property Listings Overview</h2>
                         <button
                             onClick={() => navigate('/seller/create-listing')}
-                            className="px-6 py-3 text-amber-500 hover:text-amber-600 font-semibold border border-amber-500 rounded-xl transition-all duration-300"
+                            className="px-4 sm:px-6 py-2 sm:py-3 text-amber-500 hover:text-amber-600 text-sm sm:text-base font-semibold border border-amber-500 rounded-xl transition-all duration-300 whitespace-nowrap"
                         >
                             Create New Listing
                         </button>
                     </div>
 
                     {/* Stats Cards */}
-                    <div className="grid grid-cols-3 gap-6 mb-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-4">
                         <StatsCard
                             label="Total Listings"
                             value="5"
@@ -99,12 +99,10 @@ const PropertyListings = () => {
 
 
                     {/* My Listings Table */}
-                    <div className="p-6">
-                        <h3 className="text-xl font-semibold text-white mb-2">My Listings</h3>
+                    <div className="p-4 sm:p-6">
+                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">My Listings</h3>
                     </div>
                     <div className="bg-gray-800/40 backdrop-blur-lg rounded-2xl overflow-hidden">
-
-
                         <div className="overflow-x-auto">
                             <table className="w-full border border-gray-700">
                                 <thead>
@@ -166,7 +164,7 @@ const PropertyListings = () => {
 
             {/* Notifications Panel */}
             {showNotifications && (
-                <div className="fixed right-8 top-24 w-96 bg-gray-800 rounded-2xl shadow-2xl z-50 overflow-hidden">
+                <div className="fixed right-4 sm:right-8 top-20 sm:top-24 w-80 sm:w-96 bg-gray-800 rounded-2xl shadow-2xl z-50 overflow-hidden">
                     <div className="flex items-center justify-between p-6 border-b border-gray-700">
                         <h3 className="text-white font-semibold">Notifications</h3>
                         <div className="flex items-center gap-4">

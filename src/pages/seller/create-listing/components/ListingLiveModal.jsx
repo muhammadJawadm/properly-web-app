@@ -58,7 +58,7 @@ const ListingLiveModal = ({ isOpen, onClose }) => {
     ];
 
     const handleViewListing = () => {
-        navigate('/seller/property-listings');
+        navigate('/seller/listings');
         onClose();
     };
 

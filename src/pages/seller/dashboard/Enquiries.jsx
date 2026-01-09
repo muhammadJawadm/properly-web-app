@@ -36,7 +36,7 @@ const Enquiries = () => {
             {/* Main Content */}
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: sidebarCollapsed ? '6rem' : '16rem' }}
+                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0' }}
             >
                 <SellerHeader
                     title="Enquiries"
@@ -44,18 +44,18 @@ const Enquiries = () => {
                     onNotificationClick={() => setShowNotifications(!showNotifications)}
                 />
 
-                <div className="p-8 min-h-[calc(100vh-88px)] flex gap-6">
+                <div className="p-4 sm:p-6 md:p-8 min-h-[calc(100vh-88px)] flex flex-col lg:flex-row gap-4 sm:gap-6">
                     {/* Left Side - Enquiries List */}
-                    <div className="w-2/3 flex flex-col gap-6 h-full">
+                    <div className="w-full lg:w-2/3 flex flex-col gap-4 sm:gap-6 h-full">
                         {/* Tabs */}
-                        <div className="flex gap-6 mb-6 border-b border-gray-700">
+                        <div className="flex gap-3 sm:gap-6 mb-4 sm:mb-6 border-b border-gray-700 overflow-x-auto">
                             {tabs.map((tab) => (
                                 <button
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
-                                    className={`pb-3 pl-3 pr-3 font-medium transition-all ${activeTab === tab
-                                        ? 'text-amber-500 border-b-2 border-amber-500'
-                                        : 'text-gray-400 hover:text-white'
+                                    className={`pb-3 px-2sm:px-3 font-medium text-sm sm:text-base whitespace-nowrap transition-all ${activeTab === tab
+                                            ? 'text-amber-500 border-b-2 border-amber-500'
+                                            : 'text-gray-400 hover:text-white'
                                         }`}
                                 >
                                     {tab}
@@ -64,7 +64,7 @@ const Enquiries = () => {
                         </div>
 
                         {/* Buyer Inquiries Header */}
-                        <h3 className="text-white font-semibold text-lg mb-4">Buyer Inquiries</h3>
+                        <h3 className="text-white font-semibold text-base sm:text-lg mb-3 sm:mb-4">Buyer Inquiries</h3>
 
                         {/* Listing Selector */}
                         <div className="relative mb-6">
@@ -132,7 +132,7 @@ const Enquiries = () => {
                     </div>
 
                     {/* Right Side - Enhanced Chat Interface */}
-                    <div className="w-1/3 h-full bg-gray-700/70 backdrop-blur-lg rounded-2xl flex flex-col">
+                    <div className="w-full lg:w-1/3 h-full bg-gray-700/70 backdrop-blur-lg rounded-2xl flex flex-col">
                         {/* Buyer Profile Header */}
                         <div className="p-6 border-b border-gray-700">
                             <div className="flex items-center gap-4 mb-4">
@@ -239,7 +239,7 @@ const Enquiries = () => {
 
             {/* Notifications Panel */}
             {showNotifications && (
-                <div className="fixed right-8 top-24 w-96 bg-gray-800 rounded-2xl shadow-2xl z-50 overflow-hidden">
+                <div className="fixed right-4 sm:right-8 top-20 sm:top-24 w-80 sm:w-96 bg-gray-800 rounded-2xl shadow-2xl z-50 overflow-hidden">
                     <div className="flex items-center justify-between p-6 border-b border-gray-700">
                         <h3 className="text-white font-semibold">Notifications</h3>
                         <div className="flex items-center gap-4">

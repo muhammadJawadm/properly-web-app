@@ -28,7 +28,7 @@ import { useEffect } from 'react';
 const CreateListing = () => {
     const navigate = useNavigate();
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-    const [currentStep, setCurrentStep] = useState(7);
+    const [currentStep, setCurrentStep] = useState(0);
     const [formData, setFormData] = useState({});
     const [showAIGuide, setShowAIGuide] = useState(false);
     const [showMapSelector, setShowMapSelector] = useState(false);
@@ -242,6 +242,7 @@ const CreateListing = () => {
                 onClose={() => setShowCompliance(false)}
                 onAccept={() => {
                     setShowCompliance(false);
+                    setShowOfflineModal(false);
                     setShowOTP(true);
                 }}
             />
@@ -253,6 +254,10 @@ const CreateListing = () => {
                 onUpload={(file) => {
                     setFormData({ ...formData, conditionReport: file });
                     setShowOfflineModal(false);
+                }}
+                onAccept={() => {
+                    setShowOfflineModal(false);
+                    setShowOTP(true);
                 }}
             />
 

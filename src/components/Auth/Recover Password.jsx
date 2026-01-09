@@ -62,59 +62,62 @@ const RecoverPassword = () => {
 
             {/* Back Button */}
             <button
-                className="absolute top-8 left-8 z-20 text-white hover:text-gray-300 transition-colors"
+                className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20 text-white hover:text-gray-300 transition-colors"
                 onClick={() => window.history.back()}
             >
-                <FaArrowLeft className="w-6 h-6" />
+                <FaArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
-            {/* Left Side - Phone Illustration */}
-            <div className="relative z-10 w-1/2 flex items-center justify-center">
-                <img
-                    src={SplashLogo}
-                    alt="Phone Verification"
-                    className="w-80 h-auto object-contain"
-                />
-            </div>
+            {/* Main Container */}
+            <div className="relative z-10 w-full max-w-6xl flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0">
+                {/* Left Side - Phone Illustration (Hidden on mobile/tablet) */}
+                <div className="hidden lg:flex lg:w-1/2 items-center justify-center">
+                    <img
+                        src={SplashLogo}
+                        alt="Phone Verification"
+                        className="w-80 h-auto object-contain"
+                    />
+                </div>
 
-            {/* Right Side - Verification Form */}
-            <div className="relative z-10 w-1/2 flex items-center justify-center px-8">
-                <div className="bg-black bg-opacity-80 backdrop-blur-sm rounded-3xl px-12 py-16 pb-10 shadow-2xl w-full max-w-lg">
-                    {/* Title */}
-                    <div className="mb-24">
-                        <h1 className="text-3xl font-bold text-white mb-3 tracking-wide">
-                            Recover Password
-                        </h1>
-                        <p className="text-gray-400 text-sm">
-                            Please enter your registered email address so we can send a password reset link.
-                        </p>
-                    </div>
-
-                    {/* OTP Form */}
-                    <form onSubmit={handleSubmit} className=" mb-8">
-
-                        <div className="mb-20">
-                            <input
-                                type="text"
-                                placeholder="Email"
-                                className="w-full px-6 py-4 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-gray-400 transition-colors"
-                            />
+                {/* Right Side - Recovery Form */}
+                <div className="w-full lg:w-1/2 flex items-center justify-center px-4 sm:px-8">
+                    <div className="bg-black bg-opacity-80 backdrop-blur-sm rounded-2xl sm:rounded-3xl px-6 py-10 sm:px-10 md:px-12 sm:py-16 md:pb-10 shadow-2xl w-full max-w-lg">
+                        {/* Title */}
+                        <div className="mb-12 sm:mb-16 md:mb-24">
+                            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-3 tracking-wide">
+                                Recover Password
+                            </h1>
+                            <p className="text-gray-400 text-xs sm:text-sm">
+                                Please enter your registered email address so we can send a password reset link.
+                            </p>
                         </div>
 
-                        <button
-                            type="submit"
-                            className="w-[80%] ml-[10%] py-4 px-4 rounded-full font-semibold text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
-                            style={{ backgroundColor: '#012688' }}
-                        >
-                            <Link to="/recoverpassword2">
-                                Continue
+                        {/* Recovery Form */}
+                        <form onSubmit={handleSubmit} className="mb-6 sm:mb-8">
+                            <div className="mb-10 sm:mb-16 md:mb-20">
+                                <input
+                                    type="text"
+                                    placeholder="Email"
+                                    className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-transparent border border-gray-600 rounded-xl text-white text-sm sm:text-base placeholder-gray-500 focus:outline-none focus:border-gray-400 transition-colors"
+                                />
+                            </div>
+
+                            <Link to="/recoverpassword2" className="block">
+                                <button
+                                    type="submit"
+                                    className="w-full sm:w-[80%] sm:mx-auto block py-3 sm:py-4 px-4 rounded-full font-semibold text-white text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
+                                    style={{ backgroundColor: '#012688' }}
+                                >
+                                    Continue
+                                </button>
                             </Link>
-                        </button>
-                    </form>
-                    <div className="text-center mt-16">
-                        <span className="text-white">
-                            I remember it! <Link className="text-amber-400" to="/signin">SIGN IN</Link>
-                        </span>
+                        </form>
+
+                        <div className="text-center mt-8 sm:mt-12 md:mt-16">
+                            <span className="text-white text-xs sm:text-sm">
+                                I remember it! <Link className="text-amber-400 hover:underline" to="/signin">SIGN IN</Link>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>

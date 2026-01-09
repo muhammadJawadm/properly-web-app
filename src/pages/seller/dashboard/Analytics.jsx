@@ -40,7 +40,7 @@ const Analytics = () => {
             {/* Main Content */}
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: sidebarCollapsed ? '6rem' : '16rem' }}
+                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
                 <SellerHeader
                     title="Analytics"
@@ -48,12 +48,12 @@ const Analytics = () => {
                     onNotificationClick={() => setShowNotifications(!showNotifications)}
                 />
 
-                <div className="p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                     {/* Analytics Overview Header */}
-                    <h2 className="text-xl font-semibold text-white mb-6">Analytics Overview</h2>
+                    <h2 className="text-lg sm:text-xl font-semibold text-white mb-4 sm:mb-6">Analytics Overview</h2>
 
                     {/* Metric Cards */}
-                    <div className="grid grid-cols-4 gap-6 mb-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
                         <StatsCard
                             label="Accounts Reached"
                             value="40k"
@@ -82,7 +82,7 @@ const Analytics = () => {
                     </div>
 
                     {/* Engagement Charts */}
-                    <div className="grid grid-cols-3 gap-6 mb-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
                         {/* LinkedIn Engagements */}
                         <div className="bg-gray-800/40 backdrop-blur-lg rounded-2xl p-6">
                             <div className="flex items-center justify-between mb-4">
@@ -250,7 +250,7 @@ const Analytics = () => {
 
             {/* Notifications Panel */}
             {showNotifications && (
-                <div className="fixed right-8 top-24 w-96 bg-gray-800 rounded-2xl shadow-2xl z-50 overflow-hidden">
+                <div className="fixed right-4 sm:right-8 top-20 sm:top-24 w-80 sm:w-96 bg-gray-800 rounded-2xl shadow-2xl z-50 overflow-hidden">
                     <div className="flex items-center justify-between p-6 border-b border-gray-700">
                         <h3 className="text-white font-semibold">Notifications</h3>
                         <div className="flex items-center gap-4">
