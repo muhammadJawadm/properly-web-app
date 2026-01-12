@@ -36,7 +36,7 @@ const Enquiries = () => {
             {/* Main Content */}
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0' }}
+                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
                 <SellerHeader
                     title="Enquiries"
@@ -54,8 +54,8 @@ const Enquiries = () => {
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
                                     className={`pb-3 px-2sm:px-3 font-medium text-sm sm:text-base whitespace-nowrap transition-all ${activeTab === tab
-                                            ? 'text-amber-500 border-b-2 border-amber-500'
-                                            : 'text-gray-400 hover:text-white'
+                                        ? 'text-amber-500 border-b-2 border-amber-500'
+                                        : 'text-gray-400 hover:text-white'
                                         }`}
                                 >
                                     {tab}

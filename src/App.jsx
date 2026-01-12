@@ -10,10 +10,21 @@ import RecoverPassword2 from "./components/Auth/Recover Password 2"
 import SellerKyc from "./components/Auth/SellerKyc"
 import KycVerification from "./components/Auth/KycVerification"
 import SellerDashboard from "./pages/seller/dashboard/SellerDashboard"
+import BuyerDashboard from "./pages/dashboard/buyer/dashboard/BuyerDashboard"
 import PropertyListings from "./pages/seller/dashboard/PropertyListings"
 import Analytics from "./pages/seller/dashboard/Analytics"
 import Enquiries from "./pages/seller/dashboard/Enquiries"
+import Offers from "./pages/seller/dashboard/Offers"
+import OfferDraft from "./pages/seller/dashboard/OfferDraft"
+import OfferDetails from "./pages/seller/dashboard/OfferDetails"
+import Negotiations from "./pages/seller/dashboard/Negotiations"
 import CreateListing from "./pages/seller/create-listing/CreateListing"
+import BrowseProperties from "./pages/dashboard/buyer/browse/BrowseProperties"
+import PropertyDetails from "./pages/dashboard/buyer/browse/PropertyDetails"
+import MyInquiries from "./pages/dashboard/buyer/enquiries/MyInquiries"
+import SubmitOffer from "./pages/dashboard/buyer/enquiries/SubmitOffer"
+import MyOffers from "./pages/dashboard/buyer/offers/MyOffers"
+import BuyerOfferDraft from "./pages/dashboard/buyer/offers/OfferDraft"
 
 
 export default function App() {
@@ -37,7 +48,20 @@ export default function App() {
         <Route path="/seller/listings" element={<PropertyListings />} />
         <Route path="/seller/analytics" element={<Analytics />} />
         <Route path="/seller/enquiries" element={<Enquiries />} />
+        <Route path="/seller/offers" element={<Offers />} />
+        <Route path="/seller/offers/details/:offerId" element={<OfferDetails />} />
+        <Route path="/seller/offers/draft/:offerId" element={<OfferDraft />} />
+        <Route path="/seller/offers/negotiation/:offerId" element={<Negotiations />} />
         <Route path="/seller/create-listing" element={<CreateListing />} />
+
+        <Route path="/buyer/dashboard" element={<BuyerDashboard />} />
+        <Route path="/buyer/browse" element={<BrowseProperties />} />
+        <Route path="/buyer/browse/:propertyId" element={<PropertyDetails />} />
+        <Route path="/buyer/enquiries" element={<MyInquiries />} />
+        <Route path="/buyer/enquiries/:enquiryId" element={<MyInquiries />} />
+        <Route path="/buyer/submit-offer/:propertyId" element={<SubmitOffer />} />
+        <Route path="/buyer/offers" element={<MyOffers />} />
+        <Route path="/buyer/offer-draft/:offerId" element={<BuyerOfferDraft />} />
 
       </Routes>
     </BrowserRouter>
