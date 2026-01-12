@@ -81,6 +81,16 @@ const BrowseProperties = () => {
             beds: 3,
             baths: 4,
             image: 'https://images.pexels.com/photos/206172/pexels-photo-206172.jpeg?auto=compress&cs=tinysrgb&w=600'
+        },
+        {
+            id: 6,
+            title: '3 bedroom house',
+            location: 'Zimbali estate',
+            price: 2500000,
+            sqft: 2580,
+            beds: 3,
+            baths: 4,
+            image: 'https://images.pexels.com/photos/206172/pexels-photo-206172.jpeg?auto=compress&cs=tinysrgb&w=600'
         }
     ];
 

@@ -52,7 +52,7 @@ const AdvancedSearchPanel = ({ isOpen, onClose, onApply }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 lg:relative lg:inset-auto">
+        <div className=" fixed inset-0 z-50 lg:relative lg:inset-auto">
             {/* Overlay for mobile */}
             <div
                 className="fixed inset-0 bg-black/70 lg:hidden"
@@ -60,7 +60,7 @@ const AdvancedSearchPanel = ({ isOpen, onClose, onApply }) => {
             />
 
             {/* Panel */}
-            <div className="fixed right-0 top-0 h-full w-full sm:w-96 bg-gray-800 shadow-2xl z-50 overflow-y-auto lg:relative lg:w-full">
+            <div className="rounded-xl fixed right-0 top-0 h-full w-full sm:w-96 bg-gray-800 shadow-2xl z-50 overflow-y-auto lg:relative lg:w-full">
                 {/* Header */}
                 <div className="sticky top-0 bg-gray-800 border-b border-gray-700 p-4 sm:p-6 flex items-center justify-between z-10">
                     <h2 className="text-white text-lg sm:text-xl font-bold">Advanced Search</h2>
@@ -145,14 +145,14 @@ const AdvancedSearchPanel = ({ isOpen, onClose, onApply }) => {
                     {/* Bedrooms */}
                     <div>
                         <label className="text-gray-300 text-sm mb-3 block">Bedrooms</label>
-                        <div className="grid grid-cols-4 gap-2">
+                        <div className="grid grid-cols-8 gap-2">
                             {numberOptions.map(num => (
                                 <button
                                     key={num}
                                     onClick={() => handleNumberSelect('bedrooms', num)}
-                                    className={`py-2 rounded-lg font-semibold text-sm transition-all ${searchFilters.bedrooms === num
-                                            ? 'bg-amber-500 text-black'
-                                            : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                                    className={`py-2 rounded-3xl font-semibold text-sm transition-all ${searchFilters.bedrooms === num
+                                        ? 'bg-amber-500 text-black'
+                                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                                         }`}
                                 >
                                     {num}
@@ -164,14 +164,14 @@ const AdvancedSearchPanel = ({ isOpen, onClose, onApply }) => {
                     {/* Bathrooms */}
                     <div>
                         <label className="text-gray-300 text-sm mb-3 block">Bathrooms</label>
-                        <div className="grid grid-cols-4 gap-2">
+                        <div className="grid grid-cols-8 gap-2">
                             {numberOptions.map(num => (
                                 <button
                                     key={num}
                                     onClick={() => handleNumberSelect('bathrooms', num)}
-                                    className={`py-2 rounded-lg font-semibold text-sm transition-all ${searchFilters.bathrooms === num
-                                            ? 'bg-amber-500 text-black'
-                                            : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                                    className={`py-2 rounded-3xl font-semibold text-sm transition-all ${searchFilters.bathrooms === num
+                                        ? 'bg-amber-500 text-black'
+                                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                                         }`}
                                 >
                                     {num}
@@ -183,14 +183,14 @@ const AdvancedSearchPanel = ({ isOpen, onClose, onApply }) => {
                     {/* Garage/Carports */}
                     <div>
                         <label className="text-gray-300 text-sm mb-3 block">Garage/ Carports</label>
-                        <div className="grid grid-cols-4 gap-2">
+                        <div className="grid grid-cols-8 gap-2">
                             {numberOptions.map(num => (
                                 <button
                                     key={num}
                                     onClick={() => handleNumberSelect('garages', num)}
-                                    className={`py-2 rounded-lg font-semibold text-sm transition-all ${searchFilters.garages === num
-                                            ? 'bg-amber-500 text-black'
-                                            : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                                    className={`py-2 rounded-3xl font-semibold text-sm transition-all ${searchFilters.garages === num
+                                        ? 'bg-amber-500 text-black'
+                                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                                         }`}
                                 >
                                     {num}
@@ -201,8 +201,8 @@ const AdvancedSearchPanel = ({ isOpen, onClose, onApply }) => {
 
                     {/* Categorize */}
                     <div>
-                        <label className="text-gray-300 text-sm mb-3 block">Categorize</label>
-                        <div className="flex gap-4">
+                        <label className="text-gray-300 text-sm mb-3 block">Categories</label>
+                        <div className="flex gap-20">
                             <button
                                 onClick={() => setSearchFilters(prev => ({ ...prev, furnished: 'furnished' }))}
                                 className={`flex items-center gap-2 ${searchFilters.furnished === 'furnished' ? 'text-amber-500' : 'text-gray-400'
@@ -262,12 +262,14 @@ const AdvancedSearchPanel = ({ isOpen, onClose, onApply }) => {
                     </div>
 
                     {/* Apply Button */}
-                    <button
-                        onClick={handleApply}
-                        className="w-full py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-xl hover:opacity-90 transition-opacity"
-                    >
-                        Apply
-                    </button>
+                    <div className='flex justify-center'>
+                        <button
+                            onClick={handleApply}
+                            className="w-2/3 py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-3xl hover:opacity-90 transition-opacity"
+                        >
+                            Apply
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

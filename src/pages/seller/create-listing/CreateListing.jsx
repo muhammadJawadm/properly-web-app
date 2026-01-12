@@ -205,7 +205,7 @@ const CreateListing = () => {
 
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: sidebarCollapsed ? '6rem' : '16rem' }}
+                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
                 <SellerHeader
                     title="Create Listing"

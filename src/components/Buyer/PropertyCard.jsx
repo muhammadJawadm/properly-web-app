@@ -6,25 +6,25 @@ const PropertyCard = ({ property, onViewDetails }) => {
     return (
         <div className="bg-gray-800/40 backdrop-blur-lg border border-gray-700 rounded-2xl overflow-hidden hover:border-amber-500 transition-all duration-300 group">
             {/* Property Image */}
-            <div className="relative h-48 sm:h-56 overflow-hidden">
+            <div className="relative h-48 sm:h-56 overflow-hidden p-3">
                 <img
                     src={property.image}
                     alt={property.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full rounded-lg object-cover group-hover:scale-110 transition-transform duration-500"
                 />
             </div>
 
             {/* Property Details */}
             <div className="p-4">
-                {/* Title and Location */}
-                <h3 className="text-white font-semibold text-base sm:text-lg mb-2">
-                    {property.title}
-                </h3>
-                <div className="flex items-center gap-1 text-gray-400 text-xs sm:text-sm mb-3">
-                    <HiLocationMarker className="text-amber-500" size={16} />
-                    <span>{property.location}</span>
+                <div className='flex gap-80'>
+                    <h3 className="text-white font-semibold text-base sm:text-lg mb-2">
+                        {property.title}
+                    </h3>
+                    <div className="pl-16 flex items-center gap-1 text-gray-400 text-sm sm:text-sm mb-2">
+                        <HiLocationMarker className="text-amber-500" size={20} />
+                        <span>{property.location}</span>
+                    </div>
                 </div>
-
                 {/* Price */}
                 <p className="text-amber-500 font-bold text-lg sm:text-xl mb-4">
                     R {property.price.toLocaleString()}
