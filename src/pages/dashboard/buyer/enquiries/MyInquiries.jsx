@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Seller/BuyerSidebar';
-import BuyerHeader from '../../../../components/Seller/BuyerHeader';
+import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
+import BuyerHeader from '../../../../components/Buyer/BuyerHeader';
 import InquiryCard from '../../../../components/Buyer/InquiryCard';
 import ChatPanel from '../../../../components/Buyer/ChatPanel';
 
@@ -228,7 +228,7 @@ const MyInquiries = () => {
 
                         {/* Right Panel - Chat */}
                         <div className="xl:col-span-2">
-                            <div className="bg-gray-800/40 backdrop-blur-lg border border-gray-700 rounded-2xl overflow-hidden h-[calc(100vh-12rem)]">
+                            <div className="bg-gray-800/40 backdrop-blur-lg border border-gray-700 rounded-2xl overflow-hidden ">
                                 {selectedInquiry ? (
                                     <ChatPanel
                                         user={selectedInquiry.user}

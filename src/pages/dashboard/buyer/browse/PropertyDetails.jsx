@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft, FaBed, FaBath, FaCar, FaPhoneAlt } from 'react-icons/fa';
-import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Seller/BuyerSidebar';
-import BuyerHeader from '../../../../components/Seller/BuyerHeader';
+import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
+import BuyerHeader from '../../../../components/Buyer/BuyerHeader';
 import EnquiryFormModal from '../../../../components/Buyer/EnquiryFormModal';
 import OTPVerificationModal from '../../../../components/Buyer/OTPVerificationModal';
 import UploadDocumentsModal from '../../../../components/Buyer/UploadDocumentsModal';

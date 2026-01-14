@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Seller/BuyerSidebar';
-import BuyerHeader from '../../../../components/Seller/BuyerHeader';
+import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
+import BuyerHeader from '../../../../components/Buyer/BuyerHeader';
 
 const OfferDraft = () => {
     const navigate = useNavigate();

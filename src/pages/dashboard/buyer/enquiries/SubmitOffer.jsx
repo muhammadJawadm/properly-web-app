@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Seller/BuyerSidebar';
-import BuyerHeader from '../../../../components/Seller/BuyerHeader';
+import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
+import BuyerHeader from '../../../../components/Buyer/BuyerHeader';
 
 const SubmitOffer = () => {
     const navigate = useNavigate();

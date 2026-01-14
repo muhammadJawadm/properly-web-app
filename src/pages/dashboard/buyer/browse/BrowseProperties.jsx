@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaSearch, FaFilter } from 'react-icons/fa';
-import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Seller/BuyerSidebar';
-import BuyerHeader from '../../../../components/Seller/BuyerHeader';
+import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
+import BuyerHeader from '../../../../components/Buyer/BuyerHeader';
 import PropertyCard from '../../../../components/Buyer/PropertyCard';
 import AdvancedSearchPanel from '../../../../components/Buyer/AdvancedSearchPanel';
 

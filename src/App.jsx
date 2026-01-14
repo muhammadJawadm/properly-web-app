@@ -10,6 +10,7 @@ import RecoverPassword2 from "./components/Auth/Recover Password 2"
 import SellerKyc from "./components/Auth/SellerKyc"
 import KycVerification from "./components/Auth/KycVerification"
 import SellerDashboard from "./pages/seller/dashboard/SellerDashboard"
+import Attorney from "./pages/seller/dashboard/Attorney"
 import BuyerDashboard from "./pages/dashboard/buyer/dashboard/BuyerDashboard"
 import PropertyListings from "./pages/seller/dashboard/PropertyListings"
 import Analytics from "./pages/seller/dashboard/Analytics"
@@ -49,6 +50,7 @@ export default function App() {
         <Route path="/seller/analytics" element={<Analytics />} />
         <Route path="/seller/enquiries" element={<Enquiries />} />
         <Route path="/seller/offers" element={<Offers />} />
+        <Route path="/seller/attorney" element={<Attorney />} />
         <Route path="/seller/offers/details/:offerId" element={<OfferDetails />} />
         <Route path="/seller/offers/draft/:offerId" element={<OfferDraft />} />
         <Route path="/seller/offers/negotiation/:offerId" element={<Negotiations />} />

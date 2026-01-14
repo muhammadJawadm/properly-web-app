@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaEye, FaQuestionCircle, FaList, FaPencilAlt, FaTrash, FaTimes } from 'react-icons/fa';
-import SellerSidebar, { subscribeSidebarState } from '../../../../components/Seller/SellerSidebar';
-import BuyerHeader from '../../../../components/Seller/BuyerHeader';
+import SellerSidebar, { subscribeSidebarState } from '../../../../components/buyer/SellerSidebar';
+import BuyerHeader from '../../../../components/Buyer/BuyerHeader';
 import StatsCard from '../../../../components/Seller/StatsCard';
 
 const PropertyListings = () => {

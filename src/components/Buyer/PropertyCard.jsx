@@ -16,7 +16,7 @@ const PropertyCard = ({ property, onViewDetails }) => {
 
             {/* Property Details */}
             <div className="p-4">
-                <div className='flex gap-80'>
+                <div className='flex gap-10'>
                     <h3 className="text-white font-semibold text-base sm:text-lg mb-2">
                         {property.title}
                     </h3>
