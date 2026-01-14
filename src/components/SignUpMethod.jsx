@@ -1,5 +1,5 @@
 import SplashBg from "../assets/SplashBg.png";
-import SplashLogo from "../assets/splashlogo2.png";
+import SplashLogo from "../assets/Splashlogo2.png";
 import { Link } from "react-router-dom";
 
 const SignUpMethod = () => {
