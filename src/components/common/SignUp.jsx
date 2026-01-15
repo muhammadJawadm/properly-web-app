@@ -46,7 +46,7 @@ const SignUp = () => {
                                 SIGN UP
                             </h1>
                             <p className="text-gray-400 text-xs sm:text-sm">
-                                Register a new seller account
+                                Register a new Buyer account
                             </p>
                         </div>
 

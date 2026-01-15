@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
-import SellerHeader from '../../../components/Seller/SellerHeader';
+import SellerSidebar, { subscribeSidebarState } from '../../../../components/Seller/SellerSidebar';
+import SellerHeader from '../../../../components/Seller/SellerHeader';
 import ProgressStepper from './components/ProgressStepper';
 import PropertyTypeSelection from './steps/PropertyTypeSelection';
 import ResidentialOwnership from './steps/ResidentialOwnership';

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaHome, FaList, FaGavel, FaBalanceScale, FaLock, FaBars, FaTimes, FaHandshake } from 'react-icons/fa';
 import SplashLogo from '../../assets/splashLogo2.png';
+import AIChat from '../common/AIChat';
 
 // Create a global state for sidebar collapse
 export let sidebarState = { isCollapsed: false, isMobileMenuOpen: false, listeners: [] };
@@ -23,6 +24,7 @@ const BuyerSidebar = () => {
     const navigate = useNavigate();
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [showAIChat, setShowAIChat] = useState(false);
 
     // Notify listeners when collapse state changes
     useEffect(() => {
@@ -137,8 +139,11 @@ const BuyerSidebar = () => {
                 {/* Ask AI Button */}
                 <div className="p-4 flex ">
                     <div className="relative group">
-                        <button className="w-14 h-14 flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg">
-                            <span className="text-2xl">💬</span>
+                        <button
+                            onClick={() => setShowAIChat(!showAIChat)}
+                            className="w-14 h-14 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                        >
+                            <img src={SplashLogo} alt="AI" className="w-10 h-10" />
                         </button>
                         {/* Tooltip */}
                         <div className="absolute bottom-full ml-10 left-1/2 -translate-x-1/2 mb-2 px-4 py-4 bg-gray-800 text-amber-500 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
@@ -148,6 +153,9 @@ const BuyerSidebar = () => {
                     </div>
                 </div>
             </div>
+
+            {/* AI Chat Panel */}
+            <AIChat isOpen={showAIChat} onClose={() => setShowAIChat(false)} />
         </>
     );
 };

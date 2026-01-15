@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaEye, FaQuestionCircle, FaList, FaPencilAlt, FaTrash, FaTimes } from 'react-icons/fa';
-import SellerSidebar, { subscribeSidebarState } from '../../../../components/buyer/SellerSidebar';
-import BuyerHeader from '../../../../components/Buyer/BuyerHeader';
-import StatsCard from '../../../../components/Seller/StatsCard';
+import BuyerSidebar, { subscribeSidebarState } from '../../../components/Buyer/BuyerSidebar';
+import BuyerHeader from '../../../components/Buyer/BuyerHeader';
+import StatsCard from '../../../components/Seller/StatsCard';
 
 const PropertyListings = () => {
     const navigate = useNavigate();
@@ -53,7 +53,7 @@ const PropertyListings = () => {
     return (
         <>
             {/* Sidebar */}
-            <SellerSidebar />
+            <BuyerSidebar />
 
             {/* Main Content */}
             <div

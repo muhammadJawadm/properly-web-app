@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaHandshake, FaHistory, FaPaperPlane } from 'react-icons/fa';
-import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
-import BuyerHeader from '../../../../components/Buyer/BuyerHeader';
+import BuyerSidebar, { subscribeSidebarState } from '../../../components/Buyer/BuyerSidebar';
+import BuyerHeader from '../../../components/Buyer/BuyerHeader';
 
 const BuyerDashboard = () => {
     const navigate = useNavigate();

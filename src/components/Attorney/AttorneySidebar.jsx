@@ -19,7 +19,7 @@ export const toggleMobileMenu = () => {
     sidebarState.listeners.forEach(listener => listener(sidebarState.isCollapsed, sidebarState.isMobileMenuOpen));
 };
 
-const SellerSidebar = () => {
+const AttorneySidebar = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [isCollapsed, setIsCollapsed] = useState(false);
@@ -42,13 +42,8 @@ const SellerSidebar = () => {
     }, []);
 
     const menuItems = [
-        { icon: FaHome, label: 'Dashboard', path: '/seller/dashboard' },
-        { icon: FaList, label: 'My Listing', path: '/seller/listings' },
-        { icon: FaHandshake, label: 'Offers', path: '/seller/offers' },
-        { icon: FaBalanceScale, label: 'Attorney', path: '/seller/attorney' },
-        { icon: FaGavel, label: 'Analytics', path: '/seller/analytics' },
-        { icon: FaBalanceScale, label: 'Enquiries', path: '/seller/enquiries' },
-        { icon: FaLock, label: 'Vault', path: '/seller/vault' }
+        { icon: FaHome, label: 'Dashboard', path: '/attorney/dashboard' },
+
     ];
 
     const isActive = (path) => location.pathname === path;
@@ -162,4 +157,4 @@ const SellerSidebar = () => {
     );
 };
 
-export default SellerSidebar;
+export default AttorneySidebar;
