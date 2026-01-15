@@ -112,7 +112,7 @@ const SignIn = () => {
                             <Link to="/recoverpassword">
                                 <button
                                     type="button"
-                                    className="w-full text-white py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
+                                    className="my-10 w-full text-white py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                                     style={{ backgroundColor: '#012688' }}
                                 >
                                     Sign In

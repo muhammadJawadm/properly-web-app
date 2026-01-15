@@ -3,11 +3,12 @@ import { FaArrowLeft } from "react-icons/fa";
 import SplashBg from "../../assets/SplashBg.png";
 import { Link } from "react-router-dom";
 import SplashLogo from "../../assets/phone.png";
-
+import { useRole } from "../../context/RoleContext";
 const Verification = () => {
     const [otp, setOtp] = useState(["", "", "", ""]);
     const [timer, setTimer] = useState(28);
     const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+    const { isSeller } = useRole();
 
     // Countdown timer for resend OTP
     useEffect(() => {
@@ -129,15 +130,17 @@ const Verification = () => {
                             </div>
 
                             {/* Submit Button */}
-                            <button
-                                type="submit"
-                                className="w-full py-3 sm:py-4 px-6 rounded-full font-semibold text-black text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
-                                style={{ backgroundColor: '#EDBF6D' }}
-                            >
-                                <Link to="/sellerkyc">
+                            <Link to={isSeller ? '/sellerkyc' : '/buyerType'}>
+                                <button
+                                    type="button"
+                                    className="w-full py-3 sm:py-4 px-6 rounded-full font-semibold text-black text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
+                                    style={{ backgroundColor: '#EDBF6D' }}
+                                >
+
                                     Sign Up
-                                </Link>
-                            </button>
+
+                                </button>
+                            </Link>
                         </form>
                     </div>
                 </div>

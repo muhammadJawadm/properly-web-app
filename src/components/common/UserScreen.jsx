@@ -1,7 +1,14 @@
 import SplashBg from "../../assets/SplashBg.png";
 import { Link } from "react-router-dom";
+import { useRole } from "../../context/RoleContext";
 
 const UserScreen = () => {
+    const { selectRole } = useRole();
+
+    const handleRoleSelection = (role) => {
+        selectRole(role);
+    };
+
     return (
         <div className="min-h-screen relative overflow-hidden flex items-center justify-center p-4">
             {/* Background Image - Same as SplashScreen */}
@@ -29,8 +36,9 @@ const UserScreen = () => {
                         </p>
 
                         {/* I am a Seller Button */}
-                        <Link to="/signupmethod" className="w-full sm:w-2/3">
+                        <Link to="/SignupMethod" className="w-full sm:w-2/3">
                             <button
+                                onClick={() => handleRoleSelection('seller')}
                                 className="w-full py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold text-white text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                                 style={{ backgroundColor: '#012688' }}
                             >
@@ -39,8 +47,9 @@ const UserScreen = () => {
                         </Link>
 
                         {/* I am Buyer Button */}
-                        <Link to="/signupmethod" className="w-full sm:w-2/3">
+                        <Link to="/SignupMethod" className="w-full sm:w-2/3">
                             <button
+                                onClick={() => handleRoleSelection('buyer')}
                                 className="w-full py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold text-black text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                                 style={{ backgroundColor: '#EDBF6D' }}
                             >
@@ -49,8 +58,9 @@ const UserScreen = () => {
                         </Link>
 
                         {/* I am Attorney Button */}
-                        <Link to="/signupmethod" className="w-full sm:w-2/3">
+                        <Link to="/Attorney/access" className="w-full sm:w-2/3">
                             <button
+                                onClick={() => handleRoleSelection('attorney')}
                                 className="w-full py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold text-black text-sm sm:text-base bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-95"
                             >
                                 I am Attorney

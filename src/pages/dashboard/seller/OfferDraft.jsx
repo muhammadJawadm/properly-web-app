@@ -220,12 +220,14 @@ const OfferDraft = () => {
                     </div>
 
                     {/* Continue Button */}
-                    <button
-                        onClick={() => navigate(`/seller/offers/negotiation/${offerId}`)}
-                        className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-xl hover:opacity-90 transition-opacity text-sm sm:text-base"
-                    >
-                        Continue to negotiation
-                    </button>
+                    <div className="flex justify-center">
+                        <button
+                            onClick={() => navigate(`/seller/offers/negotiation/${offerId}`)}
+                            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-3xl hover:opacity-90 transition-opacity text-sm sm:text-base"
+                        >
+                            Continue to negotiation
+                        </button>
+                    </div>
                 </div>
             </div>
         </>

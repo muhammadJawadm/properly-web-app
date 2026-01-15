@@ -148,13 +148,13 @@ const Negotiations = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
                         <button
                             onClick={handleAcceptOffer}
-                            className="py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors"
+                            className="py-3 border-2 border-green-600 text-green-600  hover:bg-green-700 hover:text-white font-semibold rounded-3xl transition-colors"
                         >
                             Accept
                         </button>
                         <button
                             onClick={() => navigate(`/seller/offers/draft/${offerId}`)}
-                            className="py-3 border-2 border-amber-500 text-amber-500 font-semibold rounded-lg hover:bg-amber-500/10 transition-all"
+                            className="py-3 border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white font-semibold rounded-3xl hover:bg-amber-500/10 transition-all"
                         >
                             Negotiate
                         </button>

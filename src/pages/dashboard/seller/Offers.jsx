@@ -155,16 +155,16 @@ const Offers = () => {
 
                                 {/* Action Buttons */}
                                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
-                                    <button className="py-2.5 sm:py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors text-sm">
+                                    <button className="py-2.5 sm:py-3 text-green-600 hover:bg-green-500 hover:text-white font-semibold rounded-lg transition-colors text-sm">
                                         Accept Offer
                                     </button>
                                     <button
                                         onClick={() => navigate(`/seller/offers/negotiation/${offer.id}`)}
-                                        className="py-2.5 sm:py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity text-sm"
+                                        className="py-2.5 sm:py-3 text-amber-600 hover:bg-amber-500 hover:text-black font-semibold rounded-lg hover:opacity-90 transition-opacity text-sm"
                                     >
                                         Start Negotiation
                                     </button>
-                                    <button className="py-2.5 sm:py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors text-sm">
+                                    <button className="py-2.5 sm:py-3 text-red-600 hover:bg-red-500 hover:text-white font-semibold rounded-lg transition-colors text-sm">
                                         Reject Offer
                                     </button>
                                     <button

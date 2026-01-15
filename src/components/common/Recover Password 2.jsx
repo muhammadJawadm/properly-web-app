@@ -5,9 +5,12 @@ import { FaArrowLeft } from "react-icons/fa";
 import SplashBg from "../../assets/SplashBg.png";
 import SplashLogo from "../../assets/phone.png";
 
+import { useRole } from "../../context/RoleContext";
+
 const RecoverPassword2 = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const { selectRole, isSeller } = useRole();
     return (
         <div className="min-h-screen relative overflow-hidden flex items-center justify-center p-4">
             {/* Background Image */}
@@ -85,7 +88,7 @@ const RecoverPassword2 = () => {
                                 className="w-full sm:w-[80%] sm:mx-auto block py-3 sm:py-4 px-4 rounded-full font-semibold text-white text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                                 style={{ backgroundColor: '#012688' }}
                             >
-                                <Link to="/sellerkyc">Reset password</Link>
+                                <Link to={isSeller ? '/sellerkyc' : '/buyerType'}>Reset password</Link>
                             </button>
                         </form>
 

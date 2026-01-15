@@ -190,13 +190,17 @@ const BuyerType = () => {
 
                         {/* Submit Button */}
                         <div className="flex justify-center mt-10">
-                            <button
-                                type="submit"
-                                className="px-16 py-3 sm:py-4 rounded-full font-semibold text-black text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
-                                style={{ backgroundColor: '#EDBF6D' }}
-                            >
-                                Submit Documents
-                            </button>
+                            <Link to={'/bondattorneydetails'}>
+                                <button
+                                    type="submit"
+                                    className="px-16 py-3 sm:py-4 rounded-full font-semibold text-black text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
+                                    style={{ backgroundColor: '#EDBF6D' }}
+                                >
+
+                                    Submit Documents
+
+                                </button>
+                            </Link>
                         </div>
                     </form>
                 </div>

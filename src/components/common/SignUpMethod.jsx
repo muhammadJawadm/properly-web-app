@@ -1,7 +1,6 @@
 import SplashBg from "../../assets/SplashBg.png";
 import SplashLogo from "../../assets/splashLogo2.png";
 import { Link } from "react-router-dom";
-
 const SignUpMethod = () => {
     return (
         <div className="min-h-screen relative overflow-hidden flex items-center justify-center p-4">

@@ -2,9 +2,11 @@ import { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import SplashBg from "../../assets/SplashBg.png";
 import { Link, useNavigate } from "react-router-dom";
+import { useRole } from "../../context/RoleContext";
 
 const BondAttorneyDetails = () => {
     const navigate = useNavigate();
+    const { selectRole } = useRole();
     const [formData, setFormData] = useState({
         firmName: "",
         contactPerson: "",
@@ -140,12 +142,15 @@ const BondAttorneyDetails = () => {
 
                         {/* Submit Button */}
                         <div className="flex justify-center mt-10">
-                            <button
-                                type="submit"
-                                className="px-16 py-3 sm:py-4 rounded-full font-semibold text-black text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
-                                style={{ backgroundColor: '#EDBF6D' }}
-                            ><Link to="/buyer/dashboard">Submit</Link>
-                            </button>
+                            <Link to="/buyer/dashboard">
+                                <button
+                                    type="submit"
+                                    className="px-16 py-3 sm:py-4 rounded-full font-semibold text-black text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
+                                    style={{ backgroundColor: '#EDBF6D' }}
+                                >
+                                    Submit
+                                </button>
+                            </Link>
                         </div>
                     </form>
                 </div>

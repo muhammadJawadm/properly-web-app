@@ -8,7 +8,7 @@ const AttorneyDashboard = () => {
     const [activeTab, setActiveTab] = useState('buyer'); // 'buyer' or 'seller'
     const [otpUploaded, setOTPUploaded] = useState(false); // Toggle between states
     const [message, setMessage] = useState('');
-    const [showNotifications, setShowNotifications] = useState(false);
+    const [showNotifications, setShowNotifications] = useState(true);
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
