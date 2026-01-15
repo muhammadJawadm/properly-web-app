@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { FaTimes, FaPaperPlane, FaMicrophone } from 'react-icons/fa';
-import SplashLogo from '../../assets/splashLogo2.png';
+import SplashLogo from '../../assets/Splashlogo2.png';
 
 const AIChat = ({ isOpen, onClose }) => {
     const [messages, setMessages] = useState([

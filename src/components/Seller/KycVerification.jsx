@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaQuestionCircle, FaTimes, FaUpload, FaCamera, FaFileAlt } from "react-icons/fa";
-import SplashLogo from "../../assets/splashLogo2.png";
+import SplashLogo from "../../assets/Splashlogo2.png";
 import { Link } from "react-router-dom";
 
 const KycVerification = () => {

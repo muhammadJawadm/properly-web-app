@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaUpload } from 'react-icons/fa';
-import SplashLogo from '../../../assets/splashLogo2.png';
+import SplashLogo from '../../../assets/Splashlogo2.png';
 import VerificationSuccessModal from '../../../components/Attorney/VerificationSuccessModal';
-import SplashBg from '../../../assets/splashBg.png';
+import SplashBg from '../../../assets/SplashBg.png';
 import { Link } from 'react-router-dom';
 
 const AttorneyAccess = () => {

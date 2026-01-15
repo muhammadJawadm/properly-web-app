@@ -4,7 +4,7 @@ import { FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import SplashBg from "../../assets/SplashBg.png";
-import SplashLogo from "../../assets/splashLogo2.png";
+import SplashLogo from "../../assets/Splashlogo2.png";
 
 const SignIn = () => {
     const [showPassword, setShowPassword] = useState(false);
