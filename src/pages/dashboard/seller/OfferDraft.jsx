@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft, FaDownload, FaCheckCircle, FaTimes } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
-import SellerHeader from '../../../components/Seller/SellerHeader';
+import Header from '../../../components/common/Header';
 
 const OfferDraft = () => {
     const navigate = useNavigate();
@@ -67,7 +67,7 @@ const OfferDraft = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
-                <SellerHeader
+                <Header
                     title="Offers"
                     showNotifications={false}
                 />

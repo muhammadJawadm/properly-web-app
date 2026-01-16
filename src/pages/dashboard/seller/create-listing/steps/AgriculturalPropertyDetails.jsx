@@ -177,17 +177,24 @@ const AgriculturalPropertyDetails = ({ onContinue, onBack, formData }) => {
                     {/* Business Assets */}
                     <div>
                         <label className="block text-white mb-3 text-sm">Add Business Assets</label>
-                        <div className="grid grid-cols-3 gap-3">
-                            {['Livestock', 'Equipment', 'Machinery', 'Water Rights', 'Infrastructure', 'Infrastructure', 'Vehicles'].map((asset, index) => (
-                                <label key={index} className="flex items-center gap-2 cursor-pointer">
+                        <div className="space-y-3">
+                            {['Livestock', 'Equipment', 'Machinery', 'Water Rights', 'Infrastructure', 'Vehicles'].map((asset, index) => (
+                                <div key={index} className="flex items-center gap-3">
+                                    <label className="flex items-center gap-2 cursor-pointer min-w-[140px]">
+                                        <input
+                                            type="checkbox"
+                                            checked={businessAssets.includes(asset.toLowerCase())}
+                                            onChange={() => toggleAsset(asset.toLowerCase())}
+                                            className="w-4 h-4 rounded accent-amber-500"
+                                        />
+                                        <span className="text-gray-300 text-sm">{asset}</span>
+                                    </label>
                                     <input
-                                        type="checkbox"
-                                        checked={businessAssets.includes(asset.toLowerCase())}
-                                        onChange={() => toggleAsset(asset.toLowerCase())}
-                                        className="w-4 h-4 rounded accent-amber-500"
+                                        type="text"
+                                        placeholder={`Enter ${asset.toLowerCase()} details...`}
+                                        className="flex-1 px-3 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-amber-500"
                                     />
-                                    <span className="text-gray-300 text-sm">{asset}</span>
-                                </label>
+                                </div>
                             ))}
                         </div>
                     </div>

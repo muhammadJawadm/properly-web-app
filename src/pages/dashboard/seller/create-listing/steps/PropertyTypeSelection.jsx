@@ -9,7 +9,8 @@ const PropertyTypeSelection = ({ onContinue }) => {
         { value: 'residential', label: 'Residential' },
         { value: 'commercial', label: 'Commercial' },
         { value: 'agricultural', label: 'Agricultural' },
-        { value: 'vacant_land', label: 'Vacant Land' }
+        { value: 'vacant_land', label: 'Vacant Land' },
+        { value: 'hospitality', label: 'Hospitality' },
     ];
 
     const typeOptions = {
@@ -30,7 +31,13 @@ const PropertyTypeSelection = ({ onContinue }) => {
         vacant_land: [
             { value: 'residential_plot', label: 'Residential Plot' },
             { value: 'commercial_plot', label: 'Commercial Plot' }
+        ],
+        hospitality: [
+            { value: 'hotel', label: 'Hotel' },
+            { value: 'restaurant', label: 'Restaurant' },
+            { value: 'club', label: 'Club' },
         ]
+
     };
 
     const handleContinue = () => {

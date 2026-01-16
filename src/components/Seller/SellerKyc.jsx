@@ -116,13 +116,13 @@ const SellerKyc = () => {
                 style={{ backgroundImage: `url(${SplashBg})` }}>
             </div>
 
-            {/* Back Button */}
+            {/* Back Button
             <button
                 className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20 text-white hover:text-gray-300 transition-colors"
                 onClick={() => window.history.back()}
             >
                 <FaArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
+            </button> */}
 
             {/* Main Content Container */}
             <div className="relative z-10 w-full max-w-7xl flex flex-col lg:flex-row gap-6 sm:gap-8">

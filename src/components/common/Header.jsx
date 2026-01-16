@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { FaBell, FaBars } from 'react-icons/fa';
-import { toggleMobileMenu } from './SellerSidebar';
+import { toggleMobileMenu } from '../Seller/SellerSidebar';
 
-const SellerHeader = ({ title, showNotifications = true, onNotificationClick }) => {
+const Header = ({ title, showNotifications = true, onNotificationClick }) => {
     return (
         <div className="bg-[#1a1a1a] border-b border-gray-800 px-4 sm:px-6 md:px-8 py-4 sm:py-6 flex items-center justify-between">
             {/* Left Side - Hamburger Menu (Mobile) + Title */}
@@ -48,4 +48,4 @@ const SellerHeader = ({ title, showNotifications = true, onNotificationClick }) 
     );
 };
 
-export default SellerHeader;
+export default Header;

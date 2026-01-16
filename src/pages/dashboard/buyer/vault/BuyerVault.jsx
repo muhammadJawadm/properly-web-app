@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaEllipsisV, FaFile } from 'react-icons/fa';
 import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
-import BuyerHeader from '../../../../components/Buyer/BuyerHeader';
+import Header from '../../../../components/common/Header';
 
 const BuyerVault = () => {
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -99,7 +99,7 @@ const BuyerVault = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
-                <BuyerHeader title="Document Vault" showNotifications={true} />
+                <Header title="Document Vault" showNotifications={true} />
 
                 <div className="p-4 sm:p-6 md:p-8 bg-black">
                     <div className='bg-gray-800/60 backdrop-blur-lg rounded-2xl p-4 sm:p-6 md:p-8'>

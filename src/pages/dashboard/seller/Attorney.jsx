@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaDownload, FaUpload, FaCheckCircle, FaClock, FaExclamationCircle, FaCommentDots } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
-import SellerHeader from '../../../components/Seller/SellerHeader';
+import Header from '../../../components/common/Header';
 import FicaComplianceModal from '../../../components/Seller/FicaComplianceModal';
 import RateAttorneyModal from '../../../components/Seller/RateAttorneyModal';
 
@@ -66,7 +66,7 @@ const Attorney = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
-                <SellerHeader title="Attorney" showNotifications={true} />
+                <Header title="Attorney" showNotifications={true} />
 
                 <div className="p-4 sm:p-6 md:p-8">
                     <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">

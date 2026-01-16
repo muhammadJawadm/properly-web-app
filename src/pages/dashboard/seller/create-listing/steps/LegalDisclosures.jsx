@@ -149,7 +149,7 @@ const LegalDisclosures = ({ onContinue, onBack, formData }) => {
 
                 {/* Joint Ownership Consent */}
                 <div className="border-t border-gray-700 pt-6">
-                    <h3 className="text-white text-xl font-semibold mb-4">Joint ownership Consent</h3>
+                    <h3 className="text-white text-xl font-semibold mb-4 mt-6">Joint ownership Consent</h3>
                     <div className='grid grid-cols-2 gap-6'>
                         <div className="mb-6">
                             <label className="block text-white mb-6 text-sm">Is joint ownership consent required for this sale?</label>
@@ -183,7 +183,7 @@ const LegalDisclosures = ({ onContinue, onBack, formData }) => {
                         </div>
 
                         {jointOwnership === 'yes' && (
-                            <div>
+                            <div className="-mt-10">
                                 <label className="block text-white mb-3 text-sm">Upload signed consent documents (PDF, JPG)</label>
                                 <div className="border-2 border-dashed border-gray-600 rounded-xl p-8 text-center hover:border-amber-500 transition-colors">
                                     <input

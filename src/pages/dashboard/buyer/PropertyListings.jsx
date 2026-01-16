@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaEye, FaQuestionCircle, FaList, FaPencilAlt, FaTrash, FaTimes } from 'react-icons/fa';
 import BuyerSidebar, { subscribeSidebarState } from '../../../components/Buyer/BuyerSidebar';
-import BuyerHeader from '../../../components/Buyer/BuyerHeader';
+import Header from '../../../components/common/Header';
 import StatsCard from '../../../components/Seller/StatsCard';
 
 const PropertyListings = () => {
@@ -60,7 +60,7 @@ const PropertyListings = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
-                <BuyerHeader
+                <Header
                     title="Property Listing"
                     showNotifications={true}
                     onNotificationClick={() => setShowNotifications(!showNotifications)}

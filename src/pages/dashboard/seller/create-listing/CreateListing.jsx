@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../../components/Seller/SellerSidebar';
-import SellerHeader from '../../../../components/Seller/SellerHeader';
+import Header from '../../../../components/common/Header';
 import ProgressStepper from './components/ProgressStepper';
 import PropertyTypeSelection from './steps/PropertyTypeSelection';
 import ResidentialOwnership from './steps/ResidentialOwnership';
 import AgriculturalOwnership from './steps/AgriculturalOwnership';
 import VacantLandOwnership from './steps/VacantLandOwnership';
+import CommercialOwnership from './steps/CommercialOwnership';
+import HospitalityOwnership from './steps/HospitalityOwnership';
 import RepresentativeType from './steps/RepresentativeType';
 import PropertyDetails from './steps/PropertyDetails';
 import AgriculturalPropertyDetails from './steps/AgriculturalPropertyDetails';
@@ -106,6 +108,24 @@ const CreateListing = () => {
                     />
                 );
             }
+            else if (propertyCategory === 'commercial') {
+                return (
+                    <CommercialOwnership
+                        onContinue={handleOwnershipContinue}
+                        onBack={handleBack}
+                        formData={formData}
+                    />
+                );
+            }
+            else if (propertyCategory === 'hospitality') {
+                return (
+                    <HospitalityOwnership
+                        onContinue={handleOwnershipContinue}
+                        onBack={handleBack}
+                        formData={formData}
+                    />
+                );
+            }
         }
 
         if (currentStep === 2) {
@@ -119,33 +139,13 @@ const CreateListing = () => {
         }
 
         if (currentStep === 3) {
-            const { propertyCategory } = formData;
-
-            if (propertyCategory === 'agricultural') {
-                return (
-                    <AgriculturalPropertyDetails
-                        onContinue={handleOwnershipContinue}
-                        onBack={handleBack}
-                        formData={formData}
-                    />
-                );
-            } else if (propertyCategory === 'vacant_land') {
-                return (
-                    <VacantLandDetails
-                        onContinue={handleOwnershipContinue}
-                        onBack={handleBack}
-                        formData={formData}
-                    />
-                );
-            } else {
-                return (
-                    <PropertyDetails
-                        onContinue={handleOwnershipContinue}
-                        onBack={handleBack}
-                        formData={formData}
-                    />
-                );
-            }
+            return (
+                <PropertyDetails
+                    onContinue={handleOwnershipContinue}
+                    onBack={handleBack}
+                    formData={formData}
+                />
+            );
         }
 
         if (currentStep === 4) {
@@ -171,7 +171,7 @@ const CreateListing = () => {
         if (currentStep === 6) {
             return (
                 <MediaUpload
-                    onContinue={() => setShowCompliance(true)}
+                    onContinue={handleOwnershipContinue}
                     onBack={handleBack}
                     formData={formData}
                     onShowBrochure={() => setShowBrochure(true)}
@@ -207,14 +207,14 @@ const CreateListing = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
-                <SellerHeader
+                <Header
                     title="Create Listing"
                     showNotifications={true}
                     onNotificationClick={() => setShowNotifications(!showNotifications)}
                 />
 
                 {/* Content */}
-                <div className="p-4 ">
+                <div className="p-10 ">
                     {currentStep > 0 && <ProgressStepper steps={steps} currentStep={currentStep} />}
                     {renderStep()}
                 </div>
@@ -242,8 +242,7 @@ const CreateListing = () => {
                 onClose={() => setShowCompliance(false)}
                 onAccept={() => {
                     setShowCompliance(false);
-                    setShowOfflineModal(false);
-                    setShowOTP(true);
+                    setShowOfflineModal(true);
                 }}
             />
 

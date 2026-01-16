@@ -66,7 +66,6 @@ const ComplianceAgreement = ({ isOpen, onClose, onAccept }) => {
                     {/* Sign Button */}
                     <button
                         onClick={handleSignByOTP}
-                        disabled={!isChecked || otpSent}
                         className={`w-full py-4 rounded-full font-semibold text-lg transition-all ${isChecked && !otpSent
                             ? 'bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black hover:opacity-90'
                             : 'bg-gray-700 text-gray-400 cursor-not-allowed'

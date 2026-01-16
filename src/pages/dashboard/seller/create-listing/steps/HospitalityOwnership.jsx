@@ -3,7 +3,7 @@ import FormInput from '../components/FormInput';
 import LoadingModal from '../components/LoadingModal';
 import SuccessModal from '../components/SuccessModal';
 
-const ResidentialOwnership = ({ onContinue, onBack, formData }) => {
+const HospitalityOwnership = ({ onContinue, onBack, formData }) => {
     const [addTown, setAddTown] = useState(formData?.addTown || '');
     const [streetName, setStreetName] = useState(formData?.streetName || '');
     const [streetNumber, setStreetNumber] = useState(formData?.streetNumber || '');
@@ -51,22 +51,22 @@ const ResidentialOwnership = ({ onContinue, onBack, formData }) => {
             <div className="max-w-6xl mx-auto space-y-6">
                 {/* Main Form */}
                 <div className="bg-gray-600/40 backdrop-blur-lg rounded-2xl p-10">
-                    <h2 className="text-white text-2xl font-semibold mb-2">Residential Property</h2>
+                    <h2 className="text-white text-2xl font-semibold mb-2">Hospitality Property</h2>
                     <p className="text-gray-400 text-sm mb-12">
-                        Please enter your details. Your ownership will verified through Lightstone Property.
+                        Please enter your hospitality property details (Hotel, Guest House, B&B, Lodge). Your ownership will be verified through Lightstone Property.
                     </p>
 
                     <div className="space-y-10">
                         <div className="grid grid-cols-2 gap-6">
                             <FormInput
-                                label="Add town"
-                                placeholder="e.g Street Mario"
+                                label="Property/Establishment Name"
+                                placeholder="e.g. Sunset Lodge"
                                 value={addTown}
                                 onChange={(e) => setAddTown(e.target.value)}
                             />
                             <FormInput
-                                label="Street Name"
-                                placeholder="e.g Street Mario"
+                                label="Town/City"
+                                placeholder="e.g. Cape Town"
                                 value={streetName}
                                 onChange={(e) => setStreetName(e.target.value)}
                                 required
@@ -75,14 +75,14 @@ const ResidentialOwnership = ({ onContinue, onBack, formData }) => {
 
                         <div className="grid grid-cols-2 gap-6">
                             <FormInput
-                                label="Street Number"
-                                placeholder="Enter Number"
+                                label="Street Address"
+                                placeholder="Enter full street address"
                                 value={streetNumber}
                                 onChange={(e) => setStreetNumber(e.target.value)}
                                 required
                             />
                             <FormInput
-                                label="Title deed number (Optional)"
+                                label="Title Deed Number (Optional)"
                                 placeholder="Title deed number"
                                 value={titleDeedNumber}
                                 onChange={(e) => setTitleDeedNumber(e.target.value)}
@@ -109,17 +109,17 @@ const ResidentialOwnership = ({ onContinue, onBack, formData }) => {
                             <span className="text-gray-400 text-sm font-normal ml-2">(from Lightstone)</span>
                         </h3>
                         <p className="text-gray-400 text-sm mb-6">
-                            You ownership is confirmed. The following details are automatically retrieved from Lightstone records.
+                            Your ownership is confirmed. The following details are automatically retrieved from Lightstone records.
                         </p>
 
                         <div className="grid grid-cols-3 gap-6 mb-6">
                             <div>
-                                <p className="text-white font-medium">Erf Size</p>
-                                <p className="text-gray-400 text-sm mt-1">45,000 m²</p>
+                                <p className="text-white font-medium">Property Type</p>
+                                <p className="text-gray-400 text-sm mt-1">Guest House</p>
                             </div>
                             <div>
-                                <p className="text-white font-medium">Total Hectares (for Agricultural)</p>
-                                <p className="text-gray-400 text-sm mt-1">45ha</p>
+                                <p className="text-white font-medium">Number of Rooms</p>
+                                <p className="text-gray-400 text-sm mt-1">12 Rooms</p>
                             </div>
                             <div>
                                 <p className="text-white font-medium">Province</p>
@@ -127,14 +127,18 @@ const ResidentialOwnership = ({ onContinue, onBack, formData }) => {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-3 gap-2">
+                        <div className="grid grid-cols-3 gap-2 mb-6">
                             <div>
                                 <p className="text-white font-medium">Town</p>
-                                <p className="text-gray-400 text-sm mt-1">Stellenbosch</p>
+                                <p className="text-gray-400 text-sm mt-1">Cape Town</p>
                             </div>
                             <div>
                                 <p className="text-white font-medium">Suburb</p>
-                                <p className="text-gray-400 text-sm mt-1">Town Devon Valley</p>
+                                <p className="text-gray-400 text-sm mt-1">Camps Bay</p>
+                            </div>
+                            <div>
+                                <p className="text-white font-medium">Zoning</p>
+                                <p className="text-gray-400 text-sm mt-1">Hospitality/Commercial</p>
                             </div>
                         </div>
 
@@ -163,4 +167,4 @@ const ResidentialOwnership = ({ onContinue, onBack, formData }) => {
     );
 };
 
-export default ResidentialOwnership;
+export default HospitalityOwnership;

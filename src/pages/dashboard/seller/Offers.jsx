@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
-import SellerHeader from '../../../components/Seller/SellerHeader';
+import Header from '../../../components/common/Header';
 
 const Offers = () => {
     const navigate = useNavigate();
@@ -61,7 +61,7 @@ const Offers = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
-                <SellerHeader
+                <Header
                     title="Offers"
                     showNotifications={true}
                     onNotificationClick={() => setShowNotifications(!showNotifications)}

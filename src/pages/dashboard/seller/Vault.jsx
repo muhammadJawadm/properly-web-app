@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaEllipsisV, FaFile } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
-import SellerHeader from '../../../components/Seller/SellerHeader';
+import Header from '../../../components/common/Header';
 
 const Vault = () => {
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -93,7 +93,7 @@ const Vault = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
-                <SellerHeader title="Document Vault" showNotifications={true} />
+                <Header title="Document Vault" showNotifications={true} />
 
                 <div className="p-4 sm:p-6 md:p-8 bg-black">
                     <div className='bg-gray-800/60 backdrop-blur-lg rounded-2xl p-4 sm:p-6 md:p-8'>

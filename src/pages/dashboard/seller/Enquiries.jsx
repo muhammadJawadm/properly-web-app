@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { FaPaperPlane, FaCheckCircle, FaEnvelope, FaCalendar, FaHashtag, FaFileAlt, FaTimes } from 'react-icons/fa';
+import { FaPaperPlane, FaCheckCircle, FaEnvelope, FaCalendar, FaHashtag, FaFileAlt, FaTimes, FaChevronDown } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
-import SellerHeader from '../../../components/Seller/SellerHeader';
+import Header from '../../../components/common/Header';
 
 const Enquiries = () => {
     const [activeTab, setActiveTab] = useState('All');
@@ -38,7 +38,7 @@ const Enquiries = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
-                <SellerHeader
+                <Header
                     title="Enquiries"
                     showNotifications={true}
                     onNotificationClick={() => setShowNotifications(!showNotifications)}
@@ -77,6 +77,7 @@ const Enquiries = () => {
                                 <option>12 Maple Street</option>
                                 <option>3 bedroom Apartment</option>
                             </select>
+                            <FaChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" size={14} />
                         </div>
 
                         {/* Property Title */}
@@ -206,7 +207,7 @@ const Enquiries = () => {
                             ></textarea>
 
                             {/* Create Viewing Invite Button */}
-                            <button className="w-full mt-3 py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity">
+                            <button className="w-full mt-3 py-3  text-amber-500 font-semibold rounded-lg hover:opacity-90 transition-opacity">
                                 Create Viewing Invite
                             </button>
                         </div>

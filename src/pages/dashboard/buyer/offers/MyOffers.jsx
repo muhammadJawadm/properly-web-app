@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaPaperPlane } from 'react-icons/fa';
 import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
-import BuyerHeader from '../../../../components/Buyer/BuyerHeader';
+import Header from '../../../../components/common/Header';
 import AttorneyAccessNotificationModal from '../../../../components/Buyer/AttorneyAccessNotificationModal';
 
 const MyOffers = () => {
@@ -70,7 +70,7 @@ const MyOffers = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
-                <BuyerHeader
+                <Header
                     title="Offers"
                     showNotifications={true}
                 />

@@ -11,7 +11,7 @@ const SignUpMethod = () => {
 
             {/* Logo - Hidden on mobile and tablet, visible on desktop */}
             <div className="hidden lg:block relative z-10 w-1/2 max-w-7xl mx-auto px-8">
-                <div className="mx-32 flex-shrink-0">
+                <div className="mx-16 flex-shrink-0">
                     <img
                         src={SplashLogo}
                         alt="Properly Real Estate Logo"
@@ -21,7 +21,7 @@ const SignUpMethod = () => {
             </div>
 
             {/* Main Content Card */}
-            <div className="relative z-10 w-full lg:w-1/2 max-w-2xl lg:mx-24">
+            <div className="relative z-10 w-full lg:w-2/3 max-w-2xl lg:mx-24">
                 <div className="bg-black bg-opacity-80 backdrop-blur-sm rounded-2xl sm:rounded-3xl px-6 py-8 sm:px-12 md:px-16 sm:py-12 md:py-14 shadow-2xl relative">
                     {/* Welcome Title */}
                     <div className="mb-12 sm:mb-20 md:mb-32">

@@ -92,11 +92,11 @@ const RecoverPassword2 = () => {
                             </button>
                         </form>
 
-                        <div className="text-center mt-8 sm:mt-12 md:mt-16">
+                        {/* <div className="text-center mt-8 sm:mt-12 md:mt-16">
                             <span className="text-white text-xs sm:text-sm">
                                 I remember it! <Link className="text-amber-400 hover:underline" to="/signin">SIGN IN</Link>
                             </span>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

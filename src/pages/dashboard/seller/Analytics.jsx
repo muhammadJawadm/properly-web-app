@@ -1,13 +1,21 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaUsers, FaFire, FaHeart, FaEye, FaTimes } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
-import SellerHeader from '../../../components/Seller/SellerHeader';
+import Header from '../../../components/common/Header';
 import { FaTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa';
 import StatsCard from '../../../components/Seller/StatsCard';
 
 const Analytics = () => {
-    const [showNotifications, setShowNotifications] = useState(false);
+    const navigate = useNavigate();
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+    const [showNotifications, setShowNotifications] = useState(false);
+    // Separate state for each card
+    const [linkedInPeriod, setLinkedInPeriod] = useState('This Month');
+    const [twitterPeriod, setTwitterPeriod] = useState('This Month');
+    const [instagramPeriod, setInstagramPeriod] = useState('This Month');
+
+    const timePeriods = ['This Week', 'This Month', 'This Year'];
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
@@ -42,7 +50,7 @@ const Analytics = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
-                <SellerHeader
+                <Header
                     title="Analytics"
                     showNotifications={true}
                     onNotificationClick={() => setShowNotifications(!showNotifications)}
@@ -58,7 +66,7 @@ const Analytics = () => {
                             label="Accounts Reached"
                             value="40k"
                             icon={<FaUsers className="text-white" size={20} />}
-                            trend="+8.4k this week"
+                            trend="+1.29%"
                             highlighted={true}
                         />
                         <StatsCard
@@ -87,10 +95,18 @@ const Analytics = () => {
                         <div className="bg-gray-800/40 backdrop-blur-lg rounded-2xl p-6">
                             <div className="flex items-center justify-between mb-4">
                                 <h3 className="text-white font-semibold">LinkedIn Engagements</h3>
-                                <span className="text-gray-400 text-sm">This Month</span>
+                                <select
+                                    value={linkedInPeriod}
+                                    onChange={(e) => setLinkedInPeriod(e.target.value)}
+                                    className="bg-gray-700/50 text-gray-300 text-sm rounded-lg px-3 py-1 border border-gray-600 focus:outline-none focus:border-amber-500 cursor-pointer"
+                                >
+                                    {timePeriods.map(period => (
+                                        <option key={period} value={period}>{period}</option>
+                                    ))}
+                                </select>
                             </div>
                             <div className="mb-4">
-                                <div className="text-3xl font-bold text-white mb-2">4,224</div>
+                                <div className="text-3xl font-bold text-white mb-2">84%</div>
                                 <div className="flex items-center gap-2">
                                     <span className="text-pink-400 text-sm font-semibold">-8.0%</span>
                                 </div>
@@ -118,6 +134,8 @@ const Analytics = () => {
                                     />
                                     {/* Dot at peak */}
                                     <circle cx="150" cy="50" r="4" fill="#ec4899" stroke="#1f2937" strokeWidth="2" />
+                                    {/* Value label */}
+                                    <text x="150" y="35" textAnchor="middle" fill="#ec4899" fontSize="14" fontWeight="bold">84%</text>
                                 </svg>
                                 {/* Month labels */}
                                 <div className="flex justify-between text-xs text-gray-500 mt-2">
@@ -134,10 +152,18 @@ const Analytics = () => {
                         <div className="bg-gray-800/40 backdrop-blur-lg rounded-2xl p-6">
                             <div className="flex items-center justify-between mb-4">
                                 <h3 className="text-white font-semibold">Twitter Engagements</h3>
-                                <span className="text-gray-400 text-sm">This Month</span>
+                                <select
+                                    value={twitterPeriod}
+                                    onChange={(e) => setTwitterPeriod(e.target.value)}
+                                    className="bg-gray-700/50 text-gray-300 text-sm rounded-lg px-3 py-1 border border-gray-600 focus:outline-none focus:border-amber-500 cursor-pointer"
+                                >
+                                    {timePeriods.map(period => (
+                                        <option key={period} value={period}>{period}</option>
+                                    ))}
+                                </select>
                             </div>
                             <div className="mb-4">
-                                <div className="text-3xl font-bold text-white mb-2">48</div>
+                                <div className="text-3xl font-bold text-white mb-2">48%</div>
                                 <div className="flex items-center gap-2">
                                     <span className="text-green-400 text-sm font-semibold">+12%</span>
                                 </div>
@@ -154,10 +180,18 @@ const Analytics = () => {
                         <div className="bg-gray-800/40 backdrop-blur-lg rounded-2xl p-6">
                             <div className="flex items-center justify-between mb-4">
                                 <h3 className="text-white font-semibold">Instagram Engagements</h3>
-                                <span className="text-gray-400 text-sm">This Month</span>
+                                <select
+                                    value={instagramPeriod}
+                                    onChange={(e) => setInstagramPeriod(e.target.value)}
+                                    className="bg-gray-700/50 text-gray-300 text-sm rounded-lg px-3 py-1 border border-gray-600 focus:outline-none focus:border-amber-500 cursor-pointer"
+                                >
+                                    {timePeriods.map(period => (
+                                        <option key={period} value={period}>{period}</option>
+                                    ))}
+                                </select>
                             </div>
                             <div className="mb-4">
-                                <div className="text-3xl font-bold text-white mb-2">4,224</div>
+                                <div className="text-3xl font-bold text-white mb-2">84%</div>
                                 <div className="flex items-center gap-2">
                                     <span className="text-blue-400 text-sm font-semibold">-8.0%</span>
                                 </div>

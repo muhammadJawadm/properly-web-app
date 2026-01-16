@@ -42,7 +42,7 @@ const SignUp = () => {
                     <div className="bg-black bg-opacity-80 backdrop-blur-sm rounded-2xl sm:rounded-3xl px-6 py-8 sm:px-10 md:px-12 sm:py-10 shadow-2xl w-full max-w-lg">
                         {/* Title */}
                         <div className="mb-6 sm:mb-8">
-                            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-wide">
+                            <h1 className="text-1xl sm:text-2xl font-bold text-white mb-2 tracking-wide">
                                 SIGN UP
                             </h1>
                             <p className="text-gray-400 text-xs sm:text-sm">
@@ -134,16 +134,21 @@ const SignUp = () => {
                             </div>
 
                             {/* Sign Up Button */}
-                            <Link to="/verification" className="block mt-4 sm:mt-6">
+                            <Link to="/verification" className="block mt-4 flex justify-center sm:mt-6">
                                 <button
                                     type="button"
-                                    className="w-full py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold text-black text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
+                                    className="w-3/4 mt-4 py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold text-black text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
                                     style={{ backgroundColor: '#EDBF6D' }}
                                 >
                                     Sign Up
                                 </button>
                             </Link>
                         </form>
+                        <div className="text-center mt-8 sm:mt-12 md:mt-16">
+                            <span className="text-white text-xs sm:text-sm">
+                                Already have an account? <Link className="text-amber-400 hover:underline" to="/signin">SIGN IN</Link>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>

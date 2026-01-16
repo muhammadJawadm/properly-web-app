@@ -22,7 +22,7 @@ const StatsCard = ({ label, value, icon, trend, highlighted = false }) => {
                 </h3>
 
                 {trend && (
-                    <span className={`text-sm font-semibold ${trend.startsWith('+') ? 'text-white' : 'text-red-400'
+                    <span className={`text-sm border-2 border-white/30 bg-white/10 backdrop-blur-lg rounded-full px-2 py-1 font-semibold ${trend.startsWith('+') ? 'text-white' : 'text-red-400'
                         }`}>
                         {trend}
                     </span>
@@ -30,8 +30,8 @@ const StatsCard = ({ label, value, icon, trend, highlighted = false }) => {
             </div>
 
             {trend && (
-                <p className={`text-xs mt-2 ${highlighted ? 'text-amber-100' : 'text-gray-500'}`}>
-                    {trend.startsWith('+') ? '+' : ''}{trend.replace('+', '')} this week
+                <p className={`text-xs mt-2 ${highlighted ? 'text-amber-100' : 'text-white'}`}>
+                    {trend.replace('%', 'K')} this week
                 </p>
             )}
         </div>
