@@ -117,7 +117,7 @@ const EnquiryFormModal = ({ isOpen, onClose, onSubmit, propertyTitle }) => {
                         onClick={handleSubmit}
                         className="w-full py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-xl hover:opacity-90 transition-opacity mb-6"
                     >
-                        Continue
+                        Verify Details
                     </button>
 
                     {/* Download Brochure */}

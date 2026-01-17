@@ -206,7 +206,7 @@ const OfferDraft = () => {
                         <div className="bg-gray-800/40 backdrop-blur-lg border border-gray-700 rounded-xl p-4 sm:p-6">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                                 <div>
-                                    <p className="text-gray-400 text-xs sm:text-sm mb-1">Pass-expire Date</p>
+                                    <p className="text-gray-400 text-xs sm:text-sm mb-1">Occupation Date</p>
                                     <p className="text-white font-semibold">12 December 2025</p>
                                 </div>
                                 <div>

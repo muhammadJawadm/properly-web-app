@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaEdit, FaTimes } from 'react-icons/fa';
 
-const FillOfflineModal = ({ isOpen, onClose, onUpload }) => {
+const FillOfflineModal = ({ isOpen, onClose, onUpload, onAccept }) => {
     const [activeTab, setActiveTab] = useState('offline'); // 'offline' or 'online'
 
     if (!isOpen) return null;
@@ -115,6 +115,18 @@ const FillOfflineModal = ({ isOpen, onClose, onUpload }) => {
                                 <p className="text-gray-400 text-sm">
                                     <span className="font-semibold">File Status:</span> No file uploaded yet
                                 </p>
+                            </div>
+                            <div className="flex justify-end gap-4 pt-4">
+                                <button
+                                    onClick={onClose}
+                                    className="px-6 py-3 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-600 transition-colors"
+                                >
+                                    Save as Draft
+                                </button>
+                                <button onClick={onAccept}
+                                    className="px-6 py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity">
+                                    Submit Report
+                                </button>
                             </div>
                         </>
                     ) : (
@@ -388,7 +400,8 @@ const FillOfflineModal = ({ isOpen, onClose, onUpload }) => {
                                     >
                                         Save as Draft
                                     </button>
-                                    <button className="px-6 py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity">
+                                    <button onClick={onAccept}
+                                        className="px-6 py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity">
                                         Submit Report
                                     </button>
                                 </div>

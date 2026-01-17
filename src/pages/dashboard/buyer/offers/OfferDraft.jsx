@@ -230,15 +230,17 @@ const OfferDraft = () => {
                     </div>
 
                     {/* Submit Button */}
-                    <button
-                        onClick={() => {
-                            alert('Offer submitted to seller!');
-                            navigate('/buyer/offers');
-                        }}
-                        className="w-full py-4 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-xl hover:opacity-90 transition-opacity"
-                    >
-                        Submit Offer to Seller
-                    </button>
+                    <div className="mt-6 gap-4 flex justify-center">
+                        <button
+                            onClick={() => {
+                                alert('Offer submitted to seller!');
+                                navigate('/buyer/offers');
+                            }}
+                            className="w-1/3 py-4 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-full hover:opacity-90 transition-opacity"
+                        >
+                            Submit Offer to Seller
+                        </button>
+                    </div>
                 </div>
             </div>
         </>

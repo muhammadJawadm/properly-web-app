@@ -20,7 +20,7 @@ const ComplianceAgreement = ({ isOpen, onClose, onAccept }) => {
 
     return (
         <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
-            <div className="w-full max-w-3xl bg-gray-600/50 backdrop-blur-xl rounded-2xl overflow-hidden">
+            <div className="w-full max-w-3xl max-h-[90vh] bg-gray-600/50 backdrop-blur-xl rounded-2xl overflow-y-auto">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-700">
                     <h2 className="text-white text-2xl font-semibold">Seller Compliance Agreement</h2>

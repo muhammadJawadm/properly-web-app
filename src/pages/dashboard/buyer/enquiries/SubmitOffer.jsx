@@ -85,11 +85,9 @@ const SubmitOffer = () => {
                                     <p className="text-gray-300">{buyerInfo.email}</p>
                                     <p className="text-gray-300">{buyerInfo.phone}</p>
                                 </div>
-                            </div>
 
-                            {/* Verified Status Card */}
-                            <div className="bg-gray-800/40 backdrop-blur-lg border border-gray-700 rounded-2xl p-6">
-                                <h3 className="text-white font-semibold mb-4">Verified Status</h3>
+                                {/* Verified Status Card */}
+                                <h3 className=" mt-10 text-white font-semibold mb-4">Verified Status</h3>
 
                                 <div className="space-y-3 mb-4">
                                     <div className="flex items-center gap-2">
@@ -114,7 +112,7 @@ const SubmitOffer = () => {
                                     />
                                 </div>
 
-                                <button className="w-full py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-gray-300 text-sm hover:bg-gray-700 transition-colors">
+                                <button className="w-full py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-amber-500 text-sm hover:bg-gray-700 transition-colors">
                                     Update my verification
                                 </button>
                             </div>
@@ -204,18 +202,7 @@ const SubmitOffer = () => {
                                     <button className="w-full py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-gray-300 font-semibold hover:bg-gray-700 transition-colors">
                                         Preview offer
                                     </button>
-                                    <button
-                                        onClick={handleSubmitOffer}
-                                        className="w-full py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity"
-                                    >
-                                        Submit offer
-                                    </button>
-                                    <button
-                                        onClick={() => navigate(-1)}
-                                        className="w-full py-3 bg-transparent border border-gray-600 rounded-lg text-gray-300 font-semibold hover:bg-gray-800/50 transition-colors"
-                                    >
-                                        Cancel
-                                    </button>
+
                                 </div>
                             </div>
                         </div>
@@ -262,6 +249,20 @@ const SubmitOffer = () => {
                                         Your personal contact details remain hidden until the offer is accepted.
                                     </p>
                                 </div>
+                            </div>
+                            <div className="mt-6 gap-4 flex justify-between">
+                                <button
+                                    onClick={() => navigate('/buyer/offer-draft/1')}
+                                    className="w-full py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity"
+                                >
+                                    Submit offer
+                                </button>
+                                <button
+                                    onClick={() => navigate(-1)}
+                                    className="w-full py-3 bg-transparent border border-gray-600 rounded-lg text-gray-300 font-semibold hover:bg-gray-800/50 transition-colors"
+                                >
+                                    Cancel
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -117,53 +117,91 @@ const Negotiations = () => {
                         </div>
                     </div>
 
-                    {/* Revision Card */}
-                    <div className="bg-gray-800/40 backdrop-blur-lg border border-gray-700 rounded-xl p-4 sm:p-6 mb-6">
-                        <h3 className="text-white font-semibold text-base sm:text-lg mb-4">Revision 1</h3>
+                    {/* Revision & Chat Combined Card */}
+                    <div className="bg-gray-800/40 backdrop-blur-lg border border-gray-700 rounded-2xl overflow-hidden mb-6">
+                        {/* Header */}
+                        <div className="p-4 sm:p-6 border-b border-gray-700">
+                            <h3 className="text-white font-semibold text-lg">Revision 1</h3>
+                        </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                            <div>
-                                <p className="text-gray-400 text-xs sm:text-sm mb-2">Buyer's offered price</p>
-                                <p className="text-white text-xl sm:text-2xl font-bold">R 1,250,000</p>
+                        {/* Two Column Layout: Revision Details (Left) + Chat (Right) */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 sm:p-6">
+                            {/* Left Side: Revision Details */}
+                            <div className="space-y-4">
+                                {/* Price Grid */}
+                                <div className="grid grid-cols-2 gap-4 bg-gray-900/50 rounded-xl p-4">
+                                    <div>
+                                        <p className="text-gray-400 text-xs mb-2">Buyer's offered price</p>
+                                        <p className="text-white text-lg font-bold">R 1,250,000</p>
+                                    </div>
+                                    <div>
+                                        <p className="text-gray-400 text-xs mb-2">Your listed price</p>
+                                        <p className="text-white text-lg font-bold">R 1,300,000</p>
+                                    </div>
+                                    <p className="text-red-400 text-sm">
+                                        <span className="font-semibold">Difference:</span> 50,000
+                                    </p>
+                                    <p className="text-gray-400 text-xs mb-2">Condition:</p>
+                                    <p className="text-white text-sm">Buyer request occupation date in 30 days.</p>
+                                </div>
+
+                                {/* Action Buttons */}
+                                <div className="grid grid-cols-3 gap-2">
+                                    <button
+                                        onClick={handleAcceptOffer}
+                                        className="py-2.5 px-3 border-green-600 border-2  text-green-400 hover:bg-green-600 hover:text-white font-semibold rounded-full transition-colors text-xs sm:text-sm"
+                                    >
+                                        Accept
+                                    </button>
+                                    <button
+                                        onClick={() => navigate(`/seller/offers/draft/${offerId}`)}
+                                        className="py-2.5 px-3 border-amber-600 border-2 text-amber-400 hover:bg-amber-600 hover:text-black font-semibold rounded-full transition-colors text-xs sm:text-sm"
+                                    >
+                                        Negotiate
+                                    </button>
+                                    <button
+                                        onClick={handleCounterOffer}
+                                        className="py-2.5 px-3 border-gray-700 border-2 text-gray-300 hover:bg-gray-600 hover:text-white font-semibold rounded-full transition-colors text-xs sm:text-sm"
+                                    >
+                                        Counter offer
+                                    </button>
+                                </div>
                             </div>
-                            <div>
-                                <p className="text-gray-400 text-xs sm:text-sm mb-2">Your listed price</p>
-                                <p className="text-white text-xl sm:text-2xl font-bold">R 1,300,000</p>
+
+                            {/* Right Side: Messages */}
+                            <div className="flex flex-col space-y-4">
+                                {/* Buyer Message */}
+                                <div className=" flex justify-end mt-auto">
+                                    <div className="bg-gray-700/50 backdrop-blur-sm rounded-2xl rounded-tr-none p-4 max-w-[85%] border-r-4 border-amber-500">
+                                        <p className="text-white text-sm">
+                                            Let's settle at R 1,280,000 and I will share transfer cost for your convenience.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Additional messages can be added here */}
                             </div>
                         </div>
 
-                        <div className="mb-4">
-                            <p className="text-red-500 text-sm sm:text-base font-semibold">
-                                Difference: 50,000
-                            </p>
+                        {/* Message Input at Bottom */}
+                        <div className="border-t border-gray-700 p-4 sm:p-6">
+                            <div className="flex items-center gap-3">
+                                <input
+                                    type="text"
+                                    value={message}
+                                    onChange={(e) => setMessage(e.target.value)}
+                                    onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                                    placeholder="Write your message..."
+                                    className="flex-1 bg-gray-900/50 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/50 border border-gray-700"
+                                />
+                                <button
+                                    onClick={handleSendMessage}
+                                    className="bg-gray-700/50 hover:bg-gray-600 text-white p-3 rounded-xl transition-colors"
+                                >
+                                    <FaPaperPlane size={18} />
+                                </button>
+                            </div>
                         </div>
-
-                        <div>
-                            <p className="text-gray-400 text-xs sm:text-sm mb-2">Condition:</p>
-                            <p className="text-white text-sm">Buyer request occupation date in 30 days.</p>
-                        </div>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-                        <button
-                            onClick={handleAcceptOffer}
-                            className="py-3 border-2 border-green-600 text-green-600  hover:bg-green-700 hover:text-white font-semibold rounded-3xl transition-colors"
-                        >
-                            Accept
-                        </button>
-                        <button
-                            onClick={() => navigate(`/seller/offers/draft/${offerId}`)}
-                            className="py-3 border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white font-semibold rounded-3xl hover:bg-amber-500/10 transition-all"
-                        >
-                            Negotiate
-                        </button>
-                        <button
-                            onClick={handleCounterOffer}
-                            className="py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors"
-                        >
-                            Counter offer
-                        </button>
                     </div>
 
                     {/* Counter Offer Input */}
@@ -193,38 +231,6 @@ const Negotiations = () => {
                             </div>
                         </div>
                     )}
-
-                    {/* Chat Interface */}
-                    <div className="bg-gray-800/40 backdrop-blur-lg border border-gray-700 rounded-xl p-4 sm:p-6 mb-6">
-                        <h3 className="text-white font-semibold text-base mb-4">Messages</h3>
-
-                        {/* Message from Buyer */}
-                        <div className="mb-4">
-                            <div className="bg-gray-700/50 rounded-lg p-4 relative border-l-4 border-amber-500">
-                                <p className="text-white text-sm">
-                                    Let's settle at R 1,280,000 and I will share transfer cost for your convenience.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Message Input */}
-                        <div className="relative">
-                            <input
-                                type="text"
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
-                                onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                                placeholder="Write your message..."
-                                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 pr-12 focus:outline-none focus:border-amber-500"
-                            />
-                            <button
-                                onClick={handleSendMessage}
-                                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-amber-500 transition-colors"
-                            >
-                                <FaPaperPlane size={18} />
-                            </button>
-                        </div>
-                    </div>
 
                     {/* Bottom Action Buttons */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

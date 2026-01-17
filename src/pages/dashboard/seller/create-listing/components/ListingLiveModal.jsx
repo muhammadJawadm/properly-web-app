@@ -64,7 +64,7 @@ const ListingLiveModal = ({ isOpen, onClose }) => {
 
     return (
         <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
-            <div className="w-full max-w-xl bg-gray-800/95 backdrop-blur-xl rounded-2xl overflow-hidden">
+            <div className="w-full max-w-xl max-h-[90vh] bg-gray-800/95 backdrop-blur-xl rounded-2xl overflow-y-auto">
                 {/* Header */}
                 <div className="flex items-center justify-end p-4 pb-0 border-gray-700">
                     <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors border bg-gray-500 p-1 border-white rounded-full">

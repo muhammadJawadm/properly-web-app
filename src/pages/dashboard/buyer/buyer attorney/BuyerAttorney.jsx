@@ -127,26 +127,27 @@ const BuyerAttorney = () => {
                                         Track your transfer journey and document submissions in real time.
                                     </p>
                                 </div>
+                                <div className="w-1/3">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <span className="text-white text-sm font-medium">Overall Progress</span>
+                                        <span className="text-amber-500 text-sm font-bold">{progressPercentage}%</span>
+                                    </div>
+                                    <div className="w-full bg-gray-700 rounded-full h-3">
+                                        <div
+                                            className="bg-gradient-to-r from-amber-400 to-amber-600 h-3 rounded-full transition-all duration-500"
+                                            style={{ width: `${progressPercentage}%` }}
+                                        />
+                                    </div>
+                                </div>
                                 <div className="mt-4 sm:mt-0">
-                                    <span className="px-4 py-2 bg-amber-500/20 border border-amber-500 rounded-full text-amber-500 font-semibold text-sm">
+                                    <span className="px-4 py-2 bg-blue-500/20 border border-blue-500 rounded-full text-blue-500 font-semibold text-sm">
                                         In Progress
                                     </span>
                                 </div>
                             </div>
 
                             {/* Progress Bar */}
-                            <div className="mb-4">
-                                <div className="flex items-center justify-between mb-2">
-                                    <span className="text-white text-sm font-medium">Overall Progress</span>
-                                    <span className="text-amber-500 text-sm font-bold">{progressPercentage}%</span>
-                                </div>
-                                <div className="w-full bg-gray-700 rounded-full h-3">
-                                    <div
-                                        className="bg-gradient-to-r from-amber-400 to-amber-600 h-3 rounded-full transition-all duration-500"
-                                        style={{ width: `${progressPercentage}%` }}
-                                    />
-                                </div>
-                            </div>
+
                         </div>
 
                         {/* Two Column Layout */}
@@ -170,11 +171,7 @@ const BuyerAttorney = () => {
                                             Request Update
                                         </button>
                                     </div>
-                                </div>
-
-                                {/* Final OTP Document */}
-                                <div className="bg-gray-700/40 backdrop-blur-lg border border-gray-600 rounded-xl p-6">
-                                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                                    <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                                         <div className="flex items-start gap-3">
                                             <div className="w-12 h-12 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0">
                                                 <FaDownload className="text-gray-300 text-lg" />
@@ -288,39 +285,7 @@ const BuyerAttorney = () => {
                                 </div>
 
                                 {/* Payment Tracking */}
-                                <div className="bg-gray-700/40 backdrop-blur-lg border border-gray-600 rounded-xl p-6">
-                                    <h3 className="text-xl font-semibold text-white mb-6">Payment Tracking</h3>
-                                    <div className="space-y-6">
-                                        {paymentTracking.map((item, index) => (
-                                            <div key={item.id} className="flex gap-4">
-                                                {/* Timeline Icon */}
-                                                <div className="flex flex-col items-center">
-                                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${item.status === 'completed'
-                                                        ? 'bg-green-500'
-                                                        : 'bg-gray-600'
-                                                        }`}>
-                                                        {item.status === 'completed' ? (
-                                                            <FaCheckCircle className="text-white text-lg" />
-                                                        ) : (
-                                                            <FaClock className="text-gray-400 text-lg" />
-                                                        )}
-                                                    </div>
-                                                    {index < paymentTracking.length - 1 && (
-                                                        <div className="w-1 h-16 bg-gray-600 mt-2" />
-                                                    )}
-                                                </div>
 
-                                                {/* Content */}
-                                                <div className="flex-1 pb-8">
-                                                    <h4 className={`font-medium ${item.status === 'completed'
-                                                        ? 'text-white'
-                                                        : 'text-gray-400'
-                                                        }`}>{item.title}</h4>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
                             </div>
 
                             {/* Right Column - Updates & Payment */}
@@ -345,21 +310,64 @@ const BuyerAttorney = () => {
                                 {/* Payment Status */}
                                 <div className="bg-gray-700/40 backdrop-blur-lg border border-gray-600 rounded-xl p-6">
                                     <h3 className="text-xl font-semibold text-white mb-6">Payment status</h3>
-                                    <div className="space-y-3">
-                                        <button
-                                            onClick={handleMarkPaymentSent}
-                                            className="w-full px-6 py-3 bg-amber-500 hover:bg-amber-600 text-black rounded-lg font-semibold transition-colors"
-                                        >
-                                            Mark as Payment Sent
-                                        </button>
+                                    <div className='border w-full border-gray-600 rounded-xl'></div>
+                                    <div className="space-y-6 mt-20">
+                                        <div className="flex justify-center">
+                                            <button
+                                                onClick={handleMarkPaymentSent}
+                                                className="w-3/4 px-4 py-3 bg-amber-500 hover:bg-amber-600 text-black rounded-full font-semibold transition-colors"
+                                            >
+                                                Mark as Payment Sent
+                                            </button>
+                                        </div>
                                         <button
                                             onClick={handleReviewAttorney}
-                                            className="w-full px-6 py-3 border border-amber-500 text-amber-500 rounded-lg font-semibold hover:bg-amber-500/10 transition-colors"
+                                            className="w-full px-6 py-3  text-amber-500 rounded-lg font-semibold hover:bg-amber-500/10 transition-colors"
                                         >
                                             Review Attorney
                                         </button>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="bg-gray-700/40 backdrop-blur-lg border border-gray-600 rounded-xl p-6">
+                        <h3 className="text-xl font-semibold text-white mb-6">Payment Tracking</h3>
+                        <div className="grid grid-cols-2">
+                            <div className="space-y-6 grid grid-cols-1 mt-4">
+                                {paymentTracking.map((item, index) => (
+                                    <div key={item.id} className="flex gap-4">
+                                        {/* Timeline Icon */}
+                                        <div className="flex flex-col items-center">
+                                            <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${item.status === 'completed'
+                                                ? 'bg-green-500'
+                                                : 'bg-gray-600'
+                                                }`}>
+                                                {item.status === 'completed' ? (
+                                                    <FaCheckCircle className="text-white text-lg" />
+                                                ) : (
+                                                    <FaClock className="text-gray-400 text-lg" />
+                                                )}
+                                            </div>
+                                            {index < paymentTracking.length - 1 && (
+                                                <div className="w-1 h-16 bg-gray-600 mt-2" />
+                                            )}
+                                        </div>
+
+                                        {/* Content */}
+                                        <div className="flex-1 pb-8">
+                                            <h4 className={`font-medium ${item.status === 'completed'
+                                                ? 'text-white'
+                                                : 'text-gray-400'
+                                                }`}>{item.title}</h4>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="ml-[30%]">
+                                <button className="w-1/2 px-2 py-3 border border-amber-500 text-amber-500 rounded-xl font-semibold hover:bg-amber-500/10 transition-colors">
+                                    Mark Payment as Sent
+                                </button>
                             </div>
                         </div>
                     </div>

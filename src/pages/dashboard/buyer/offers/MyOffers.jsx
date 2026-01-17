@@ -169,45 +169,52 @@ const MyOffers = () => {
                                     <h3 className="text-white font-semibold mb-6">Revision {revision.revision}</h3>
 
                                     {/* Revision Comparison */}
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                                        <div>
-                                            <p className="text-gray-400 text-sm mb-2">Your offered price</p>
-                                            <p className="text-white text-2xl font-bold">R {revision.offeredPrice.toLocaleString()}</p>
+                                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
+                                        {/* Left Column: Revision Details */}
+                                        <div className='border-gray-600 border-2 rounded-xl p-4'>
+                                            <div className="grid grid-cols-2 gap-6 mb-6">
+                                                <div>
+                                                    <p className="text-gray-400 text-sm mb-2">Your offered price</p>
+                                                    <p className="text-white text-2xl font-bold">R {revision.offeredPrice.toLocaleString()}</p>
+                                                </div>
+                                                <div>
+                                                    <p className="text-gray-400 text-sm mb-2">Your listed price</p>
+                                                    <p className="text-white text-2xl font-bold">R {revision.listedPrice.toLocaleString()}</p>
+                                                </div>
+                                            </div>
+
+                                            <p className="text-red-400 text-sm mb-4">
+                                                Difference: {revision.difference.toLocaleString()}
+                                            </p>
+
+                                            <p className="text-white text-sm mb-6">
+                                                <span className="font-semibold">Condition:</span> {revision.condition}
+                                            </p>
                                         </div>
-                                        <div>
-                                            <p className="text-gray-400 text-sm mb-2">Your listed price</p>
-                                            <p className="text-white text-2xl font-bold">R {revision.listedPrice.toLocaleString()}</p>
+
+                                        {/* Right Column: Action Buttons & Seller Message */}
+                                        <div className='flex flex-col gap-4 mt-auto'>
+
+                                            {/* Seller Message */}
+                                            <div className="bg-gray-700/30 rounded-xl p-4 relative">
+                                                <div className="absolute -left-2 top-4 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-gray-700/30"></div>
+                                                <p className="text-white text-sm">{revision.sellerMessage}</p>
+                                            </div>
+                                            <div className="flex flex-wrap gap-3">
+                                                <button className="px-6 py-2.5 bg-transparent border border-green-500 rounded-full text-green-500 font-semibold hover:bg-green-500/10 transition-colors">
+                                                    Accept
+                                                </button>
+                                                <button
+                                                    onClick={() => setShowAttorneyNotification(true)}
+                                                    className="px-6 py-2.5  text-amber-500 border border-amber-500 rounded-full font-semibold hover:opacity-90 transition-opacity"
+                                                >
+                                                    Negotiate
+                                                </button>
+                                                <button className="px-6 py-2.5 bg-transparent border border-gray-600 rounded-full text-gray-300 font-semibold hover:bg-gray-700/50 transition-colors">
+                                                    Counter offer
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
-
-                                    <p className="text-red-400 text-sm mb-4">
-                                        Difference: {revision.difference.toLocaleString()}
-                                    </p>
-
-                                    <p className="text-white text-sm mb-6">
-                                        <span className="font-semibold">Condition:</span> {revision.condition}
-                                    </p>
-
-                                    {/* Seller Message */}
-                                    <div className="bg-gray-700/30 rounded-xl p-4 mb-6 relative">
-                                        <div className="absolute -left-2 top-4 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-gray-700/30"></div>
-                                        <p className="text-white text-sm">{revision.sellerMessage}</p>
-                                    </div>
-
-                                    {/* Action Buttons */}
-                                    <div className="flex flex-wrap gap-3">
-                                        <button className="px-6 py-2.5 bg-transparent border border-green-500 rounded-lg text-green-500 font-semibold hover:bg-green-500/10 transition-colors">
-                                            Accept
-                                        </button>
-                                        <button
-                                            onClick={() => setShowAttorneyNotification(true)}
-                                            className="px-6 py-2.5 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity"
-                                        >
-                                            Negotiate
-                                        </button>
-                                        <button className="px-6 py-2.5 bg-transparent border border-gray-600 rounded-lg text-gray-300 font-semibold hover:bg-gray-700/50 transition-colors">
-                                            Counter offer
-                                        </button>
                                     </div>
                                 </div>
                             ))}

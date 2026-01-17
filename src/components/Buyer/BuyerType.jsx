@@ -68,7 +68,7 @@ const BuyerType = () => {
             <div className="mb-4">
                 <div className="flex items-center gap-3">
                     {/* Upload Button/Display */}
-                    <div className="flex-1 flex items-center justify-between px-4 py-3 bg-gray-900/40 border border-gray-700 rounded-lg hover:border-gray-600 transition-colors">
+                    <div className="flex-1 flex items-center justify-between px-4 py-3 min-h-[72px] bg-gray-900/40 border border-gray-700 rounded-lg hover:border-gray-600 transition-colors">
                         <div className="flex items-center gap-3">
                             <FaFileAlt className="text-amber-500" size={18} />
                             <div>
