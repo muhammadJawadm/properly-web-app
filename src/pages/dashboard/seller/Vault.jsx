@@ -134,7 +134,7 @@ const Vault = () => {
                                                         <FaFile className="text-gray-300 text-lg sm:text-xl" />
                                                     </div>
                                                     <div className="flex-1 min-w-0">
-                                                        <h4 className="text-white font-medium text-sm sm:text-base truncate">
+                                                        <h4 className="text-white font-medium text-sm sm:text-base">
                                                             {doc.name}
                                                         </h4>
                                                     </div>
