@@ -117,12 +117,12 @@ const FillOfflineModal = ({ isOpen, onClose, onUpload, onAccept }) => {
                                 </p>
                             </div>
                             <div className="flex justify-end gap-4 pt-4">
-                                <button
+                                {/* <button
                                     onClick={onClose}
                                     className="px-6 py-3 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-600 transition-colors"
                                 >
                                     Save as Draft
-                                </button>
+                                </button> */}
                                 <button onClick={onAccept}
                                     className="px-6 py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity">
                                     Submit Report
@@ -183,7 +183,7 @@ const FillOfflineModal = ({ isOpen, onClose, onUpload, onAccept }) => {
                                     <div>
                                         <h4 className="text-amber-500 font-medium mb-3">DISCLOSURE INFORMATION</h4>
                                         <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                                            The Owner of the PROPERTY provides the information contained in this document so that prospective PURCHASERS may benefit from the contents in making their decision on whether to buy the PROPERTY and if so, on what terms. The Owner does not warrant that his responses to the various questions accurately represent the true status of the defect/condition enquired about but <span className="text-amber-500 font-semibold">does warrant</span> that his answers constitute his true and honest belief about the status. The Owner understands and accepts that this document will be incorporated into any agreement with any prospective PURCHASER.
+                                            The Owner of the PROPERTY provides the information contained in this document so that prospective PURCHASERS may benefit from the contents in making their decision on whether to buy the PROPERTY and if so, on what terms. The Owner does not warrant that his responses to the various questions accurately represent the true status of the defect/condition inquired about but <span className="text-amber-500 font-semibold">does warrant</span> that his answers constitute his true and honest belief about the status. The Owner understands and accepts that this document will be incorporated into any agreement with any prospective PURCHASER.
                                         </p>
 
                                         {/* Questions Table */}
@@ -394,12 +394,12 @@ const FillOfflineModal = ({ isOpen, onClose, onUpload, onAccept }) => {
 
                                 {/* Submit Buttons */}
                                 <div className="flex justify-end gap-4 pt-4">
-                                    <button
+                                    {/* <button
                                         onClick={onClose}
                                         className="px-6 py-3 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-600 transition-colors"
                                     >
                                         Save as Draft
-                                    </button>
+                                    </button> */}
                                     <button onClick={onAccept}
                                         className="px-6 py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity">
                                         Submit Report

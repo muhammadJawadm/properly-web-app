@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaTimes, FaDownload } from 'react-icons/fa';
 
-const EnquiryFormModal = ({ isOpen, onClose, onSubmit, propertyTitle }) => {
+const InquiryFormModal = ({ isOpen, onClose, onSubmit, propertyTitle }) => {
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -13,7 +13,7 @@ const EnquiryFormModal = ({ isOpen, onClose, onSubmit, propertyTitle }) => {
     if (!isOpen) return null;
 
     const handleSubmit = () => {
-        console.log('Submitting enquiry:', formData);
+        console.log('Submitting inquiry:', formData);
         if (onSubmit) {
             onSubmit(formData);
         } else {
@@ -23,10 +23,19 @@ const EnquiryFormModal = ({ isOpen, onClose, onSubmit, propertyTitle }) => {
 
     return (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-gray-800 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-gray-800 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
+                {/* Close Button - Absolutely Positioned */}
+                <button
+                    onClick={onClose}
+                    className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10"
+                    aria-label="Close"
+                >
+                    <FaTimes size={24} />
+                </button>
+
                 <div className="p-6 sm:p-8">
                     {/* Title */}
-                    <h2 className="text-amber-500 text-2xl font-bold mb-6">Enquiry Form</h2>
+                    <h2 className="text-amber-500 text-2xl font-bold mb-6">Inquiry Form</h2>
 
                     {/* Form Fields */}
                     <div className="space-y-4 mb-6">
@@ -142,4 +151,4 @@ const EnquiryFormModal = ({ isOpen, onClose, onSubmit, propertyTitle }) => {
     );
 };
 
-export default EnquiryFormModal;
+export default InquiryFormModal;

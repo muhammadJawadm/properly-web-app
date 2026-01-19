@@ -82,14 +82,15 @@ const RecoverPassword2 = () => {
                                     {showConfirmPassword ? <FaEyeSlash className="w-4 h-4 sm:w-5 sm:h-5" /> : <FaEye className="w-4 h-4 sm:w-5 sm:h-5" />}
                                 </button>
                             </div>
-
-                            <button
-                                type="submit"
-                                className="w-full sm:w-[80%] sm:mx-auto block py-3 sm:py-4 px-4 rounded-full font-semibold text-white text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
-                                style={{ backgroundColor: '#012688' }}
-                            >
-                                <Link to={isSeller ? '/sellerkyc' : '/buyerType'}>Reset password</Link>
-                            </button>
+                            <Link to={isSeller ? '/sellerkyc' : '/buyerType'}>
+                                <button
+                                    type="submit"
+                                    className="w-full sm:w-[80%] sm:mx-auto block py-3 sm:py-4 px-4 rounded-full font-semibold text-white text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110"
+                                    style={{ backgroundColor: '#012688' }}
+                                >
+                                    Reset password
+                                </button>
+                            </Link>
                         </form>
 
                         {/* <div className="text-center mt-8 sm:mt-12 md:mt-16">

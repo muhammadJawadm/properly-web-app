@@ -92,7 +92,7 @@ const SellerDashboard = () => {
                                 View My Listing
                             </button>
                             <button
-                                onClick={() => navigate('/seller/enquiries')}
+                                onClick={() => navigate('/seller/inquiries')}
                                 className="px-4 sm:px-6 py-3 sm:py-4 bg-gray-800/40 backdrop-blur-lg border rounded-xl text-amber-500 text-sm sm:text-base font-semibold hover:bg-amber-500/10 transition-all duration-300"
                             >
                                 View Inquiries

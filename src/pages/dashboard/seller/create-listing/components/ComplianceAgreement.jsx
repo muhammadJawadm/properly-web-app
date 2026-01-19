@@ -41,7 +41,7 @@ const ComplianceAgreement = ({ isOpen, onClose, onAccept }) => {
 
                         <h3 className="text-white font-semibold ">Enforced Platform Usage</h3>
                         <p className="text-gray-300 text-sm">
-                            • The system requires that any buyer contact, enquiry, offer or sale that comes through the platform (or its partner sites like Property24, Private Property, social media) must be completed using the platform's process.
+                            • The system requires that any buyer contact, inquiry, offer or sale that comes through the platform (or its partner sites like Property24, Private Property, social media) must be completed using the platform's process.
                         </p>
 
                         <h3 className="text-white font-semibold ">Penalty Clause</h3>

@@ -91,7 +91,7 @@ const Negotiations = () => {
                     showNotifications={false}
                 />
 
-                <div className="p-4 sm:p-6 md:p-8 max-w-4xl mx-auto">
+                <div className="p-4 sm:p-6 md:p-8 max-w-6xl mx-auto">
                     {/* Back Button */}
                     <button
                         onClick={() => navigate('/seller/offers')}
@@ -125,53 +125,66 @@ const Negotiations = () => {
                         </div>
 
                         {/* Two Column Layout: Revision Details (Left) + Chat (Right) */}
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 sm:p-6">
-                            {/* Left Side: Revision Details */}
+                        <div className="grid grid-cols-1 h-[40vh] lg:grid-cols-2 gap-6 p-4 sm:p-6">
+                            {/* Left Column: Revision Details */}
                             <div className="space-y-4">
-                                {/* Price Grid */}
-                                <div className="grid grid-cols-2 gap-4 bg-gray-900/50 rounded-xl p-4">
-                                    <div>
-                                        <p className="text-gray-400 text-xs mb-2">Buyer's offered price</p>
-                                        <p className="text-white text-lg font-bold">R 1,250,000</p>
+                                {/* Price Comparison Card */}
+                                <div className="bg-gray-900/50 border border-gray-700 rounded-xl p-4">
+                                    <div className="grid grid-cols-2 gap-4 mb-4">
+                                        {/* Buyer's Offered Price */}
+                                        <div>
+                                            <p className="text-gray-400 text-xs mb-2">Buyer's offered price</p>
+                                            <p className="text-white text-lg font-bold">R 1,250,000</p>
+                                        </div>
+
+                                        {/* Your Listed Price */}
+                                        <div>
+                                            <p className="text-gray-400 text-xs mb-2">Your listed price</p>
+                                            <p className="text-white text-lg font-bold">R 1,300,000</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p className="text-gray-400 text-xs mb-2">Your listed price</p>
-                                        <p className="text-white text-lg font-bold">R 1,300,000</p>
+
+                                    {/* Price Difference */}
+                                    <div className="mb-4">
+                                        <p className="text-red-400 text-sm">
+                                            <span className="font-semibold">Difference:</span> R 50,000
+                                        </p>
                                     </div>
-                                    <p className="text-red-400 text-sm">
-                                        <span className="font-semibold">Difference:</span> 50,000
-                                    </p>
-                                    <p className="text-gray-400 text-xs mb-2">Condition:</p>
-                                    <p className="text-white text-sm">Buyer request occupation date in 30 days.</p>
+
+                                    {/* Conditions */}
+                                    <div>
+                                        <p className="text-gray-400 text-xs mb-2">Condition:</p>
+                                        <p className="text-white text-sm">Buyer request occupation date in 30 days.</p>
+                                    </div>
                                 </div>
 
                                 {/* Action Buttons */}
                                 <div className="grid grid-cols-3 gap-2">
                                     <button
                                         onClick={handleAcceptOffer}
-                                        className="py-2.5 px-3 border-green-600 border-2  text-green-400 hover:bg-green-600 hover:text-white font-semibold rounded-full transition-colors text-xs sm:text-sm"
+                                        className="py-2.5 px-3 border-2 border-green-600 text-green-400 hover:bg-green-600 hover:text-white font-semibold rounded-full transition-colors text-xs sm:text-sm"
                                     >
                                         Accept
                                     </button>
                                     <button
                                         onClick={() => navigate(`/seller/offers/draft/${offerId}`)}
-                                        className="py-2.5 px-3 border-amber-600 border-2 text-amber-400 hover:bg-amber-600 hover:text-black font-semibold rounded-full transition-colors text-xs sm:text-sm"
+                                        className="py-2.5 px-3 border-2 border-amber-600 text-amber-400 hover:bg-amber-600 hover:text-black font-semibold rounded-full transition-colors text-xs sm:text-sm"
                                     >
                                         Negotiate
                                     </button>
                                     <button
                                         onClick={handleCounterOffer}
-                                        className="py-2.5 px-3 border-gray-700 border-2 text-gray-300 hover:bg-gray-600 hover:text-white font-semibold rounded-full transition-colors text-xs sm:text-sm"
+                                        className="py-2.5 px-3 border-2 border-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white font-semibold rounded-full transition-colors text-xs sm:text-sm"
                                     >
                                         Counter offer
                                     </button>
                                 </div>
                             </div>
 
-                            {/* Right Side: Messages */}
-                            <div className="flex flex-col space-y-4">
-                                {/* Buyer Message */}
-                                <div className=" flex justify-end mt-auto">
+                            {/* Right Column: Messages */}
+                            <div className="flex flex-col h-full justify-end space-y-4">
+                                {/* Buyer Message Bubble */}
+                                <div className="flex justify-end">
                                     <div className="bg-gray-700/50 backdrop-blur-sm rounded-2xl rounded-tr-none p-4 max-w-[85%] border-r-4 border-amber-500">
                                         <p className="text-white text-sm">
                                             Let's settle at R 1,280,000 and I will share transfer cost for your convenience.

@@ -28,7 +28,7 @@ const KycUploadIdStep = ({ onNext, onFileUpload, steps }) => {
 
                     {/* Right: Upload Form */}
                     <div className="w-full lg:w-1/2">
-                        <h2 className="text-xl sm:text-2xl text-center font-bold text-white mb-2">Upload Government ID.</h2>
+                        <h2 className="text-xl sm:text-2xl text-center font-bold text-white mb-2">Upload Proof of ID</h2>
                         <p className="text-gray-400 text-xs sm:text-sm mb-6 sm:mb-8 text-center">National Identity Card or Passport</p>
 
                         <div className="space-y-4">

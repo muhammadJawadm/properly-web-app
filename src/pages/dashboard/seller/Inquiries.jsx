@@ -3,7 +3,7 @@ import { FaPaperPlane, FaCheckCircle, FaEnvelope, FaCalendar, FaHashtag, FaFileA
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
 import Header from '../../../components/common/Header';
 
-const Enquiries = () => {
+const Inquiries = () => {
     const [activeTab, setActiveTab] = useState('All');
     const [selectedListing, setSelectedListing] = useState('Select the Listing');
     const [message, setMessage] = useState('');
@@ -39,13 +39,13 @@ const Enquiries = () => {
                 style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
             >
                 <Header
-                    title="Enquiries"
+                    title="Inquiries"
                     showNotifications={true}
                     onNotificationClick={() => setShowNotifications(!showNotifications)}
                 />
 
                 <div className="p-4 sm:p-6 md:p-8 min-h-[calc(100vh-88px)] flex flex-col lg:flex-row gap-4 sm:gap-6">
-                    {/* Left Side - Enquiries List */}
+                    {/* Left Side - Inquiries List */}
                     <div className="w-full lg:w-2/3 flex flex-col gap-4 sm:gap-6 h-full">
                         {/* Tabs */}
                         <div className="flex gap-3 sm:gap-6 mb-4 sm:mb-6 border-b border-gray-700 overflow-x-auto">
@@ -277,4 +277,4 @@ const Enquiries = () => {
     );
 };
 
-export default Enquiries;
+export default Inquiries;

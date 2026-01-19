@@ -12,7 +12,7 @@ const VerificationResultsModal = ({
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
-            <div className="bg-gray-800 rounded-2xl p-8 sm:p-12 md:p-24 max-w-xl w-full shadow-2xl relative">
+            <div className="bg-gray-800 rounded-2xl  sm:p-8 md:p-12 max-w-xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-gray-400 hover:text-white"
@@ -95,7 +95,7 @@ const VerificationResultsModal = ({
                         <>
                             {/* Green Checkmark */}
                             <div className="flex justify-center mb-6">
-                                <div className="w-20 h-20 rounded-full border-4 border-green-500 flex items-center justify-center">
+                                <div className="w-16 h-16 rounded-full border-4 border-green-500 flex items-center justify-center">
                                     <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                     </svg>
@@ -113,7 +113,7 @@ const VerificationResultsModal = ({
                             <p className="text-gray-300 text-sm mb-8">
                                 Congratulations! You have successfully verified your Ownership, Now you can create listing. You will get verified ownership Badge.
                             </p>
-                            <div className="flex justify-center mt-24">                                    <button
+                            <div className="flex justify-center mt-12">                                    <button
                                 onClick={onContinue || onClose}
                                 className="w-2/3 px-8 py-4 rounded-full font-semibold text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
                                 style={{ backgroundColor: '#0A1628' }}

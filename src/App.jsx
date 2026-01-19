@@ -17,7 +17,7 @@ import Attorney from "./pages/dashboard/seller/Attorney"
 import BuyerDashboard from "./pages/dashboard/buyer/BuyerDashboard"
 import PropertyListings from "./pages/dashboard/seller/PropertyListings"
 import Analytics from "./pages/dashboard/seller/Analytics"
-import Enquiries from "./pages/dashboard/seller/Enquiries"
+import Inquiries from "./pages/dashboard/seller/Inquiries"
 import Offers from "./pages/dashboard/seller/Offers"
 import OfferDraft from "./pages/dashboard/seller/OfferDraft"
 import OfferDetails from "./pages/dashboard/seller/OfferDetails"
@@ -26,8 +26,8 @@ import Vault from "./pages/dashboard/seller/Vault"
 import CreateListing from "./pages/dashboard/seller/create-listing/CreateListing"
 import BrowseProperties from "./pages/dashboard/buyer/browse/BrowseProperties"
 import PropertyDetails from "./pages/dashboard/buyer/browse/PropertyDetails"
-import MyInquiries from "./pages/dashboard/buyer/enquiries/MyInquiries"
-import SubmitOffer from "./pages/dashboard/buyer/enquiries/SubmitOffer"
+import MyInquiries from "./pages/dashboard/buyer/inquiries/MyInquiries"
+import SubmitOffer from "./pages/dashboard/buyer/inquiries/SubmitOffer"
 import MyOffers from "./pages/dashboard/buyer/offers/MyOffers"
 import BuyerOfferDraft from "./pages/dashboard/buyer/offers/OfferDraft"
 import BuyerAttorney from "./pages/dashboard/buyer/buyer attorney/BuyerAttorney"
@@ -63,7 +63,7 @@ export default function App() {
           <Route path="/seller/dashboard" element={<SellerDashboard />} />
           <Route path="/seller/listings" element={<PropertyListings />} />
           <Route path="/seller/analytics" element={<Analytics />} />
-          <Route path="/seller/enquiries" element={<Enquiries />} />
+          <Route path="/seller/inquiries" element={<Inquiries />} />
           <Route path="/seller/offers" element={<Offers />} />
           <Route path="/seller/attorney" element={<Attorney />} />
           <Route path="/seller/vault" element={<Vault />} />
@@ -78,8 +78,8 @@ export default function App() {
           <Route path="/buyer/dashboard" element={<BuyerDashboard />} />
           <Route path="/buyer/browse" element={<BrowseProperties />} />
           <Route path="/buyer/browse/:propertyId" element={<PropertyDetails />} />
-          <Route path="/buyer/enquiries" element={<MyInquiries />} />
-          <Route path="/buyer/enquiries/:enquiryId" element={<MyInquiries />} />
+          <Route path="/buyer/inquiries" element={<MyInquiries />} />
+          <Route path="/buyer/inquiries/:inquiryId" element={<MyInquiries />} />
           <Route path="/buyer/submit-offer/:propertyId" element={<SubmitOffer />} />
           <Route path="/buyer/offers" element={<MyOffers />} />
           <Route path="/buyer/offer-draft/:offerId" element={<BuyerOfferDraft />} />

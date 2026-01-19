@@ -2,8 +2,17 @@ import SplashBg from "../../assets/SplashBg.png";
 import SplashLogo from "../../assets/Splashlogo3.png";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useRole } from "../../context/RoleContext";
+
+
 
 const SplashScreen = () => {
+    const { selectRole } = useRole();
+
+    const handleRoleSelection = (role) => {
+        selectRole(role);
+    };
+
     return (
         <div className="min-h-screen relative overflow-hidden flex items-center justify-center">
             {/* Background Image */}
@@ -27,8 +36,9 @@ const SplashScreen = () => {
                     {/* Buttons Below Logo */}
                     <div className="flex flex-col items-center gap-4 w-full max-w-xs">
                         {/* Sell Property Button */}
-                        <Link to="/user" className="w-full">
+                        <Link to="/SignupMethod" className="w-full">
                             <button
+                                onClick={() => handleRoleSelection('seller')}
                                 className="flex items-center gap-2 px-6 py-2.5 rounded-full text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 uppercase text-xs w-full justify-center"
                                 style={{ backgroundColor: '#EDBF6D' }}
                             >
@@ -38,8 +48,9 @@ const SplashScreen = () => {
                         </Link>
 
                         {/* Buy Property Button */}
-                        <Link to="/user" className="w-full">
+                        <Link to="/SignupMethod" className="w-full">
                             <button
+                                onClick={() => handleRoleSelection('buyer')}
                                 className="flex items-center gap-2 px-6 py-2.5 rounded-full text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 uppercase text-xs w-full justify-center"
                                 style={{ backgroundColor: '#EDBF6D' }}
                             >
@@ -55,8 +66,9 @@ const SplashScreen = () => {
                     {/* Buttons Row - Positioned Above Logo */}
                     <div className="absolute top-[25%] md:top-[30%] lg:top-[35%] left-0 right-0 flex flex-row items-center justify-center sm:justify-between gap-6 px-8 md:px-16 lg:px-32 max-w-6xl mx-auto">
                         {/* Sell Property Button */}
-                        <Link to="/user">
+                        <Link to="/SignupMethod">
                             <button
+                                onClick={() => handleRoleSelection('seller')}
                                 className="flex items-center gap-2 px-8 py-3 rounded-full text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 uppercase text-sm"
                                 style={{ backgroundColor: '#EDBF6D' }}
                             >
@@ -66,8 +78,9 @@ const SplashScreen = () => {
                         </Link>
 
                         {/* Buy Property Button */}
-                        <Link to="/user">
+                        <Link to="/SignupMethod">
                             <button
+                                onClick={() => handleRoleSelection('buyer')}
                                 className="flex items-center gap-2 px-8 py-3 rounded-full text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 uppercase text-sm"
                                 style={{ backgroundColor: '#EDBF6D' }}
                             >
@@ -89,14 +102,13 @@ const SplashScreen = () => {
             </div>
 
             {/* Conveyor Login Link - Responsive Positioning */}
-            <div className="absolute bottom-4 sm:bottom-6 md:bottom-10 right-4 sm:right-6 md:right-10">
-                <a
-                    href="/signin"
+            <div className="absolute bottom-4 sm:bottom-6 md:bottom-10 right-4 sm:right-6 md:right-10 z-20">
+                <Link to="/attorney/access"
                     className="px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-gray-400 text-xs sm:text-sm hover:bg-white hover:bg-opacity-10 transition-all duration-300 inline-block"
                     style={{ color: '#EDBF6D' }}
                 >
                     Conveyor login
-                </a>
+                </Link>
             </div>
         </div>
     );

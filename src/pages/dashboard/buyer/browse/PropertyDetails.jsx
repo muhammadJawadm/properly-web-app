@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft, FaBed, FaBath, FaCar, FaPhoneAlt } from 'react-icons/fa';
 import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
 import Header from '../../../../components/common/Header';
-import EnquiryFormModal from '../../../../components/Buyer/EnquiryFormModal';
+import InquiryFormModal from '../../../../components/Buyer/InquiryFormModal';
 import OTPVerificationModal from '../../../../components/Buyer/OTPVerificationModal';
 import UploadDocumentsModal from '../../../../components/Buyer/UploadDocumentsModal';
 
@@ -11,7 +11,7 @@ const PropertyDetails = () => {
     const navigate = useNavigate();
     const { propertyId } = useParams();
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-    const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+    const [showInquiryForm, setShowInquiryForm] = useState(false);
     const [showOTPModal, setShowOTPModal] = useState(false);
     const [showUploadDocs, setShowUploadDocs] = useState(false);
     const [selectedImage, setSelectedImage] = useState(0);
@@ -48,8 +48,8 @@ const PropertyDetails = () => {
         description: 'This elegant 3-bedroom residence in Sandton blends modern living with convenience. Featuring open-plan design, high-end finishes, and proximity to schools, shopping centers, and parks, it offers the perfect balance of comfort and sophistication for today\'s families.'
     };
 
-    const handleEnquirySubmit = () => {
-        setShowEnquiryForm(false);
+    const handleInquirySubmit = () => {
+        setShowInquiryForm(false);
         setShowOTPModal(true);
     };
 
@@ -62,7 +62,7 @@ const PropertyDetails = () => {
     const handleDocumentsUpload = (documents) => {
         console.log('Documents uploaded:', documents);
         setShowUploadDocs(false);
-        alert('Enquiry submitted successfully!');
+        alert('Inquiry submitted successfully!');
     };
 
     return (
@@ -210,12 +210,12 @@ const PropertyDetails = () => {
                                 </p>
                             </div>
 
-                            {/* Enquire Button */}
+                            {/* Inquire Button */}
                             <button
-                                onClick={() => setShowEnquiryForm(true)}
+                                onClick={() => setShowInquiryForm(true)}
                                 className="w-full py-4 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-xl hover:opacity-90 transition-opacity"
                             >
-                                Enquire/ Contact seller
+                                Inquire/ Contact seller
                             </button>
                         </div>
 
@@ -252,11 +252,11 @@ const PropertyDetails = () => {
                 </div>
             </div>
 
-            {/* Enquiry Form Modal */}
-            <EnquiryFormModal
-                isOpen={showEnquiryForm}
-                onClose={() => setShowEnquiryForm(false)}
-                onSubmit={handleEnquirySubmit}
+            {/* Inquiry Form Modal */}
+            <InquiryFormModal
+                isOpen={showInquiryForm}
+                onClose={() => setShowInquiryForm(false)}
+                onSubmit={handleInquirySubmit}
                 propertyTitle={property.title}
             />
 

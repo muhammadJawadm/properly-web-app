@@ -44,7 +44,7 @@ const BuyerSidebar = () => {
     const menuItems = [
         { icon: FaHome, label: 'Dashboard', path: '/buyer/dashboard' },
         { icon: FaList, label: 'Browse Property', path: '/buyer/browse' },
-        { icon: FaHandshake, label: 'Enquiries', path: '/buyer/enquiries' },
+        { icon: FaHandshake, label: 'Inquiries', path: '/buyer/inquiries' },
         { icon: FaGavel, label: 'Attorney', path: '/buyer/attorney' },
         { icon: FaLock, label: 'Vault', path: '/buyer/vault' }
     ];

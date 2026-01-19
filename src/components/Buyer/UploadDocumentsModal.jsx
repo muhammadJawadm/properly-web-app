@@ -51,7 +51,7 @@ const UploadDocumentsModal = ({ isOpen, onClose, onContinue }) => {
 
                     {/* Description */}
                     <p className="text-gray-300 text-sm mb-6">
-                        Attach your ID verification, proof of funds or proof of residence to strengthen your enquiry and speed up the seller's response.
+                        Attach your ID verification, proof of funds or proof of residence to strengthen your inquiry and speed up the seller's response.
                     </p>
 
                     {/* Upload Area */}

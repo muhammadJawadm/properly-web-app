@@ -58,7 +58,7 @@ const VacantLandDetails = ({ onContinue, onBack, formData }) => {
                     tags={bulkServices}
                     onAddTag={addService}
                     onRemoveTag={removeService}
-                    placeholder="water, sewer, power"
+                    placeholder="Bulk Services"
                 />
 
                 {/* Action Buttons */}

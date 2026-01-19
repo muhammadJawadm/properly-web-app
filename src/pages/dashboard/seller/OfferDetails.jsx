@@ -135,7 +135,7 @@ const OfferDetails = () => {
                     <div className="bg-gray-800/40 backdrop-blur-lg border border-gray-700 rounded-2xl p-4 sm:p-6 mb-6">
                         <h3 className="text-white font-semibold text-lg mb-4">Revision 1</h3>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 pb-4 border-b border-gray-700">
+                        <div className="grid grid-cols-1 h-[40vh] sm:grid-cols-2 gap-4 mb-4 pb-4 border-b border-gray-700">
                             <div>
                                 <p className="text-gray-400 text-xs sm:text-sm mb-1">Your offered price</p>
                                 <p className="text-white text-xl sm:text-2xl font-bold">R 1,250,000</p>

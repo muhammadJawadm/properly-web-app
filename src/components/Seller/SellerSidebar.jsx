@@ -47,7 +47,7 @@ const SellerSidebar = () => {
         { icon: FaHandshake, label: 'Offers', path: '/seller/offers' },
         { icon: FaBalanceScale, label: 'Attorney', path: '/seller/attorney' },
         { icon: FaGavel, label: 'Analytics', path: '/seller/analytics' },
-        { icon: FaBalanceScale, label: 'Enquiries', path: '/seller/enquiries' },
+        { icon: FaBalanceScale, label: 'Inquiries', path: '/seller/inquiries' },
         { icon: FaLock, label: 'Vault', path: '/seller/vault' }
     ];
 
@@ -143,14 +143,15 @@ const SellerSidebar = () => {
                     <div className="relative group">
                         <button
                             onClick={() => setShowAIChat(!showAIChat)}
-                            className="w-14 h-14 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                            className="w- h-14 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
                         >
-                            <img src={SplashLogo} alt="AI" className="w-10 h-10" />
+                            <img src={SplashLogo} alt="AI" className="w-28 h-20" />
+                            <h1 className="text-amber-800 border-2 border-amber-500 px-5 py-2 rounded-full bg-amber-300">Ask AI</h1>
                         </button>
                         {/* Tooltip */}
-                        <div className="absolute bottom-full ml-10 left-1/2 -translate-x-1/2 mb-2 px-4 py-4 bg-gray-800 text-amber-500 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                        <div className="absolute bottom-full ml-20 left-1/2 -translate-x-1/2 mb-2 px-4 py-4 bg-gray-800 text-amber-500 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
                             Ask AI Anything
-                            <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-800"></div>
+                            {/* <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-800"></div> */}
                         </div>
                     </div>
                 </div>

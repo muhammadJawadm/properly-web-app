@@ -9,10 +9,10 @@ const PreviewAndPublish = ({ onPublish, onBack, formData }) => {
         switch (section) {
             case 'ownership':
                 return {
-                    erfNumber: formData.erfNumber || 'N/A',
-                    streetName: formData.streetName || 'N/A',
-                    titleDeed: formData.titleDeedNumber || 'N/A',
-                    lifespanNumber: formData.lifespanNumber || 'N/A',
+                    erfNumber: formData.erfNumber || '213',
+                    streetName: formData.streetName || 'Stellenbosch',
+                    titleDeed: formData.titleDeedNumber || '213',
+                    lifespanNumber: formData.lifespanNumber || '213',
                     erfSize: formData.erfSize || '45,000 Hectares',
                     lifeOwnerStatus: formData.lifeOwnerStatus || 'Life owner verified'
                 };

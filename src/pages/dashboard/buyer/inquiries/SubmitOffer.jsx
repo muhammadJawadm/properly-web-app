@@ -49,7 +49,7 @@ const SubmitOffer = () => {
             return;
         }
         alert('Offer submitted successfully!');
-        navigate('/buyer/enquiries');
+        navigate('/buyer/inquiries');
     };
 
     return (

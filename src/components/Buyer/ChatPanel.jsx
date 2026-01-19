@@ -57,7 +57,7 @@ const ChatPanel = ({
                     </div>
                     <div className="flex items-center gap-2 text-xs">
                         <span className="text-gray-400">#</span>
-                        <span className="text-gray-300">{user.enquiryNumber}</span>
+                        <span className="text-gray-300">{user.inquiryNumber}</span>
                     </div>
                 </div>
 

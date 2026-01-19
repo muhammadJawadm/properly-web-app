@@ -37,6 +37,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
     const [parking, setParking] = useState('');
     const [zoningType, setZoningType] = useState('');
     const [businessAssets, setBusinessAssets] = useState([]);
+    const [businessAssetsOther, setBusinessAssetsOther] = useState('');
 
     // Hospitality fields
     const [hospitalityType, setHospitalityType] = useState('');
@@ -534,7 +535,31 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                                         <span className="text-gray-300 text-sm">{asset}</span>
                                     </label>
                                 ))}
+
+                                {/* Other Option */}
+                                <label className="flex items-center gap-2 cursor-pointer">
+                                    <input
+                                        type="checkbox"
+                                        checked={businessAssets.includes('other')}
+                                        onChange={() => toggleBusinessAsset('other')}
+                                        className="w-4 h-4 accent-amber-500"
+                                    />
+                                    <span className="text-gray-300 text-sm">Other</span>
+                                </label>
                             </div>
+
+                            {/* Other Text Input - Appears when Other is checked */}
+                            {businessAssets.includes('other') && (
+                                <div className="mt-3">
+                                    <input
+                                        type="text"
+                                        placeholder="Please specify other business assets..."
+                                        value={businessAssetsOther}
+                                        onChange={(e) => setBusinessAssetsOther(e.target.value)}
+                                        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500"
+                                    />
+                                </div>
+                            )}
                         </div>
                     </div>
                 )}
