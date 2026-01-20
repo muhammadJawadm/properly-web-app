@@ -75,8 +75,8 @@ const AttorneySelectionModal = ({ isOpen, onClose, crn, onConfirm }) => {
                     <button
                         onClick={() => setActiveTab('choose')}
                         className={`flex-1 py-3 px-4 rounded-full font-semibold transition-all ${activeTab === 'choose'
-                                ? 'bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black'
-                                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                            ? 'bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black'
+                            : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                             }`}
                     >
                         Choose attorney
@@ -84,8 +84,8 @@ const AttorneySelectionModal = ({ isOpen, onClose, crn, onConfirm }) => {
                     <button
                         onClick={() => setActiveTab('own')}
                         className={`flex-1 py-3 px-4 rounded-full font-semibold transition-all ${activeTab === 'own'
-                                ? 'bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black'
-                                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                            ? 'bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black'
+                            : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                             }`}
                     >
                         My own attorney
@@ -108,7 +108,7 @@ const AttorneySelectionModal = ({ isOpen, onClose, crn, onConfirm }) => {
                                 <option value="">Select</option>
                                 {partnerAttorneys.map((attorney) => (
                                     <option key={attorney.id} value={attorney.id}>
-                                        {attorney.name} - {attorney.firm}
+                                        {attorney.firm}
                                     </option>
                                 ))}
                             </select>

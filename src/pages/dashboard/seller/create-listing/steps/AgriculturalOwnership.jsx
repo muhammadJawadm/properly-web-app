@@ -38,11 +38,11 @@ const AgriculturalOwnership = ({ onContinue, onBack, formData }) => {
     };
 
     return (
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl  mx-auto">
             <div className="bg-gray-800/40 backdrop-blur-lg rounded-2xl p-8">
-                <div className="flex items-start justify-between mb-8">
+                <div className="flex items-start justify-between mb-8 gap-2">
                     <div>
-                        <h2 className="text-white text-2xl font-semibold mb-2">Agricultural Property</h2>
+                        <h2 className="text-white text-xl sm:text-2xl font-semibold mb-2 ">Agricultural Property</h2>
                         <p className="text-gray-400 text-sm">
                             Verify your agricultural property ownership through Lightstone Property.
                         </p>
@@ -55,7 +55,7 @@ const AgriculturalOwnership = ({ onContinue, onBack, formData }) => {
                 </div>
 
                 <div className="space-y-6">
-                    <div className="grid grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                         <FormInput
                             label="Number of title deed"
                             placeholder="2"
@@ -71,7 +71,7 @@ const AgriculturalOwnership = ({ onContinue, onBack, formData }) => {
                             onChange={(e) => setFarmName(e.target.value)}
                         />
                     </div>
-                    <div className='grid grid-cols-2 gap-6'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6'>
                         {/* Title Deed Numbers */}
                         {parseInt(numberOfTitleDeeds) > 0 && (
                             <div>

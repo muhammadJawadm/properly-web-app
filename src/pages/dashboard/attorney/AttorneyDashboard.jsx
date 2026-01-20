@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import { FaCheckCircle, FaClock, FaDownload, FaUpload, FaEllipsisV, FaPaperPlane, FaTimes } from 'react-icons/fa';
 import AttorneySidebar, { subscribeSidebarState } from '../../../components/Attorney/AttorneySidebar';
 import AttorneyHeader from '../../../components/Attorney/AttorneyHeader';
+import { useSidebarMargin } from '../../../hooks/useResponsive';
 
 const AttorneyDashboard = () => {
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+    const sidebarMargin = useSidebarMargin(sidebarCollapsed);
     const [activeTab, setActiveTab] = useState('buyer'); // 'buyer' or 'seller'
     const [otpUploaded, setOTPUploaded] = useState(false); // Toggle between states
     const [message, setMessage] = useState('');
@@ -133,7 +135,7 @@ const AttorneyDashboard = () => {
 
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
+                style={{ marginLeft: sidebarMargin }}
             >
                 <AttorneyHeader title="Dashboard" showNotifications={true} onNotificationClick={() => setShowNotifications(!showNotifications)} />
 

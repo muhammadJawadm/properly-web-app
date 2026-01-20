@@ -6,11 +6,13 @@ import Header from '../../../../components/common/Header';
 import InquiryFormModal from '../../../../components/Buyer/InquiryFormModal';
 import OTPVerificationModal from '../../../../components/Buyer/OTPVerificationModal';
 import UploadDocumentsModal from '../../../../components/Buyer/UploadDocumentsModal';
+import { useSidebarMargin } from '../../../../hooks/useResponsive';
 
 const PropertyDetails = () => {
     const navigate = useNavigate();
     const { propertyId } = useParams();
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+    const sidebarMargin = useSidebarMargin(sidebarCollapsed);
     const [showInquiryForm, setShowInquiryForm] = useState(false);
     const [showOTPModal, setShowOTPModal] = useState(false);
     const [showUploadDocs, setShowUploadDocs] = useState(false);
@@ -71,7 +73,7 @@ const PropertyDetails = () => {
 
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
+                style={{ marginLeft: sidebarMargin }}
             >
                 <Header
                     title="Browse Property"

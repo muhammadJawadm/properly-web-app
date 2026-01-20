@@ -62,7 +62,7 @@ const Pricing = ({ onContinue, onBack, formData }) => {
                     </>
                 ) : (
                     <>
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label className="block text-white mb-2 text-sm">Asking Price</label>
                                 <div className="px-4 py-3 bg-gray-800/60 border border-gray-700 rounded-lg">
@@ -86,19 +86,19 @@ const Pricing = ({ onContinue, onBack, formData }) => {
                                 Based on Lightstone verified recently sold properties in your area.
                             </p>
 
-                            <div className="bg-gray-900/50 rounded-xl overflow-hidden">
+                            <div className="bg-gray-900/50 rounded-xl ">
                                 <table className="w-full">
                                     <thead>
                                         <tr className="border-b border-gray-700 ">
-                                            <th className="text-left px-24 py-4 text-white text-sm font-medium">Property Type</th>
-                                            <th className="text-right px-24 py-4 text-white text-sm font-medium">Average Price</th>
+                                            <th className="text-left px-2 md:px-10 py-4 text-white text-sm font-medium">Property Type</th>
+                                            <th className="text-right px-2 md:px-10 py-4 text-white text-sm font-medium">Average Price</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {averagePrices.map((item, index) => (
                                             <tr key={index} className="border-b border-gray-800 last:border-0">
-                                                <td className="px-24 py-4 text-white">{item.type}</td>
-                                                <td className="px-24 py-4 text-white text-right font-semibold">{item.price}</td>
+                                                <td className="px-2 md:px-10 py-4 text-white text-sm md:text-base">{item.type}</td>
+                                                <td className="px-2 md:px-10 py-4 text-white text-sm md:text-base text-right font-semibold">{item.price}</td>
                                             </tr>
                                         ))}
                                     </tbody>

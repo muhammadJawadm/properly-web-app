@@ -88,7 +88,7 @@ const LegalDisclosures = ({ onContinue, onBack, formData }) => {
                 </div>
 
                 {/* Grid Layout */}
-                <div className="border-t border-gray-700 pt-6 grid grid-cols-2 gap-6">
+                <div className="border-t border-gray-700 pt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Structural Defects */}
                     <div>
                         <label className="block text-white mb-2 text-sm">Are there any known structural or legal defects to disclose?</label>
@@ -150,7 +150,7 @@ const LegalDisclosures = ({ onContinue, onBack, formData }) => {
                 {/* Joint Ownership Consent */}
                 <div className="border-t border-gray-700 pt-6">
                     <h3 className="text-white text-xl font-semibold mb-4 mt-6">Joint ownership Consent</h3>
-                    <div className='grid grid-cols-2 gap-6'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                         <div className="mb-6">
                             <label className="block text-white mb-6 text-sm">Is joint ownership consent required for this sale?</label>
                             <div className="flex gap-16">

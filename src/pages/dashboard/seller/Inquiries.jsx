@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { FaPaperPlane, FaCheckCircle, FaEnvelope, FaCalendar, FaHashtag, FaFileAlt, FaTimes, FaChevronDown } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
 import Header from '../../../components/common/Header';
+import { useSidebarMargin } from '../../../hooks/useResponsive';
 
 const Inquiries = () => {
     const [activeTab, setActiveTab] = useState('All');
@@ -9,6 +10,7 @@ const Inquiries = () => {
     const [message, setMessage] = useState('');
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
     const [showNotifications, setShowNotifications] = useState(false);
+    const sidebarMargin = useSidebarMargin(sidebarCollapsed);
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
@@ -36,7 +38,7 @@ const Inquiries = () => {
             {/* Main Content */}
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
+                style={{ marginLeft: sidebarMargin }}
             >
                 <Header
                     title="Inquiries"
@@ -103,7 +105,7 @@ const Inquiries = () => {
                                 <div>
                                     <h6 className="text-white font-semibold mb-1">3 bedroom family home in Sandton</h6>
                                     <p className="text-amber-500 font-bold text-lg mb-2">R2,500,000</p>
-                                    <div className="flex gap-4 text-gray-400 text-sm">
+                                    <div className="flex flex-col md:flex-row gap-4 text-gray-400 text-sm">
                                         <span>• 3 Beds</span>
                                         <span>• 5 Bathrooms</span>
                                         <span>• 2 Garages</span>

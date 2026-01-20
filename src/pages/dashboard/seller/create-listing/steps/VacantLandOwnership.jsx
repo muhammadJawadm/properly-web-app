@@ -43,7 +43,7 @@ const VacantLandOwnership = ({ onContinue, onBack, formData }) => {
                 </div>
 
                 <div className="space-y-6">
-                    <div className="grid grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <FormInput
                             label="Street address (Only if applicable)"
                             placeholder="e.g Street Mario"
@@ -58,7 +58,7 @@ const VacantLandOwnership = ({ onContinue, onBack, formData }) => {
                             onChange={(e) => setErfNumber(e.target.value)}
                         />
                     </div>
-                    <div className='grid grid-cols-2 gap-6'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                         <FormInput
                             label="Title Deed Number (Optional)"
                             placeholder="Enter Number"

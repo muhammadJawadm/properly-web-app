@@ -5,10 +5,12 @@ import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buye
 import Header from '../../../../components/common/Header';
 import PropertyCard from '../../../../components/Buyer/PropertyCard';
 import AdvancedSearchPanel from '../../../../components/Buyer/AdvancedSearchPanel';
+import { useSidebarMargin } from '../../../../hooks/useResponsive';
 
 const BrowseProperties = () => {
     const navigate = useNavigate();
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+    const sidebarMargin = useSidebarMargin(sidebarCollapsed);
     const [showAdvancedSearch, setShowAdvancedSearch] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [isFiltered, setIsFiltered] = useState(false);
@@ -110,7 +112,7 @@ const BrowseProperties = () => {
 
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
+                style={{ marginLeft: sidebarMargin }}
             >
                 <Header
                     title="Browse Properties"

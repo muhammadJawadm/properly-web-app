@@ -26,6 +26,18 @@ const BuyerSidebar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [showAIChat, setShowAIChat] = useState(false);
 
+    // Handle window resize to auto-close mobile menu on desktop
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1024 && isMobileMenuOpen) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [isMobileMenuOpen]);
+
     // Notify listeners when collapse state changes
     useEffect(() => {
         sidebarState.isCollapsed = isCollapsed;

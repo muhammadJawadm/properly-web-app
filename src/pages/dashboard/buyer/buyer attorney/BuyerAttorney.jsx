@@ -3,9 +3,11 @@ import { FaUpload, FaDownload, FaCheckCircle, FaClock, FaEnvelope } from 'react-
 import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
 import Header from '../../../../components/common/Header';
 import FICAComplianceModal from '../../../../components/Buyer/FICAComplianceModal';
+import { useSidebarMargin } from '../../../../hooks/useResponsive';
 
 const BuyerAttorney = () => {
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+    const sidebarMargin = useSidebarMargin(sidebarCollapsed);
     const [showFICAModal, setShowFICAModal] = useState(false);
 
     useEffect(() => {
@@ -110,7 +112,7 @@ const BuyerAttorney = () => {
             {/* Main Content */}
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
+                style={{ marginLeft: sidebarMargin }}
             >
                 <Header title="Attorney" showNotifications={true} />
 

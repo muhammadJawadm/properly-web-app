@@ -5,10 +5,12 @@ import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller
 import Header from '../../../components/common/Header';
 import { FaTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa';
 import StatsCard from '../../../components/Seller/StatsCard';
+import { useSidebarMargin } from '../../../hooks/useResponsive';
 
 const Analytics = () => {
     const navigate = useNavigate();
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+    const sidebarMargin = useSidebarMargin(sidebarCollapsed);
     const [showNotifications, setShowNotifications] = useState(false);
     // Separate state for each card
     const [linkedInPeriod, setLinkedInPeriod] = useState('This Month');
@@ -48,7 +50,7 @@ const Analytics = () => {
             {/* Main Content */}
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
+                style={{ marginLeft: sidebarMargin }}
             >
                 <Header
                     title="Analytics"

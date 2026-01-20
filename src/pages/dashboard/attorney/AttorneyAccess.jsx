@@ -112,7 +112,7 @@ const AttorneyAccess = () => {
                                     name="firmRegistration"
                                     value={formData.firmRegistration}
                                     onChange={handleInputChange}
-                                    placeholder="Firm registrations number(Optional)"
+                                    placeholder="Firm registrations(Optional)"
                                     className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500 transition-colors"
                                 />
                             </div>

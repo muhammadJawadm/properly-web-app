@@ -57,7 +57,7 @@ const ResidentialOwnership = ({ onContinue, onBack, formData }) => {
                     </p>
 
                     <div className="space-y-10">
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 gap-6">
                             <FormInput
                                 label="Add town"
                                 placeholder="e.g Street Mario"
@@ -73,7 +73,7 @@ const ResidentialOwnership = ({ onContinue, onBack, formData }) => {
                             />
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 gap-6">
                             <FormInput
                                 label="Street Number"
                                 placeholder="Enter Number"
@@ -112,7 +112,7 @@ const ResidentialOwnership = ({ onContinue, onBack, formData }) => {
                             You ownership is confirmed. The following details are automatically retrieved from Lightstone records.
                         </p>
 
-                        <div className="grid grid-cols-3 gap-6 mb-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
                             <div>
                                 <p className="text-white font-medium">Erf Size</p>
                                 <p className="text-gray-400 text-sm mt-1">45,000 m²</p>
@@ -127,7 +127,7 @@ const ResidentialOwnership = ({ onContinue, onBack, formData }) => {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-3 gap-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                             <div>
                                 <p className="text-white font-medium">Town</p>
                                 <p className="text-gray-400 text-sm mt-1">Stellenbosch</p>

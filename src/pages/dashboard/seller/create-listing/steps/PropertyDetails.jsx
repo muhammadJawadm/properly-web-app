@@ -173,7 +173,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                 </div>
 
                 {/* Auto-filled Data */}
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <FormInput label="ERF Size" value="45,000 m²" onChange={() => { }} helperText="(Auto-filled from Lightstone)" />
                     <FormInput label="Suburb" value="Town Devon Valley" onChange={() => { }} helperText="(Auto-filled from Lightstone)" />
                     <FormInput label="Town" value="Stellenbosch" onChange={() => { }} helperText="(Auto-filled from Lightstone)" />
@@ -181,8 +181,8 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                 </div>
 
                 {/* Electricity Supply */}
-                <div className="grid grid-cols-2 gap-6">
-                    <div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="md:col-span-2">
                         <label className="block text-white mb-2 text-sm">Electricity Supply:</label>
                         <div className="space-y-2">
                             <label className="flex items-center gap-2 cursor-pointer">
@@ -270,8 +270,8 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                 </div>
 
                 {/* Seller Description */}
-                <div className="grid grid-cols-2 gap-6">
-                    <div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="md:col-span-2">
                         <label className="block text-white mb-2 text-sm">Seller Description / Special Features</label>
                         <textarea
                             placeholder="Highlight upgrades, special features, history, or unique aspects of your property..."
@@ -331,7 +331,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             <p className="text-gray-400 text-sm">Since your property is residential please fill out more details.</p>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <NumberCounter
                                 label="Bedrooms"
                                 orangeLabel="Add More"
@@ -348,7 +348,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             />
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <NumberCounter
                                 label="Bathrooms"
                                 orangeLabel="Add More"
@@ -358,7 +358,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             />
                             <div>
                                 <label className="block text-white mb-4 text-sm">Categories</label>
-                                <div className="flex gap-24">
+                                <div className="flex gap-10  md:gap-24">
                                     <label className="flex items-center gap-2 cursor-pointer">
                                         <input
                                             type="radio"
@@ -385,7 +385,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <FormInput
                                 label="Outbuildings or flatlets"
                                 placeholder="e.g. 1"
@@ -399,7 +399,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                                 onChange={(e) => setGatesLevies(e.target.value)}
                             />
                         </div>
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <TagInput
                                 label="Conveniences"
                                 tags={conveniences}
@@ -427,7 +427,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             <p className="text-gray-400 text-sm">Since your property is commercial please fill out more details.</p>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <FormSelect
                                 label="Type of commercial property"
                                 value={commercialType}
@@ -447,7 +447,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             />
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <FormInput
                                 label="Monthly rental income (Optional)"
                                 placeholder=""
@@ -462,7 +462,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             />
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label className="block text-white mb-2 text-sm">Lease Terms (Optional)</label>
                                 <select className="w-full px-4 py-3 bg-gray-800/60 border border-gray-700 rounded-lg text-white">
@@ -479,7 +479,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             />
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <FormInput
                                 label="Building Power"
                                 value={buildingPower}
@@ -492,7 +492,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             />
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label className="block text-white mb-2 text-sm">Is the property being sold as a going concern?</label>
                                 <div className="flex gap-4">
@@ -572,7 +572,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             <p className="text-gray-400 text-sm">Since your property is hospitable please fill out more details.</p>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <FormSelect
                                 label="Type of hospitality"
                                 value={hospitalityType}
@@ -593,7 +593,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             />
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label className="block text-white mb-2 text-sm">Operational</label>
                                 <div className="flex gap-4">
@@ -640,7 +640,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <TagInput
                                 label="Facilities"
                                 tags={facilities}
@@ -664,7 +664,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             <p className="text-gray-400 text-sm">Since your property is agricultural please fill out more details.</p>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <FormSelect
                                 label="Type of farming"
                                 value={farmingType}
@@ -705,7 +705,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label className="block text-white mb-2 text-sm">Are there any land claims on the property?</label>
                                 <div className="flex gap-4">
@@ -761,7 +761,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='grid grid-cols-2 gap-6'>
+                        <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                             {/* Pin Locations */}
                             <div>
                                 <div className="flex items-center justify-between mb-2">
@@ -828,7 +828,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             <p className="text-gray-400 text-sm">Since your property is agricultural please fill out more details.</p>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <FormSelect
                                 label="Zoning Type(Optional)"
                                 value={zoningType}

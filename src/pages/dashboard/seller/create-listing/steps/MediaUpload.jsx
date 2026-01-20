@@ -40,7 +40,7 @@ const MediaUpload = ({ onContinue, onBack, formData, onShowBrochure }) => {
                 </div>
 
                 {/* Upload Sections */}
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {/* Photo Upload */}
                     <div>
                         <input
@@ -121,7 +121,7 @@ const MediaUpload = ({ onContinue, onBack, formData, onShowBrochure }) => {
                                 <FaEdit size={14} />
                                 <span>Edit</span>
                             </button>
-                            <p className="text-gray-300 p-12 pr-24 text-sm leading-relaxed">{aiDescription}</p>
+                            <p className="text-gray-300 p-6 lg:p-12 lg:pr-24 text-sm leading-relaxed">{aiDescription}</p>
                             <button
                                 onClick={handleRegenerateDescription}
                                 className="pl-6 pb-3 text-amber-500 hover:text-amber-400 text-sm font-medium"

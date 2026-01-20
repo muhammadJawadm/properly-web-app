@@ -66,14 +66,14 @@ const FillOfflineModal = ({ isOpen, onClose, onUpload, onAccept }) => {
                             {/* Download Document */}
                             <div className="bg-gray-700/30 rounded-xl p-6">
                                 <h3 className="text-white font-semibold mb-4">Download Document</h3>
-                                <div className="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg">
-                                    <div className="flex items-center gap-3">
+                                <div className="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-800/50 rounded-lg">
+                                    <div className="flex flex-col md:flex-row items-center gap-3">
                                         <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center">
                                             <span className="text-red-500 font-bold text-sm">PDF</span>
                                         </div>
                                         <div>
                                             <p className="text-white font-medium">Condition report & Defects Disclosure</p>
-                                            <p className="text-gray-400 text-sm">(PDF)</p>
+                                            <p className="text-gray-400 text-sm hidden md:block">(PDF)</p>
                                         </div>
                                     </div>
                                     <button className="px-6 py-2 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-lg hover:opacity-90 transition-opacity">
@@ -116,7 +116,7 @@ const FillOfflineModal = ({ isOpen, onClose, onUpload, onAccept }) => {
                                     <span className="font-semibold">File Status:</span> No file uploaded yet
                                 </p>
                             </div>
-                            <div className="flex justify-end gap-4 pt-4">
+                            <div className="flex items-center md:justify-end justify-center gap-4 pt-4">
                                 {/* <button
                                     onClick={onClose}
                                     className="px-6 py-3 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-600 transition-colors"
@@ -338,7 +338,7 @@ const FillOfflineModal = ({ isOpen, onClose, onUpload, onAccept }) => {
 
                                 {/* Signature Section */}
                                 <div className="bg-gray-700/30 rounded-xl p-6 space-y-4">
-                                    <div className="grid grid-cols-2 gap-6">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
                                             <label className="text-white font-medium block mb-2">Dated at</label>
                                             <input

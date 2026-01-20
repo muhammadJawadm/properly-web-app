@@ -9,7 +9,7 @@ const VerificationSuccessModal = ({ isOpen, onContinue }) => {
             <div className="absolute inset-0 bg-black bg-opacity-75 backdrop-blur-sm" />
 
             {/* Modal */}
-            <div className="relative bg-gray-800 rounded-2xl p-12 sm:p-12 w-full max-w-md text-center">
+            <div className="relative bg-gray-800 rounded-2xl p-12 sm:p-12 w-full max-w-md max-h-[90vh] overflow-y-auto text-center">
                 {/* Green Checkmark */}
                 <div className="mb-16 flex justify-center">
                     <div className="w-20 h-20 rounded-full bg-green-500 flex items-center justify-center">

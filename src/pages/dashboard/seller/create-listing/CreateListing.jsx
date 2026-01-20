@@ -26,10 +26,12 @@ import OTPVerification from './components/OTPVerification';
 import ListingLiveModal from './components/ListingLiveModal';
 import AIGuide from './components/AIGuide';
 import { useEffect } from 'react';
+import { useSidebarMargin } from '../../../../hooks/useResponsive';
 
 const CreateListing = () => {
     const navigate = useNavigate();
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+    const sidebarMargin = useSidebarMargin(sidebarCollapsed);
     const [currentStep, setCurrentStep] = useState(0);
     const [formData, setFormData] = useState({});
     const [showAIGuide, setShowAIGuide] = useState(false);
@@ -205,7 +207,7 @@ const CreateListing = () => {
 
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
+                style={{ marginLeft: sidebarMargin }}
             >
                 <Header
                     title="Create Listing"

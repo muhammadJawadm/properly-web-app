@@ -5,7 +5,7 @@ const LoadingModal = ({ title, message, isOpen }) => {
 
     return (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
-            <div className="bg-gray-800/90 rounded-2xl p-16 py-36 max-w-xl w-full mx-2 relative">
+            <div className="bg-gray-800/90 rounded-2xl h-[90vh] overflow-y-auto p-16 py-36 max-w-xl w-full mx-2 relative">
                 {/* Loading Spinner */}
                 <div className="flex justify-center mb-12">
                     <div className="grid grid-cols-2 gap-4">

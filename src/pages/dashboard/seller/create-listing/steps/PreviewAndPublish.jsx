@@ -54,8 +54,8 @@ const PreviewAndPublish = ({ onPublish, onBack, formData }) => {
 
                 {/* Ownership Verification Status */}
                 <div className="bg-gray-800/40 backdrop-blur-lg rounded-2xl p-6">
-                    <div className="flex items-center justify-between">
-                        <h3 className="text-white font-semibold">Ownership verification Status</h3>
+                    <div className="flex-row sm:flex items-center justify-between ">
+                        <h3 className="text-white font-semibold mb-5 sm:mb-0">Ownership verification Status</h3>
                         {verificationStatus === 'verified' ? (
                             <div className="flex items-center gap-2 px-4 py-2 bg-green-500/20 border border-green-500 rounded-lg">
                                 <FaCheckCircle className="text-green-500" size={16} />
@@ -86,20 +86,20 @@ const PreviewAndPublish = ({ onPublish, onBack, formData }) => {
                             <span>Edit</span>
                         </button>
                     </div>
-                    <div className="grid grid-cols-4 gap-4 text-sm">
-                        <div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                        <div className="col-span-4 md:col-span-2 lg:col-span-1">
                             <p className="text-gray-400 mb-1">Erf / Stand #</p>
                             <p className="text-white">{ownershipData.erfNumber}</p>
                         </div>
-                        <div>
+                        <div className="col-span-4 md:col-span-2 lg:col-span-1">
                             <p className="text-gray-400 mb-1">Street Name</p>
                             <p className="text-white">{ownershipData.streetName}</p>
                         </div>
-                        <div>
+                        <div className="col-span-4 md:col-span-2 lg:col-span-1">
                             <p className="text-gray-400 mb-1">LRFT Standalone Number</p>
                             <p className="text-white">{ownershipData.titleDeed}</p>
                         </div>
-                        <div>
+                        <div className="col-span-4 md:col-span-2 lg:col-span-1">
                             <p className="text-gray-400 mb-1">Lightstone verified</p>
                             <p className="text-white">{ownershipData.lifespanNumber}</p>
                         </div>
@@ -113,7 +113,7 @@ const PreviewAndPublish = ({ onPublish, onBack, formData }) => {
                     <div className="flex items-center justify-between border-t border-gray-600 mt-8 pt-4 mb-4">
                         <h3 className="text-white font-semibold">Auto-Filled Data (From lightstone)</h3>
                     </div>
-                    <div className="grid grid-cols-3 gap-4 text-sm">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm">
                         <div>
                             <p className="text-gray-400 mb-1">Erf Number</p>
                             <p className="text-white">{autoFilledData.erfNumber}</p>
@@ -152,7 +152,7 @@ const PreviewAndPublish = ({ onPublish, onBack, formData }) => {
                     </div>
                     <div className="space-y-4">
                         {/* Electricity Supply */}
-                        <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div className="grid grid-cols-1 sm:grid-cols-2  gap-4 text-sm">
                             <div>
                                 <p className="text-gray-400 mb-1">Electricity Supply</p>
                                 <p className="text-white">{formData.electricitySupply || 'Eskom'}</p>
@@ -178,7 +178,7 @@ const PreviewAndPublish = ({ onPublish, onBack, formData }) => {
                     <div className="flex items-center justify-between mb-4">
                         <h3 className="text-white font-semibold">Residential Property</h3>
                     </div>
-                    <div className="grid grid-cols-6 gap-4 text-sm">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-sm">
                         <div className="flex flex-col items-center">
                             <p className="text-gray-400 mb-1 text-sm">Bedrooms</p>
                             <div className="w-12 h-12 rounded-full bg-amber-500 border border-gray-600 flex items-center justify-center">
@@ -197,21 +197,21 @@ const PreviewAndPublish = ({ onPublish, onBack, formData }) => {
                                 <p className="text-black font-semibold text-lg">{residentialData.garages}</p>
                             </div>
                         </div>
-                        <div>
+                        <div className='flex flex-col items-center'>
                             <p className="text-gray-400 mb-4">Category</p>
                             <p className="text-white">{residentialData.category}</p>
                         </div>
-                        <div>
+                        <div className='flex flex-col items-center'>
                             <p className="text-gray-400 mb-4">Outbuildings</p>
                             <p className="text-white">{residentialData.outbuildings}</p>
                         </div>
-                        <div>
+                        <div className='flex flex-col items-center'>
                             <p className="text-gray-400 mb-4">Rates & Levies</p>
                             <p className="text-white">{residentialData.ratesLevies}</p>
                         </div>
                     </div>
 
-                    <div className="mt-6 space-y-4 flex gap-20">
+                    <div className="mt-6 space-y-4 md:flex gap-20">
                         <div className="text-sm mt-4">
                             <p className="text-gray-400 mb-4">Security Features</p>
                             <div className="flex flex-wrap gap-4">
@@ -249,7 +249,7 @@ const PreviewAndPublish = ({ onPublish, onBack, formData }) => {
                     <p className="text-gray-400 text-sm mb-4">
                         Properly uses a transparent, factor-based pricing model to calculate your property's final listing price.
                     </p>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                         <div>
                             <p className="text-white mb-1">Asking price</p>
                             <p className="text-white font-semibold text-lg border border-gray-600 p-2 rounded-lg bg-gray-700/50">{formData.askingPrice || 'R750,000'}</p>
@@ -276,7 +276,7 @@ const PreviewAndPublish = ({ onPublish, onBack, formData }) => {
                             <span>Edit</span>
                         </button>
                     </div>
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                         {/* Photo thumbnails */}
                         <div className="aspect-square bg-gray-700/30 rounded-lg overflow-hidden">
                             <img

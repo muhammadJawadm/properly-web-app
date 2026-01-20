@@ -4,11 +4,13 @@ import { FaEye, FaQuestionCircle, FaList, FaTimes } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
 import Header from '../../../components/common/Header';
 import StatsCard from '../../../components/Seller/StatsCard';
+import { useSidebarMargin } from '../../../hooks/useResponsive';
 
 const SellerDashboard = () => {
     const navigate = useNavigate();
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
     const [showNotifications, setShowNotifications] = useState(false);
+    const sidebarMargin = useSidebarMargin(sidebarCollapsed);
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
@@ -34,7 +36,7 @@ const SellerDashboard = () => {
             {/* Main Content */}
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
+                style={{ marginLeft: sidebarMargin }}
             >
                 <Header
                     title="Dashboard"

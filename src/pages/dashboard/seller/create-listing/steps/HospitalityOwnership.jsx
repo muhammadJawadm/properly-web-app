@@ -57,7 +57,7 @@ const HospitalityOwnership = ({ onContinue, onBack, formData }) => {
                     </p>
 
                     <div className="space-y-10">
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <FormInput
                                 label="Property/Establishment Name"
                                 placeholder="e.g. Sunset Lodge"
@@ -73,7 +73,7 @@ const HospitalityOwnership = ({ onContinue, onBack, formData }) => {
                             />
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <FormInput
                                 label="Street Address"
                                 placeholder="Enter full street address"
@@ -112,7 +112,7 @@ const HospitalityOwnership = ({ onContinue, onBack, formData }) => {
                             Your ownership is confirmed. The following details are automatically retrieved from Lightstone records.
                         </p>
 
-                        <div className="grid grid-cols-3 gap-6 mb-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
                             <div>
                                 <p className="text-white font-medium">Property Type</p>
                                 <p className="text-gray-400 text-sm mt-1">Guest House</p>
@@ -127,7 +127,7 @@ const HospitalityOwnership = ({ onContinue, onBack, formData }) => {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-3 gap-2 mb-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-6">
                             <div>
                                 <p className="text-white font-medium">Town</p>
                                 <p className="text-gray-400 text-sm mt-1">Cape Town</p>

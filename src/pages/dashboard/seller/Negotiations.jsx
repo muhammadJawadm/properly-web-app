@@ -6,11 +6,13 @@ import Header from '../../../components/common/Header';
 import CRNModal from '../../../components/Seller/CRNModal';
 import AttorneySelectionModal from '../../../components/Seller/AttorneySelectionModal';
 import AttorneyNotificationModal from '../../../components/Seller/AttorneyNotificationModal';
+import { useSidebarMargin } from '../../../hooks/useResponsive';
 
 const Negotiations = () => {
     const navigate = useNavigate();
     const { offerId } = useParams();
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+    const sidebarMargin = useSidebarMargin(sidebarCollapsed);
     const [message, setMessage] = useState('');
     const [counterAmount, setCounterAmount] = useState('');
     const [counterCondition, setCounterCondition] = useState('');
@@ -84,7 +86,7 @@ const Negotiations = () => {
             {/* Main Content */}
             <div
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
-                style={{ marginLeft: window.innerWidth >= 1024 ? (sidebarCollapsed ? '6rem' : '16rem') : '0rem' }}
+                style={{ marginLeft: sidebarMargin }}
             >
                 <Header
                     title="Offers"
