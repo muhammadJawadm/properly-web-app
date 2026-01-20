@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaHome, FaList, FaGavel, FaBalanceScale, FaLock, FaBars, FaTimes, FaHandshake } from 'react-icons/fa';
 import SplashLogo from '../../assets/Splashlogo2.png';
+import AIchatlogo from '../../assets/group.png';
 import AIChat from '../common/AIChat';
 
 // Create a global state for sidebar collapse
@@ -149,13 +150,13 @@ const BuyerSidebar = () => {
                 </nav>
 
                 {/* Ask AI Button */}
-                <div className="p-4 flex ">
+                <div className="p-1 flex ">
                     <div className="relative group">
                         <button
                             onClick={() => setShowAIChat(!showAIChat)}
-                            className="w-14 h-14 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                            className="w-48 h-48 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
                         >
-                            <img src={SplashLogo} alt="AI" className="w-10 h-10" />
+                            <img src={AIchatlogo} alt="AI" className="w-full h-full" />
                         </button>
                         {/* Tooltip */}
                         <div className="absolute bottom-full ml-10 left-1/2 -translate-x-1/2 mb-2 px-4 py-4 bg-gray-800 text-amber-500 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">

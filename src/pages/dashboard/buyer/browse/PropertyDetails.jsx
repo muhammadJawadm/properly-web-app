@@ -222,7 +222,7 @@ const PropertyDetails = () => {
                         </div>
 
                         {/* App Download Banner - Right Side on Desktop */}
-                        <div className="lg:sticky lg:top-6 h-fit">
+                        {/* <div className="lg:sticky lg:top-6 h-fit">
                             <div className="bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl p-6 text-center">
                                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <FaPhoneAlt className="text-white" size={32} />
@@ -233,22 +233,24 @@ const PropertyDetails = () => {
                                     GET APP
                                 </button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* App Download Banner - Bottom on Mobile */}
-                    <div className="lg:hidden mt-6">
+                    <div className="mt-6">
                         <div className="bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl p-6 flex items-center gap-4">
                             <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
                                 <FaPhoneAlt className="text-white" size={28} />
                             </div>
-                            <div className="flex-1">
-                                <p className="text-black text-xs mb-1">To Access Messaging And Chat Features</p>
-                                <h3 className="text-black text-xl font-bold">DOWNLOAD APP</h3>
+                            <div className="flex flex-col md:flex-row">
+                                <div className="flex flex-col">
+                                    <p className="text-black text-xs mb-1">To Access Messaging And Chat Features</p>
+                                    <h3 className="text-black text-xl font-bold">DOWNLOAD APP</h3>
+                                </div>
+                                <button className="px-6 py-3 bg-black text-white font-semibold rounded-xl hover:opacity-90 transition-opacity flex-shrink-0">
+                                    GET APP
+                                </button>
                             </div>
-                            <button className="px-6 py-3 bg-black text-white font-semibold rounded-xl hover:opacity-90 transition-opacity flex-shrink-0">
-                                GET APP
-                            </button>
                         </div>
                     </div>
                 </div>

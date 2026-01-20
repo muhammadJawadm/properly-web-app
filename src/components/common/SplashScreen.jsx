@@ -1,5 +1,5 @@
 import SplashBg from "../../assets/SplashBg.png";
-import SplashLogo from "../../assets/Splashlogo3.png";
+import SplashLogo from "../../assets/Group5.png";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useRole } from "../../context/RoleContext";
@@ -29,7 +29,7 @@ const SplashScreen = () => {
                         <img
                             src={SplashLogo}
                             alt="Properly Real Estate Logo"
-                            className="w-[280px] h-auto object-contain"
+                            className="w-[350px] h-auto object-contain"
                         />
                     </div>
 
@@ -95,7 +95,7 @@ const SplashScreen = () => {
                         <img
                             src={SplashLogo}
                             alt="Properly Real Estate Logo"
-                            className="w-[500px] md:w-[700px] lg:w-[1000px] h-auto object-contain"
+                            className="w-[700px] md:w-[900px] lg:w-[1300px] h-[100vh] object-contain"
                         />
                     </div>
                 </div>
