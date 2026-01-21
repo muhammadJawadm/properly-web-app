@@ -10,7 +10,7 @@ const AttorneyDashboard = () => {
     const [activeTab, setActiveTab] = useState('buyer'); // 'buyer' or 'seller'
     const [otpUploaded, setOTPUploaded] = useState(false); // Toggle between states
     const [message, setMessage] = useState('');
-    const [showNotifications, setShowNotifications] = useState(true);
+    const [showNotifications, setShowNotifications] = useState(false);
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
@@ -137,7 +137,7 @@ const AttorneyDashboard = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: sidebarMargin }}
             >
-                <AttorneyHeader title="Dashboard" showNotifications={true} onNotificationClick={() => setShowNotifications(!showNotifications)} />
+                <AttorneyHeader title="Dashboard" showNotifications={false} onNotificationClick={() => setShowNotifications(!showNotifications)} />
 
                 <div className="p-4 sm:p-6 md:p-8">
                     {/* Upper Grid - Timeline on right of CRN/Upload/Progress */}
@@ -195,7 +195,7 @@ const AttorneyDashboard = () => {
                                 <h3 className="text-xl font-semibold text-white mb-4">Upload Final Signed OTP</h3>
 
                                 {!otpUploaded ? (
-                                    <div className="flex items-center justify-between p-4 bg-gray-700/40 rounded-lg">
+                                    <div className="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-700/40 rounded-lg">
                                         <div className="flex items-center gap-3">
                                             <div className="w-10 h-10 bg-gray-600 rounded-lg flex items-center justify-center">
                                                 <FaUpload className="text-gray-300" />
@@ -314,7 +314,7 @@ const AttorneyDashboard = () => {
                         <div className="bg-gray-800/60 backdrop-blur-lg rounded-2xl p-6 border border-gray-700/50">
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                                 <h3 className="text-xl font-semibold text-white">Documents</h3>
-                                <div className="flex items-center gap-3">
+                                <div className="flex flex-col md:flex-row  items-start gap-3">
                                     <select className="px-4 py-2 bg-gray-700/60 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:border-amber-500">
                                         <option>Document Type</option>
                                         <option>Identity Documents</option>

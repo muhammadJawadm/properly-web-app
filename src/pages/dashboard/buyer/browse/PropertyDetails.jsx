@@ -237,19 +237,50 @@ const PropertyDetails = () => {
                     </div>
 
                     {/* App Download Banner - Bottom on Mobile */}
-                    <div className="mt-6">
-                        <div className="bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl p-6 flex items-center gap-4">
-                            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <FaPhoneAlt className="text-white" size={28} />
-                            </div>
-                            <div className="flex flex-col md:flex-row">
-                                <div className="flex flex-col">
-                                    <p className="text-black text-xs mb-1">To Access Messaging And Chat Features</p>
-                                    <h3 className="text-black text-xl font-bold">DOWNLOAD APP</h3>
+                    <div className="mt-8 w-full lg:w-2/3">
+                        <div className="relative group overflow-hidden rounded-3xl shadow-2xl hover:shadow-amber-500/20 transition-all duration-500">
+                            {/* Animated gradient background */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 opacity-100 group-hover:opacity-90 transition-opacity duration-300"></div>
+
+                            {/* Glassmorphism overlay effect */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+
+                            {/* Subtle pattern overlay */}
+                            <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
+
+                            {/* Content */}
+                            <div className="relative flex flex-col sm:flex-row items-center gap-4 sm:gap-6 p-6 sm:p-8">
+                                {/* Icon Container with animation */}
+                                <div className="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 bg-white/25 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border-2 border-white/30">
+                                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-full flex items-center justify-center">
+                                        <FaPhoneAlt className="text-white drop-shadow-lg" size={32} />
+                                    </div>
                                 </div>
-                                <button className="px-6 py-3 bg-black text-white font-semibold rounded-xl hover:opacity-90 transition-opacity flex-shrink-0">
-                                    GET APP
-                                </button>
+
+                                {/* Text and Button Container */}
+                                <div className="flex-1 flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 w-full sm:w-auto text-center sm:text-left">
+                                    {/* Text Content */}
+                                    <div className="flex-1 space-y-1">
+                                        <p className="text-black/80 text-sm sm:text-base font-medium tracking-wide">
+                                            To Access Messaging & Chat Features
+                                        </p>
+                                        <h3 className="text-black text-2xl sm:text-3xl font-extrabold tracking-tight drop-shadow-sm">
+                                            DOWNLOAD APP
+                                        </h3>
+                                    </div>
+
+                                    {/* CTA Button */}
+                                    <button className="group/btn relative w-full sm:w-auto  px-8 lg:px-4 xl:px-8 py-4 bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white font-bold text-lg rounded-2xl overflow-hidden shadow-2xl hover:shadow-black/50 transition-all duration-300 hover:scale-105 active:scale-95 flex-shrink-0">
+                                        {/* Animated shine effect */}
+                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+
+                                        {/* Button content */}
+                                        <span className="relative z-10 tracking-wider">GET APP</span>
+
+                                        {/* Subtle glow on hover */}
+                                        <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 bg-white/10 transition-opacity duration-300"></div>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

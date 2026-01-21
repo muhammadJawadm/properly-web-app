@@ -1,15 +1,28 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { FaBell, FaBars } from 'react-icons/fa';
-import { toggleMobileMenu } from '../Seller/SellerSidebar';
+import { toggleMobileMenu as toggleSellerMenu } from '../Seller/SellerSidebar';
+import { toggleMobileMenu as toggleBuyerMenu } from '../Buyer/BuyerSidebar';
 
 const Header = ({ title, showNotifications = true, onNotificationClick }) => {
+    const location = useLocation();
+    const isBuyerPage = location.pathname.includes('/buyer');
+
+    const handleMenuToggle = () => {
+        if (isBuyerPage) {
+            toggleBuyerMenu();
+        } else {
+            toggleSellerMenu();
+        }
+    };
+
     return (
         <div className="bg-[#1a1a1a] border-b border-gray-800 px-4 sm:px-6 md:px-8 py-4 sm:py-6 flex items-center justify-between">
             {/* Left Side - Hamburger Menu (Mobile) + Title */}
             <div className="flex items-center gap-3 sm:gap-4">
                 {/* Hamburger Menu Button (Mobile Only) */}
                 <button
-                    onClick={toggleMobileMenu}
+                    onClick={handleMenuToggle}
                     className="lg:hidden text-white hover:text-amber-500 transition-colors"
                 >
                     <FaBars size={24} />
