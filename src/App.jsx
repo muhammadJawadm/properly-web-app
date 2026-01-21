@@ -13,8 +13,10 @@ import KycVerification from "./components/Seller/KycVerification"
 import BuyerType from "./components/Buyer/BuyerType"
 
 import SellerDashboard from "./pages/dashboard/seller/SellerDashboard"
+import SellerProfile from "./pages/dashboard/seller/SellerProfile"
 import Attorney from "./pages/dashboard/seller/Attorney"
 import BuyerDashboard from "./pages/dashboard/buyer/BuyerDashboard"
+import BuyerProfile from "./pages/dashboard/buyer/BuyerProfile"
 import PropertyListings from "./pages/dashboard/seller/PropertyListings"
 import Analytics from "./pages/dashboard/seller/Analytics"
 import Inquiries from "./pages/dashboard/seller/Inquiries"
@@ -34,6 +36,9 @@ import BuyerAttorney from "./pages/dashboard/buyer/buyer attorney/BuyerAttorney"
 import BuyerVault from "./pages/dashboard/buyer/vault/BuyerVault"
 import AttorneyAccess from "./pages/dashboard/attorney/AttorneyAccess"
 import AttorneyDashboard from "./pages/dashboard/attorney/AttorneyDashboard"
+import ActiveCRNs from "./pages/dashboard/attorney/ActiveCRNs"
+import CompletedCRNs from "./pages/dashboard/attorney/CompletedCRNs"
+import AttorneyProfile from "./pages/dashboard/attorney/AttorneyProfile"
 import BondAttorneyDetails from "./components/Buyer/BondAttorneyDetails"
 
 export default function App() {
@@ -61,6 +66,7 @@ export default function App() {
           <Route path="/kycverification" element={<KycVerification />} />
 
           <Route path="/seller/dashboard" element={<SellerDashboard />} />
+          <Route path="/seller/profile" element={<SellerProfile />} />
           <Route path="/seller/listings" element={<PropertyListings />} />
           <Route path="/seller/analytics" element={<Analytics />} />
           <Route path="/seller/inquiries" element={<Inquiries />} />
@@ -76,6 +82,7 @@ export default function App() {
           <Route path="/buyertype" element={<BuyerType />} />
           <Route path="/bondattorneydetails" element={<BondAttorneyDetails />} />
           <Route path="/buyer/dashboard" element={<BuyerDashboard />} />
+          <Route path="/buyer/profile" element={<BuyerProfile />} />
           <Route path="/buyer/browse" element={<BrowseProperties />} />
           <Route path="/buyer/browse/:propertyId" element={<PropertyDetails />} />
           <Route path="/buyer/inquiries" element={<MyInquiries />} />
@@ -89,6 +96,9 @@ export default function App() {
           {/* Attorney Routes */}
           <Route path="/attorney/access" element={<AttorneyAccess />} />
           <Route path="/attorney/dashboard" element={<AttorneyDashboard />} />
+          <Route path="/attorney/profile" element={<AttorneyProfile />} />
+          <Route path="/attorney/activecrns" element={<ActiveCRNs />} />
+          <Route path="/attorney/completecrns" element={<CompletedCRNs />} />
 
         </Routes>
       </BrowserRouter>

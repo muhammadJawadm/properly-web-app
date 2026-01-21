@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { FaHome, FaList, FaGavel, FaBalanceScale, FaLock, FaBars, FaTimes, FaHandshake } from 'react-icons/fa';
+import { FaHome, FaList, FaGavel, FaBalanceScale, FaLock, FaBars, FaTimes, FaHandshake, FaFolder, FaFolderMinus } from 'react-icons/fa';
 import SplashLogo from '../../assets/Splashlogo2.png';
 import Ailogo from '../../assets/Group.png';
 import AIChat from '../common/AIChat';
+import { FaRegFolderClosed } from 'react-icons/fa6';
 
 // Create a global state for sidebar collapse
 export let sidebarState = { isCollapsed: false, isMobileMenuOpen: false, listeners: [] };
@@ -56,6 +57,8 @@ const AttorneySidebar = () => {
 
     const menuItems = [
         { icon: FaHome, label: 'Dashboard', path: '/attorney/dashboard' },
+        { icon: FaFolderMinus, label: 'Active CRNs', path: '/attorney/activecrns' },
+        { icon: FaRegFolderClosed, label: 'Completed CRNs', path: '/attorney/completecrns' }
 
     ];
 

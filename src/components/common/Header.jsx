@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FaBell, FaBars } from 'react-icons/fa';
 import { toggleMobileMenu as toggleSellerMenu } from '../Seller/SellerSidebar';
 import { toggleMobileMenu as toggleBuyerMenu } from '../Buyer/BuyerSidebar';
 
 const Header = ({ title, showNotifications = true, onNotificationClick }) => {
     const location = useLocation();
+    const navigate = useNavigate();
     const isBuyerPage = location.pathname.includes('/buyer');
 
     const handleMenuToggle = () => {
@@ -13,6 +14,29 @@ const Header = ({ title, showNotifications = true, onNotificationClick }) => {
             toggleBuyerMenu();
         } else {
             toggleSellerMenu();
+        }
+    };
+
+    const handleProfileClick = () => {
+        // Check if already on profile page
+        if (location.pathname.includes('/profile')) {
+            // Navigate back to respective dashboard
+            if (isBuyerPage) {
+                navigate('/buyer/dashboard');
+            } else if (location.pathname.includes('/attorney')) {
+                navigate('/attorney/dashboard');
+            } else {
+                navigate('/seller/dashboard');
+            }
+        } else {
+            // Navigate to profile
+            if (isBuyerPage) {
+                navigate('/buyer/profile');
+            } else if (location.pathname.includes('/attorney')) {
+                navigate('/attorney/profile');
+            } else {
+                navigate('/seller/profile');
+            }
         }
     };
 
@@ -46,7 +70,10 @@ const Header = ({ title, showNotifications = true, onNotificationClick }) => {
                 </button>
 
                 {/* Profile Picture with Verified Badge */}
-                <div className="relative">
+                <div
+                    className="relative cursor-pointer hover:opacity-80 transition-opacity"
+                    onClick={handleProfileClick}
+                >
                     <img
                         src="https://via.placeholder.com/40"
                         alt="Profile"

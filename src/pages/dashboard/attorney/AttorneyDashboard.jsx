@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaCheckCircle, FaClock, FaDownload, FaUpload, FaEllipsisV, FaPaperPlane, FaTimes } from 'react-icons/fa';
 import AttorneySidebar, { subscribeSidebarState } from '../../../components/Attorney/AttorneySidebar';
-import AttorneyHeader from '../../../components/Attorney/AttorneyHeader';
+import Header from '../../../components/common/Header';
 import { useSidebarMargin } from '../../../hooks/useResponsive';
 
 const AttorneyDashboard = () => {
@@ -137,8 +137,7 @@ const AttorneyDashboard = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: sidebarMargin }}
             >
-                <AttorneyHeader title="Dashboard" showNotifications={false} onNotificationClick={() => setShowNotifications(!showNotifications)} />
-
+                <Header title="Active CRNs" showNotifications={true} />
                 <div className="p-4 sm:p-6 md:p-8">
                     {/* Upper Grid - Timeline on right of CRN/Upload/Progress */}
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
