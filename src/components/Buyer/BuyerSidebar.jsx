@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { FaHome, FaList, FaGavel, FaBalanceScale, FaLock, FaBars, FaTimes, FaHandshake } from 'react-icons/fa';
 import SplashLogo from '../../assets/Splashlogo2.png';
 import { FaUser } from 'react-icons/fa';
-import Ailogo from '../../assets/group.png';
+import Ailogo from '../../assets/Group.png';
 import AIChat from '../common/AIChat';
 
 // Create a global state for sidebar collapse

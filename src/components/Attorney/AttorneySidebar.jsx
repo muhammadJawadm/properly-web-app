@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaHome, FaList, FaGavel, FaBalanceScale, FaLock, FaBars, FaTimes, FaHandshake } from 'react-icons/fa';
 import SplashLogo from '../../assets/Splashlogo2.png';
+import Ailogo from '../../assets/Group.png';
 import AIChat from '../common/AIChat';
 
 // Create a global state for sidebar collapse
@@ -150,14 +151,14 @@ const AttorneySidebar = () => {
                     <div className="relative group">
                         <button
                             onClick={() => setShowAIChat(!showAIChat)}
-                            className="w-14 h-14 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                            className="w-28 h-20 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
                         >
-                            <img src={SplashLogo} alt="AI" className="w-10 h-10" />
+                            <img src={Ailogo} alt="AI" className="w-40 h-40" />
                         </button>
                         {/* Tooltip */}
-                        <div className="absolute bottom-full ml-10 left-1/2 -translate-x-1/2 mb-2 px-4 py-4 bg-gray-800 text-amber-500 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                        <div className="absolute bottom-full ml-20 left-1/2 -translate-x-1/2 mb-2 px-4 py-4 bg-gray-800 text-amber-500 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
                             Ask AI Anything
-                            <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-800"></div>
+                            {/* <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-800"></div> */}
                         </div>
                     </div>
                 </div>
