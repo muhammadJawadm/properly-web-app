@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaHome, FaList, FaGavel, FaBalanceScale, FaLock, FaBars, FaTimes, FaHandshake } from 'react-icons/fa';
 import SplashLogo from '../../assets/Splashlogo2.png';
+import Ailogo from '../../assets/group.png';
 import AIChat from '../common/AIChat';
 
 // Create a global state for sidebar collapse
@@ -155,10 +156,9 @@ const SellerSidebar = () => {
                     <div className="relative group">
                         <button
                             onClick={() => setShowAIChat(!showAIChat)}
-                            className="w- h-14 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                            className="w-28 h-20 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
                         >
-                            <img src={SplashLogo} alt="AI" className="w-28 h-20" />
-                            <h1 className="text-amber-800 border-2 border-amber-500 px-5 py-2 rounded-full bg-amber-300">Ask AI</h1>
+                            <img src={Ailogo} alt="AI" className="w-40 h-40" />
                         </button>
                         {/* Tooltip */}
                         <div className="absolute bottom-full ml-20 left-1/2 -translate-x-1/2 mb-2 px-4 py-4 bg-gray-800 text-amber-500 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">

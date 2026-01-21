@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaHome, FaList, FaGavel, FaBalanceScale, FaLock, FaBars, FaTimes, FaHandshake } from 'react-icons/fa';
 import SplashLogo from '../../assets/Splashlogo2.png';
+import { FaUser } from 'react-icons/fa';
+import Ailogo from '../../assets/group.png';
 import AIChat from '../common/AIChat';
 
 // Create a global state for sidebar collapse
@@ -149,26 +151,19 @@ const BuyerSidebar = () => {
                 </nav>
 
                 {/* Ask AI Button */}
-                <div className="p-4 flex justify-center">
-                    <div className="relative group w-full">
+                <div className="p-4 flex ">
+                    <div className="relative group">
                         <button
                             onClick={() => setShowAIChat(!showAIChat)}
-                            className={`flex items-center gap-2 rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg border-2 border-amber-500 bg-amber-500/10 hover:bg-amber-500/20 ${isCollapsed ? 'w-14 h-14 justify-center p-2' : 'w-full px-4 py-3 justify-center'
-                                }`}
+                            className="w-28 h-20 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
                         >
-                            {!isCollapsed && (
-                                <img src={SplashLogo} alt="AI" className="w-20 h-14 object-contain" />
-                            )}
-                            <span className="text-amber-500 font-bold text-sm whitespace-nowrap">
-                                {isCollapsed ? 'AI' : 'Ask AI'}
-                            </span>
+                            <img src={Ailogo} alt="AI" className="w-40 h-40" />
                         </button>
                         {/* Tooltip */}
-                        {isCollapsed && (
-                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-2 bg-gray-800 text-amber-500 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
-                                Ask AI Anything
-                            </div>
-                        )}
+                        <div className="absolute bottom-full ml-20 left-1/2 -translate-x-1/2 mb-2 px-4 py-4 bg-gray-800 text-amber-500 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                            Ask AI Anything
+                            {/* <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-800"></div> */}
+                        </div>
                     </div>
                 </div>
             </div>
