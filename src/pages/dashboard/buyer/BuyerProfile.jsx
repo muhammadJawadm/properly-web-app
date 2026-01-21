@@ -43,12 +43,6 @@ const BuyerProfile = () => {
             onClick: () => setActiveModal('editProfile')
         },
         {
-            id: 'kycVerification',
-            icon: FaCheckCircle,
-            label: 'KYC Verification',
-            onClick: () => navigate('/BuyerType')
-        },
-        {
             id: 'buyerDocuments',
             icon: FaFolder,
             label: 'Buyer type Documents',

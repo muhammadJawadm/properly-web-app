@@ -51,12 +51,6 @@ const SellerProfile = () => {
             onClick: () => navigate('/sellerkyc')
         },
         {
-            id: 'sellerDocuments',
-            icon: FaFolder,
-            label: 'Seller type Documents',
-            onClick: () => setActiveModal('sellerDocuments')
-        },
-        {
             id: 'changePassword',
             icon: FaLock,
             label: 'Change Password',
