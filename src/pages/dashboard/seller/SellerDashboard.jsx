@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaEye, FaQuestionCircle, FaList, FaTimes } from 'react-icons/fa';
+import { FaEye, FaQuestionCircle, FaList, FaTimes, FaListAlt } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
 import Header from '../../../components/common/Header';
 import StatsCard from '../../../components/Seller/StatsCard';
 import { useSidebarMargin } from '../../../hooks/useResponsive';
+import profilepic from "./../../../assets/profilepic.png"
 
 const SellerDashboard = () => {
     const navigate = useNavigate();
@@ -54,16 +55,7 @@ const SellerDashboard = () => {
                             <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4">
                                 <div className="flex flex-col sm:flex-row items-center gap-4">
                                     {/* Profile Picture with Verified Badge */}
-                                    <div className="relative">
-                                        <img
-                                            src="https://via.placeholder.com/100"
-                                            alt="Daniel Mthembu"
-                                            className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border-4 border-gray-700"
-                                        />
-                                        <div className="absolute -bottom-2 -right-2 w-8 h-8 sm:w-10 sm:h-10 bg-amber-500 rounded-full flex items-center justify-center border-4 border-gray-800">
-                                            <span className="text-white text-base sm:text-lg font-bold">✓</span>
-                                        </div>
-                                    </div>
+                                    <img className='w-40' src={profilepic} alt="" />
 
                                     {/* Name */}
                                     <div className="text-center sm:text-left">
@@ -116,7 +108,7 @@ const SellerDashboard = () => {
                             <StatsCard
                                 label="Listings"
                                 value="0"
-                                icon={<FaList className="text-amber-500" size={28} />}
+                                icon={<FaListAlt className="text-amber-500" size={28} />}
                             />
                         </div>
 

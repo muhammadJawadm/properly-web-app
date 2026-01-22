@@ -9,7 +9,7 @@ const StatsCard = ({ label, value, icon, trend, highlighted = false }) => {
                     {label}
                 </span>
                 {icon && (
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${highlighted ? '' : 'bg-gray-700/50'
+                    <div className={`p-2 w-12 h-12 rounded-full flex items-center justify-center ${highlighted ? '' : 'bg-gray-700/50'
                         }`}>
                         {icon}
                     </div>

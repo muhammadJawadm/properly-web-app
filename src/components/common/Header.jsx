@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { FaBell, FaBars } from 'react-icons/fa';
+import { FaBell, FaBars, FaBellSlash, FaRegBell } from 'react-icons/fa';
 import { toggleMobileMenu as toggleSellerMenu } from '../Seller/SellerSidebar';
 import { toggleMobileMenu as toggleBuyerMenu } from '../Buyer/BuyerSidebar';
-
+import profileicon from "./../../assets/profilepic.png"
 const Header = ({ title, showNotifications = true, onNotificationClick }) => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -63,7 +63,7 @@ const Header = ({ title, showNotifications = true, onNotificationClick }) => {
                     onClick={onNotificationClick}
                     className="relative text-amber-500 hover:text-amber-400 transition-colors"
                 >
-                    <FaBell size={20} className="sm:w-6 sm:h-6" />
+                    <FaRegBell size={20} className="sm:w-6 sm:h-6" />
                     {showNotifications && (
                         <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
                     )}
@@ -75,13 +75,11 @@ const Header = ({ title, showNotifications = true, onNotificationClick }) => {
                     onClick={handleProfileClick}
                 >
                     <img
-                        src="https://via.placeholder.com/40"
+                        src={profileicon}
                         alt="Profile"
-                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-gray-700"
+                        className="w-8 h-8 sm:w-10 sm:h-10"
                     />
-                    <div className="absolute -bottom-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-amber-500 rounded-full flex items-center justify-center border-2 border-[#1a1a1a]">
-                        <span className="text-white text-xs">✓</span>
-                    </div>
+
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { FaHome, FaList, FaGavel, FaBalanceScale, FaLock, FaBars, FaTimes, FaHandshake } from 'react-icons/fa';
+import { FaHome, FaList, FaGavel, FaBalanceScale, FaLock, FaBars, FaTimes, FaHandshake, FaSuitcase, FaSuitcaseRolling, FaBriefcase, FaChartArea, FaListAlt, FaRegAddressBook, FaRegSquare, FaSquare, FaRegAddressCard, FaTag, FaGift, FaTags } from 'react-icons/fa';
 import SplashLogo from '../../assets/Splashlogo2.png';
 import Ailogo from '../../assets/Group.png';
 import homeLogo from '../../assets/Home.png';
@@ -9,6 +9,7 @@ import offersLogo from '../../assets/offerss.png';
 import attorneyLogo from '../../assets/attorney.png';
 import vaultLogo from '../../assets/valut.png';
 import AIChat from '../common/AIChat';
+import { FaScaleUnbalancedFlip } from 'react-icons/fa6';
 
 // Create a global state for sidebar collapse
 export let sidebarState = { isCollapsed: false, isMobileMenuOpen: false, listeners: [] };
@@ -61,12 +62,12 @@ const SellerSidebar = () => {
 
     const menuItems = [
         { icon: FaHome, label: 'Dashboard', path: '/seller/dashboard' },
-        { icon: FaList, label: 'My Listing', path: '/seller/listings' },
-        { icon: FaHandshake, label: 'Offers', path: '/seller/offers' },
-        { icon: FaBalanceScale, label: 'Attorney', path: '/seller/attorney' },
-        { icon: FaGavel, label: 'Analytics', path: '/seller/analytics' },
+        { icon: FaListAlt, label: 'My Listing', path: '/seller/listings' },
+        { icon: FaTags, label: 'Offers', path: '/seller/offers' },
+        { icon: FaScaleUnbalancedFlip, label: 'Attorney', path: '/seller/attorney' },
+        { icon: FaChartArea, label: 'Analytics', path: '/seller/analytics' },
         { icon: FaBalanceScale, label: 'Inquiries', path: '/seller/inquiries' },
-        { icon: FaLock, label: 'Vault', path: '/seller/vault' }
+        { icon: FaBriefcase, label: 'Vault', path: '/seller/vault' }
     ];
 
     const isActive = (path) => location.pathname === path;
@@ -161,7 +162,7 @@ const SellerSidebar = () => {
                     <div className="relative group">
                         <button
                             onClick={() => setShowAIChat(!showAIChat)}
-                            className="w-28 h-20 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                            className="w-32 h-20 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
                         >
                             <img src={Ailogo} alt="AI" className="w-40 h-40" />
                         </button>

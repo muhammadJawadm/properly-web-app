@@ -181,8 +181,8 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                 </div>
 
                 {/* Electricity Supply */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="md:col-span-2">
+                <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+                    <div className="md:col-span-1">
                         <label className="block text-white mb-2 text-sm">Electricity Supply:</label>
                         <div className="space-y-2">
                             <label className="flex items-center gap-2 cursor-pointer">
@@ -220,7 +220,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                     </div>
 
                     {/* Water Supply */}
-                    <div>
+                    <div className='md:col-span-1'>
                         <label className="block text-white mb-2 text-sm">Water supply</label>
                         <div className="space-y-2">
                             <label className="flex items-center gap-2 cursor-pointer">
@@ -313,7 +313,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             </div>
                         </div> */}
 
-                        <div>
+                        <div className='flex-col md-flex-row'>
                             <label className="block text-white mb-3 text-sm">Please note how modern your building is in terms of design and amenities:</label>
                             <div className="flex items-center gap-3">
                                 <StarRating rating={propertyCondition} onRate={setPropertyCondition} />
@@ -358,7 +358,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                             />
                             <div>
                                 <label className="block text-white mb-4 text-sm">Categories</label>
-                                <div className="flex gap-10  md:gap-24">
+                                <div className="flex gap-4 md:gap-24">
                                     <label className="flex items-center gap-2 cursor-pointer">
                                         <input
                                             type="radio"
@@ -862,13 +862,13 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                 <div className="flex justify-between pt-6">
                     <button
                         onClick={onBack}
-                        className="px-8 py-3 bg-gray-700/50 text-white font-semibold rounded-full hover:bg-gray-700 transition-colors"
+                        className="px-6 py-3 bg-gray-700/50 text-white font-semibold rounded-full hover:bg-gray-700 transition-colors"
                     >
                         Back
                     </button>
                     <button
                         onClick={handleContinue}
-                        className="px-8 py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-full hover:opacity-90 transition-opacity"
+                        className="px-6 py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-full hover:opacity-90 transition-opacity"
                     >
                         Continue
                     </button>

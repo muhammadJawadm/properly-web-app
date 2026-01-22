@@ -155,7 +155,7 @@ const BuyerSidebar = () => {
                     <div className="relative group">
                         <button
                             onClick={() => setShowAIChat(!showAIChat)}
-                            className="w-28 h-20 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                            className="w-32 h-20 flex items-center justify-center text-black font-semibold rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
                         >
                             <img src={Ailogo} alt="AI" className="w-40 h-40" />
                         </button>
