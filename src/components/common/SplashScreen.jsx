@@ -29,7 +29,7 @@ const SplashScreen = () => {
                         <img
                             src={SplashLogo}
                             alt="Properly Real Estate Logo"
-                            className="w-[350px] h-auto object-contain"
+                            className="w-[300px] h-[50vh] object-contain"
                         />
                     </div>
 
@@ -95,7 +95,7 @@ const SplashScreen = () => {
                         <img
                             src={SplashLogo}
                             alt="Properly Real Estate Logo"
-                            className="w-[700px] md:w-[900px] lg:w-[1300px] h-[100vh] object-contain"
+                            className="w-[600px] md:w-[800px] lg:w-[1200px] h-[75vh] object-contain"
                         />
                     </div>
                 </div>
