@@ -1,5 +1,5 @@
 import SplashBg from "../../assets/SplashBg.png";
-import SplashLogo from "../../assets/Group5.png";
+import SplashLogo from "../../assets/newsplashlogo3.png";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useRole } from "../../context/RoleContext";

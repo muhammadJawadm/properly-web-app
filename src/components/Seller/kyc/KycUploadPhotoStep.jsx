@@ -1,5 +1,6 @@
 import { FaUpload, FaCamera } from "react-icons/fa";
 import KycStepIndicator from "./KycStepIndicator";
+import uploadphoto from "../../../assets/photostep.png"
 
 const KycUploadPhotoStep = ({ onNext, onFileUpload, steps }) => {
     return (
@@ -11,15 +12,7 @@ const KycUploadPhotoStep = ({ onNext, onFileUpload, steps }) => {
                 <div className="flex items-center gap-12">
                     {/* Left: Illustration - Hidden on mobile */}
                     <div className="hidden lg:flex lg:w-1/2 justify-center">
-                        <div className="w-64 h-64 rounded-full bg-gray-700 flex items-center justify-center">
-                            <div className="w-48 h-64 bg-gray-600 rounded-2xl flex flex-col items-center justify-center relative">
-                                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-500 rounded-full" />
-                                <span className="text-6xl mb-4">🧑</span>
-                                <div className="absolute bottom-8">
-                                    <FaCamera className="text-amber-500" size={32} />
-                                </div>
-                            </div>
-                        </div>
+                        <img src={uploadphoto} alt="govtid" className="w-full h-full object-contain" />
                     </div>
 
                     {/* Right: Upload Form */}

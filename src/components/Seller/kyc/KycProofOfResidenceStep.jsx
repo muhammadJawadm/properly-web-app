@@ -1,5 +1,6 @@
 import { FaUpload, FaFileAlt } from "react-icons/fa";
 import KycStepIndicator from "./KycStepIndicator";
+import proof from "../../../assets/residenceproof.png"
 
 const KycProofOfResidenceStep = ({ onSubmit, onFileUpload, steps }) => {
     return (
@@ -11,12 +12,7 @@ const KycProofOfResidenceStep = ({ onSubmit, onFileUpload, steps }) => {
                 <div className="flex items-center gap-12">
                     {/* Left: Illustration - Hidden on mobile */}
                     <div className="hidden lg:flex lg:w-1/2 justify-center">
-                        <div className="w-64 h-64 rounded-full bg-gray-700 flex items-center justify-center">
-                            <div className="w-48 h-64 bg-gray-600 rounded-2xl flex items-center justify-center relative">
-                                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-500 rounded-full" />
-                                <FaFileAlt className="text-amber-500" size={64} />
-                            </div>
-                        </div>
+                        <img src={proof} alt="proof" className="w-full h-full object-contain" />
                     </div>
 
                     {/* Right: Upload Form */}

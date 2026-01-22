@@ -127,7 +127,7 @@ const Negotiations = () => {
                         </div>
 
                         {/* Two Column Layout: Revision Details (Left) + Chat (Right) */}
-                        <div className="grid grid-cols-1 h-[40vh] lg:grid-cols-2 gap-6 p-4 sm:p-6">
+                        <div className="grid grid-cols-1 h-[70vh] lg:grid-cols-2 gap-6 p-4 sm:p-6">
                             {/* Left Column: Revision Details */}
                             <div className="space-y-4">
                                 {/* Price Comparison Card */}

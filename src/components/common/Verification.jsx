@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import SplashBg from "../../assets/SplashBg.png";
 import { Link } from "react-router-dom";
-import SplashLogo from "../../assets/phone.png";
+import SplashLogo from "../../assets/phonepic.png";
 import { useRole } from "../../context/RoleContext";
 const Verification = () => {
     const [otp, setOtp] = useState(["", "", "", ""]);
@@ -76,7 +76,7 @@ const Verification = () => {
                     <img
                         src={SplashLogo}
                         alt="Phone Verification"
-                        className="w-80 h-auto object-contain"
+                        className="w-96 h-auto object-contain"
                     />
                 </div>
 

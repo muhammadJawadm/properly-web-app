@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaQuestionCircle } from "react-icons/fa";
+import sellerkyc1 from "../../assets/sellerkyc1.png"
+import sellerkyc2 from "../../assets/sellerkyc2.png"
+import sellerkyc3 from "../../assets/sellerkyc3.png"
 
 // Import modals
 import VerificationProgressModal from "./kyc/VerificationProgressModal";
@@ -32,9 +35,9 @@ const KycVerification = () => {
     });
 
     const steps = [
-        { number: 1, label: "Upload ID", icon: "📄" },
-        { number: 2, label: "Upload photo", icon: "📸" },
-        { number: 3, label: "Proof of Residence", icon: "📋" }
+        { number: 1, label: "Upload ID", icon: sellerkyc1 },
+        { number: 2, label: "Upload photo", icon: sellerkyc2 },
+        { number: 3, label: "Proof of Residence", icon: sellerkyc3 }
     ];
 
     const handleFileUpload = (field, file) => {

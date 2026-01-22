@@ -1,5 +1,6 @@
 import { FaUpload, FaUser, FaPlane } from "react-icons/fa";
 import KycStepIndicator from "./KycStepIndicator";
+import govtid from "../../../assets/govtid.png"
 
 const KycUploadIdStep = ({ onNext, onFileUpload, steps }) => {
     return (
@@ -7,28 +8,16 @@ const KycUploadIdStep = ({ onNext, onFileUpload, steps }) => {
             {/* Steps Progress */}
             <KycStepIndicator steps={steps} currentStep={1} />
 
-            <div className="bg-black bg-opacity-80 backdrop-blur-sm rounded-2xl sm:rounded-3xl px-6 sm:px-12 md:px-16 py-10 sm:py-16 shadow-2xl">
+            <div className="bg-gray-900 bg-opacity-80 backdrop-blur-sm rounded-2xl sm:rounded-3xl px-6 sm:px-12 md:px-16 py-10 sm:py-16 shadow-2xl">
                 <div className="flex flex-col lg:flex-row items-center gap-12 sm:gap-16 md:gap-24">
                     {/* Left: Illustration - Hidden on mobile */}
                     <div className="hidden lg:flex lg:w-1/2 justify-center">
-                        <div className="w-64 h-64 rounded-full bg-gray-700 flex items-center justify-center">
-                            <div className="w-48 h-64 bg-gray-600 rounded-2xl flex items-center justify-center relative">
-                                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-500 rounded-full" />
-                                <div className="flex gap-4">
-                                    <div className="w-20 h-28 bg-white rounded-lg flex items-center justify-center">
-                                        <span className="text-4xl border-2 border-amber-500 rounded-full p-2"><FaUser className="text-amber-500" /></span>
-                                    </div>
-                                    <div className="w-20 h-28 rounded-lg flex items-center justify-center " style={{ backgroundColor: '#EDBF6D' }}>
-                                        <span className="text-4xl border-2 border-white rounded-full p-2"><FaPlane className="text-white" /></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <img src={govtid} alt="govtid" className="w-full h-full object-contain" />
                     </div>
 
                     {/* Right: Upload Form */}
                     <div className="w-full lg:w-1/2">
-                        <h2 className="text-xl sm:text-2xl text-center font-bold text-white mb-2">Upload Proof of ID</h2>
+                        <h2 className="text-xl sm:text-2xl text-center font-bold text-white mb-2">Upload Government ID</h2>
                         <p className="text-gray-400 text-xs sm:text-sm mb-6 sm:mb-8 text-center">National Identity Card or Passport</p>
 
                         <div className="space-y-4">

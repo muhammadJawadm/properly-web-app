@@ -15,8 +15,8 @@ const KycWelcomeStep = ({ onStart, steps }) => {
                         <div key={step.number} className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
                             <div className="flex flex-col items-center">
                                 {/* Icon */}
-                                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl sm:rounded-2xl bg-gray-700 border-2 border-amber-500 flex items-center justify-center mb-3 sm:mb-4">
-                                    <span className="text-3xl sm:text-4xl">{step.icon}</span>
+                                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl sm:rounded-2xl  flex items-center justify-center mb-3 sm:mb-4">
+                                    <img src={step.icon} alt="" />
                                 </div>
                                 {/* Step Info */}
                                 <div className="flex items-center gap-2 text-gray-400">
