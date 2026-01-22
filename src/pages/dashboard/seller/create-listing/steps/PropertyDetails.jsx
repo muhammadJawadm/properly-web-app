@@ -315,7 +315,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
 
                         <div className='flex-col md-flex-row'>
                             <label className="block text-white mb-3 text-sm">Please note how modern your building is in terms of design and amenities:</label>
-                            <div className="flex items-center gap-3">
+                            <div className="flex-col md:flex-row items-center gap-3">
                                 <StarRating rating={propertyCondition} onRate={setPropertyCondition} />
                                 <span className="text-amber-400 text-sm ml-2">No defects, very modern</span>
                             </div>
