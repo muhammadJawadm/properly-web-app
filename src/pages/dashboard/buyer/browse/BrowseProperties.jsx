@@ -5,6 +5,7 @@ import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buye
 import Header from '../../../../components/common/Header';
 import PropertyCard from '../../../../components/Buyer/PropertyCard';
 import AdvancedSearchPanel from '../../../../components/Buyer/AdvancedSearchPanel';
+import NotificationPanel from '../../../../components/common/NotificationPanel';
 import { useSidebarMargin } from '../../../../hooks/useResponsive';
 
 const BrowseProperties = () => {
@@ -14,6 +15,7 @@ const BrowseProperties = () => {
     const [showAdvancedSearch, setShowAdvancedSearch] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [isFiltered, setIsFiltered] = useState(false);
+    const [showNotifications, setShowNotifications] = useState(false);
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
@@ -116,7 +118,8 @@ const BrowseProperties = () => {
             >
                 <Header
                     title="Browse Properties"
-                    showNotifications={false}
+                    showNotifications={true}
+                    onNotificationClick={() => setShowNotifications(!showNotifications)}
                 />
 
                 <div className="p-4 sm:p-6 md:p-8">
@@ -145,7 +148,7 @@ const BrowseProperties = () => {
                             </div>
 
                             {/* Section Header with Sort */}
-                            <div className="flex items-center justify-between mb-6">
+                            <div className="flex flex-col md:flex-row items-start justify-between mb-6">
                                 <h2 className="text-amber-500 text-lg sm:text-xl font-semibold">
                                     {isFiltered ? 'Listing Based On Your Preferences' : 'Suggested'}
                                 </h2>
@@ -195,6 +198,12 @@ const BrowseProperties = () => {
                     />
                 </div>
             )}
+
+            {/* Notifications Panel */}
+            <NotificationPanel
+                showNotifications={showNotifications}
+                onClose={() => setShowNotifications(false)}
+            />
         </>
     );
 };

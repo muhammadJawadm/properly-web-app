@@ -116,13 +116,7 @@ const BuyerType = () => {
             </div>
 
             {/* Back Button */}
-            <button
-                className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20 text-white hover:text-gray-300 transition-colors"
-                onClick={() => window.history.back()}
-            >
-                <FaArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-
+        
             {/* Main Content Container */}
             <div className="relative z-10 w-full max-w-5xl">
                 <div className="bg-black bg-opacity-90 backdrop-blur-md rounded-2xl sm:rounded-3xl px-6 sm:px-10 py-8 sm:py-12 shadow-2xl">

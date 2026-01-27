@@ -11,16 +11,16 @@ const VerificationResultsModal = ({
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
-            <div className="bg-gray-800 rounded-2xl  sm:p-8 md:p-12 max-w-xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 overflow-y-auto">
+            <div className="bg-gray-800 rounded-2xl p-6 sm:p-8 md:p-12 max-w-xl w-full my-4 shadow-2xl relative">
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 text-gray-400 hover:text-white"
+                    className="absolute top-4 right-4 text-gray-400 hover:text-white z-10"
                 >
                     <FaTimes size={20} />
                 </button>
 
-                <div className="text-center">
+                <div className="text-center overflow-y-auto max-h-[calc(90vh-2rem)]">
                     <h2 className="text-2xl font-bold text-white mb-4">Ownership Results</h2>
 
                     {/* Partial Match */}

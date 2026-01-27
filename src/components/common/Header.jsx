@@ -3,15 +3,19 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { FaBell, FaBars, FaBellSlash, FaRegBell } from 'react-icons/fa';
 import { toggleMobileMenu as toggleSellerMenu } from '../Seller/SellerSidebar';
 import { toggleMobileMenu as toggleBuyerMenu } from '../Buyer/BuyerSidebar';
+import { toggleMobileMenu as toggleAttorneyMenu } from '../Attorney/AttorneySidebar';
 import profileicon from "./../../assets/profilepic.png"
 const Header = ({ title, showNotifications = true, onNotificationClick }) => {
     const location = useLocation();
     const navigate = useNavigate();
     const isBuyerPage = location.pathname.includes('/buyer');
+    const isAttorneyPage = location.pathname.includes('/attorney');
 
     const handleMenuToggle = () => {
         if (isBuyerPage) {
             toggleBuyerMenu();
+        } else if (isAttorneyPage) {
+            toggleAttorneyMenu();
         } else {
             toggleSellerMenu();
         }

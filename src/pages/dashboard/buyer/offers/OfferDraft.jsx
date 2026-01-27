@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
 import Header from '../../../../components/common/Header';
+import NotificationPanel from '../../../../components/common/NotificationPanel';
 import { useSidebarMargin } from '../../../../hooks/useResponsive';
 
 const OfferDraft = () => {
@@ -9,6 +10,7 @@ const OfferDraft = () => {
     const { offerId } = useParams();
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
     const sidebarMargin = useSidebarMargin(sidebarCollapsed);
+    const [showNotifications, setShowNotifications] = useState(false);
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
@@ -70,6 +72,7 @@ const OfferDraft = () => {
                 <Header
                     title="Offer-Draft"
                     showNotifications={true}
+                    onNotificationClick={() => setShowNotifications(!showNotifications)}
                 />
 
                 <div className="p-4 sm:p-6 md:p-8 max-w-6xl mx-auto">
@@ -97,7 +100,7 @@ const OfferDraft = () => {
                                 <p className="text-amber-500 font-bold text-lg mb-2">
                                     R{offerData.property.price.toLocaleString()}
                                 </p>
-                                <div className="flex gap-3 text-gray-400 text-sm">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 text-gray-400 text-sm">
                                     <span>● {offerData.property.beds} Beds</span>
                                     <span>● {offerData.property.bathrooms} Bathrooms</span>
                                     <span>● {offerData.property.garages} Garages</span>
@@ -238,13 +241,19 @@ const OfferDraft = () => {
                                 alert('Offer submitted to seller!');
                                 navigate('/buyer/offers');
                             }}
-                            className="w-1/3 py-4 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-full hover:opacity-90 transition-opacity"
+                            className="w-2/3 md:w-1/2 lg:w-1/3 py-4 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-full hover:opacity-90 transition-opacity"
                         >
                             Submit Offer to Seller
                         </button>
                     </div>
                 </div>
             </div>
+
+            {/* Notifications Panel */}
+            <NotificationPanel
+                showNotifications={showNotifications}
+                onClose={() => setShowNotifications(false)}
+            />
         </>
     );
 };

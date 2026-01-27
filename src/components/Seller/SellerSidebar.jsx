@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaHome, FaList, FaGavel, FaBalanceScale, FaLock, FaBars, FaTimes, FaHandshake, FaSuitcase, FaSuitcaseRolling, FaBriefcase, FaChartArea, FaListAlt, FaRegAddressBook, FaRegSquare, FaSquare, FaRegAddressCard, FaTag, FaGift, FaTags } from 'react-icons/fa';
 import SplashLogo from '../../assets/Splashlogo2.png';
-import Ailogo from '../../assets/Group.png';
+import Ailogo from '../../assets/robot.png';
 import homeLogo from '../../assets/Home.png';
 import listingLogo from '../../assets/mylisting.png';
 import offersLogo from '../../assets/offerss.png';
@@ -167,7 +167,7 @@ const SellerSidebar = () => {
                             <img src={Ailogo} alt="AI" className="w-40 h-40" />
                         </button>
                         {/* Tooltip */}
-                        <div className="absolute bottom-full ml-20 left-1/2 -translate-x-1/2 mb-2 px-4 py-4 bg-gray-800 text-amber-500 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                        <div className="absolute bottom-full ml-10 left-1/2 -translate-x-1/2 px-4 py-4 bg-gray-800 text-amber-500 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
                             Ask AI Anything
                             {/* <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-800"></div> */}
                         </div>

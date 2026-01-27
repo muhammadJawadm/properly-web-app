@@ -4,6 +4,7 @@ import { FaPaperPlane } from 'react-icons/fa';
 import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
 import Header from '../../../../components/common/Header';
 import AttorneyAccessNotificationModal from '../../../../components/Buyer/AttorneyAccessNotificationModal';
+import NotificationPanel from '../../../../components/common/NotificationPanel';
 import { useSidebarMargin } from '../../../../hooks/useResponsive';
 
 const MyOffers = () => {
@@ -13,6 +14,7 @@ const MyOffers = () => {
     const [showNegotiations, setShowNegotiations] = useState(false);
     const [messageInput, setMessageInput] = useState('');
     const [showAttorneyNotification, setShowAttorneyNotification] = useState(false);
+    const [showNotifications, setShowNotifications] = useState(false);
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
@@ -75,6 +77,7 @@ const MyOffers = () => {
                 <Header
                     title="Offers"
                     showNotifications={true}
+                    onNotificationClick={() => setShowNotifications(!showNotifications)}
                 />
 
                 <div className="p-4 sm:p-6 md:p-8 max-w-6xl mx-auto">
@@ -250,6 +253,12 @@ const MyOffers = () => {
                 isOpen={showAttorneyNotification}
                 onClose={() => setShowAttorneyNotification(false)}
                 attorneyData={attorneyData}
+            />
+
+            {/* Notifications Panel */}
+            <NotificationPanel
+                showNotifications={showNotifications}
+                onClose={() => setShowNotifications(false)}
             />
         </>
     );

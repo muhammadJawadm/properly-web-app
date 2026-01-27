@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
 import Header from '../../../../components/common/Header';
+import NotificationPanel from '../../../../components/common/NotificationPanel';
 import { useSidebarMargin } from '../../../../hooks/useResponsive';
 
 const SubmitOffer = () => {
@@ -10,6 +11,7 @@ const SubmitOffer = () => {
     const { propertyId } = useParams();
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
     const sidebarMargin = useSidebarMargin(sidebarCollapsed);
+    const [showNotifications, setShowNotifications] = useState(false);
     const [offerData, setOfferData] = useState({
         offerPrice: '2000000',
         depositAmount: '200000',
@@ -64,6 +66,7 @@ const SubmitOffer = () => {
                 <Header
                     title="Offers"
                     showNotifications={true}
+                    onNotificationClick={() => setShowNotifications(!showNotifications)}
                 />
 
                 <div className="p-4 sm:p-6 md:p-8">
@@ -270,6 +273,12 @@ const SubmitOffer = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Notifications Panel */}
+            <NotificationPanel
+                showNotifications={showNotifications}
+                onClose={() => setShowNotifications(false)}
+            />
         </>
     );
 };

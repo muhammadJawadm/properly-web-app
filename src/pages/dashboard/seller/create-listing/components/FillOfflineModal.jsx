@@ -249,35 +249,37 @@ const FillOfflineModal = ({ isOpen, onClose, onUpload, onAccept }) => {
                                             If you answered YES to any of the questions posed in the questionnaire set out above and if reasonably appropriate, then you are required to briefly explain and amplify your answer in the place provided for below:
                                         </p>
 
-                                        <div className="overflow-x-auto">
-                                            <table className="w-full border-collapse">
-                                                <thead>
-                                                    <tr className="bg-gray-800/70">
-                                                        <th className="border border-gray-600 p-3 text-left text-white font-medium w-1/4">Question Number</th>
-                                                        <th className="border border-gray-600 p-3 text-left text-white font-medium">Additional Information</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {[0, 1, 2, 3, 4, 5, 6, 7].map((index) => (
-                                                        <tr key={index}>
-                                                            <td className="border border-gray-600 p-3">
-                                                                <input
-                                                                    type="text"
-                                                                    className="w-full bg-gray-800/50 border-none px-2 py-1 text-white focus:outline-none"
-                                                                    placeholder="Question #"
-                                                                />
-                                                            </td>
-                                                            <td className="border border-gray-600 p-3">
-                                                                <textarea
-                                                                    rows="2"
-                                                                    className="w-full bg-gray-800/50 border-none px-2 py-1 text-white focus:outline-none resize-none"
-                                                                    placeholder="Provide additional details..."
-                                                                />
-                                                            </td>
+                                        <div className="overflow-x-auto -mx-2 sm:mx-0">
+                                            <div className="inline-block min-w-full align-middle">
+                                                <table className="min-w-full border-collapse">
+                                                    <thead>
+                                                        <tr className="bg-gray-800/70">
+                                                            <th className="border border-gray-600 p-2 sm:p-3 text-left text-white font-medium text-xs sm:text-sm whitespace-nowrap w-24 sm:w-1/4">Question Number</th>
+                                                            <th className="border border-gray-600 p-2 sm:p-3 text-left text-white font-medium text-xs sm:text-sm min-w-[200px]">Additional Information</th>
                                                         </tr>
-                                                    ))}
-                                                </tbody>
-                                            </table>
+                                                    </thead>
+                                                    <tbody>
+                                                        {[0, 1, 2, 3, 4, 5, 6, 7].map((index) => (
+                                                            <tr key={index}>
+                                                                <td className="border border-gray-600 p-2 sm:p-3">
+                                                                    <input
+                                                                        type="text"
+                                                                        className="w-full min-w-[60px] bg-gray-800/50 border-none px-2 py-1 text-white text-sm focus:outline-none"
+                                                                        placeholder="Question #"
+                                                                    />
+                                                                </td>
+                                                                <td className="border border-gray-600 p-2 sm:p-3">
+                                                                    <textarea
+                                                                        rows="2"
+                                                                        className="w-full min-w-[180px] bg-gray-800/50 border-none px-2 py-1 text-white text-sm focus:outline-none resize-none"
+                                                                        placeholder="Provide additional details..."
+                                                                    />
+                                                                </td>
+                                                            </tr>
+                                                        ))}
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

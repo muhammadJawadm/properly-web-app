@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react';
 import { FaEllipsisV, FaFile } from 'react-icons/fa';
 import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
 import Header from '../../../../components/common/Header';
+import NotificationPanel from '../../../../components/common/NotificationPanel';
 import { useSidebarMargin } from '../../../../hooks/useResponsive';
 
 const BuyerVault = () => {
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
     const sidebarMargin = useSidebarMargin(sidebarCollapsed);
     const [openMenuId, setOpenMenuId] = useState(null);
+    const [showNotifications, setShowNotifications] = useState(false);
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
@@ -101,7 +103,7 @@ const BuyerVault = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: sidebarMargin }}
             >
-                <Header title="Document Vault" showNotifications={true} />
+                <Header title="Document Vault" showNotifications={true} onNotificationClick={() => setShowNotifications(!showNotifications)} />
 
                 <div className="p-4 sm:p-6 md:p-8 bg-black">
                     <div className='bg-gray-800/60 backdrop-blur-lg rounded-2xl p-4 sm:p-6 md:p-8'>
@@ -199,6 +201,12 @@ const BuyerVault = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Notifications Panel */}
+            <NotificationPanel
+                showNotifications={showNotifications}
+                onClose={() => setShowNotifications(false)}
+            />
         </>
     );
 };

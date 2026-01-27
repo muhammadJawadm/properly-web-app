@@ -38,7 +38,7 @@ const EditProfileModal = ({ isOpen, onClose, onVerify }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
             {/* Backdrop */}
             <div
                 className="absolute inset-0 bg-black/70 backdrop-blur-sm"
@@ -46,11 +46,11 @@ const EditProfileModal = ({ isOpen, onClose, onVerify }) => {
             />
 
             {/* Modal */}
-            <div className="relative bg-[#4a4a4a] rounded-2xl w-full max-w-md p-8">
+            <div className="relative bg-[#4a4a4a] rounded-2xl w-full max-w-md p-6 sm:p-8 my-8 max-h-[90vh] overflow-y-auto">
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+                    className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
                 >
                     <FaTimes size={20} />
                 </button>

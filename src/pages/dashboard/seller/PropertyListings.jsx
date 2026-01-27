@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FaEye, FaQuestionCircle, FaList, FaPencilAlt, FaTrash, FaTimes } from 'react-icons/fa';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { FaEye, FaQuestionCircle, FaList, FaPencilAlt, FaTrash } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
 import Header from '../../../components/common/Header';
 import StatsCard from '../../../components/Seller/StatsCard';
+import NotificationPanel from '../../../components/common/NotificationPanel';
 import { useSidebarMargin } from '../../../hooks/useResponsive';
 
 const PropertyListings = () => {
@@ -19,14 +20,6 @@ const PropertyListings = () => {
         return unsubscribe;
     }, []);
 
-    const notifications = [
-        { id: 1, icon: '💬', text: 'New inquiry on your listing from John D.', time: 'Just now' },
-        { id: 2, icon: '👁️', text: 'Your listing got 32 new views today.', time: '30m ago' },
-        { id: 3, icon: '❤️', text: 'Your listing got 32 new views today.', time: '30m ago' },
-        { id: 4, icon: '🤝', text: 'You received an offer from a verified buyer.', time: '30m ago' },
-        { id: 5, icon: '✅', text: 'Congratulations! You have got a verified badge.', time: '30m ago' },
-        { id: 6, icon: '📊', text: 'Engagement increased by 12% this week.', time: '30m ago' }
-    ];
 
     const listings = [
         {
@@ -138,7 +131,9 @@ const PropertyListings = () => {
                                                 </span>
                                             </td>
                                             <td className="px-6 py-4">
-                                                <button className="text-amber-500 hover:text-amber-400 font-medium text-sm">
+                                                <button className="text-amber-500 hover:text-amber-400 font-medium text-sm"
+                                                onClick={()=>navigate('/seller/analytics')}
+                                                >
                                                     {listing.engagement}
                                                 </button>
                                             </td>
@@ -165,40 +160,10 @@ const PropertyListings = () => {
             </div>
 
             {/* Notifications Panel */}
-            {showNotifications && (
-                <div className="fixed right-4 sm:right-8 top-20 sm:top-24 w-80 sm:w-96 bg-gray-800 rounded-2xl shadow-2xl z-50 overflow-hidden">
-                    <div className="flex items-center justify-between p-6 border-b border-gray-700">
-                        <h3 className="text-white font-semibold">Notifications</h3>
-                        <div className="flex items-center gap-4">
-                            <button className="text-amber-500 hover:text-amber-400 text-sm font-medium">
-                                Mark All Read
-                            </button>
-                            <button
-                                onClick={() => setShowNotifications(false)}
-                                className="text-gray-400 hover:text-white"
-                            >
-                                <FaTimes />
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="max-h-96 overflow-y-auto">
-                        {notifications.map((notif) => (
-                            <div key={notif.id} className="p-4 border-b border-gray-700/50 hover:bg-gray-700/30 transition-colors cursor-pointer">
-                                <div className="flex items-start gap-3">
-                                    <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-xl flex-shrink-0">
-                                        {notif.icon}
-                                    </div>
-                                    <div className="flex-1">
-                                        <p className="text-white text-sm mb-1">{notif.text}</p>
-                                        <span className="text-gray-400 text-xs">{notif.time}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            )}
+            <NotificationPanel
+                showNotifications={showNotifications}
+                onClose={() => setShowNotifications(false)}
+            />
         </>
     );
 };

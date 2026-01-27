@@ -25,6 +25,7 @@ import FillOfflineModal from './components/FillOfflineModal';
 import OTPVerification from './components/OTPVerification';
 import ListingLiveModal from './components/ListingLiveModal';
 import AIGuide from './components/AIGuide';
+import NotificationPanel from '../../../../components/common/NotificationPanel';
 import { useEffect } from 'react';
 import { useSidebarMargin } from '../../../../hooks/useResponsive';
 
@@ -41,6 +42,7 @@ const CreateListing = () => {
     const [showOfflineModal, setShowOfflineModal] = useState(false);
     const [showOTP, setShowOTP] = useState(false);
     const [showPublished, setShowPublished] = useState(false);
+    const [showNotifications, setShowNotifications] = useState(false);
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
@@ -278,6 +280,12 @@ const CreateListing = () => {
             <ListingLiveModal
                 isOpen={showPublished}
                 onClose={() => setShowPublished(false)}
+            />
+
+            {/* Notifications Panel */}
+            <NotificationPanel
+                showNotifications={showNotifications}
+                onClose={() => setShowNotifications(false)}
             />
         </>
     );

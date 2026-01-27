@@ -3,12 +3,14 @@ import { FaUpload, FaDownload, FaCheckCircle, FaClock, FaEnvelope } from 'react-
 import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buyer/BuyerSidebar';
 import Header from '../../../../components/common/Header';
 import FICAComplianceModal from '../../../../components/Buyer/FICAComplianceModal';
+import NotificationPanel from '../../../../components/common/NotificationPanel';
 import { useSidebarMargin } from '../../../../hooks/useResponsive';
 
 const BuyerAttorney = () => {
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
     const sidebarMargin = useSidebarMargin(sidebarCollapsed);
     const [showFICAModal, setShowFICAModal] = useState(false);
+    const [showNotifications, setShowNotifications] = useState(false);
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
@@ -114,7 +116,7 @@ const BuyerAttorney = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: sidebarMargin }}
             >
-                <Header title="Attorney" showNotifications={true} />
+                <Header title="Attorney" showNotifications={true} onNotificationClick={() => setShowNotifications(!showNotifications)} />
 
                 <div className="p-4 sm:p-6 md:p-8 bg-black">
                     <div className='bg-gray-800/60 backdrop-blur-lg rounded-2xl p-4 sm:p-6 md:p-8'>
@@ -367,7 +369,7 @@ const BuyerAttorney = () => {
                                 ))}
                             </div>
                             <div className="ml-[30%]">
-                                <button className="w-1/2 px-2 py-3 border border-amber-500 text-amber-500 rounded-xl font-semibold hover:bg-amber-500/10 transition-colors">
+                                <button className=" w-full md:w-2/3 cl:w-1/2 px-2 py-3 border border-amber-500 text-amber-500 rounded-xl font-semibold hover:bg-amber-500/10 transition-colors">
                                     Mark Payment as Sent
                                 </button>
                             </div>
@@ -380,6 +382,12 @@ const BuyerAttorney = () => {
             <FICAComplianceModal
                 isOpen={showFICAModal}
                 onClose={() => setShowFICAModal(false)}
+            />
+
+            {/* Notifications Panel */}
+            <NotificationPanel
+                showNotifications={showNotifications}
+                onClose={() => setShowNotifications(false)}
             />
         </>
     );

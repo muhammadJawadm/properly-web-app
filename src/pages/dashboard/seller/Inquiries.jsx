@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { FaPaperPlane, FaCheckCircle, FaEnvelope, FaCalendar, FaHashtag, FaFileAlt, FaTimes, FaChevronDown } from 'react-icons/fa';
+import { FaPaperPlane, FaCheckCircle, FaEnvelope, FaCalendar, FaHashtag, FaFileAlt, FaChevronDown } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
 import Header from '../../../components/common/Header';
+import NotificationPanel from '../../../components/common/NotificationPanel';
 import { useSidebarMargin } from '../../../hooks/useResponsive';
 
 const Inquiries = () => {
@@ -10,6 +11,9 @@ const Inquiries = () => {
     const [message, setMessage] = useState('');
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
     const [showNotifications, setShowNotifications] = useState(false);
+    const [selectedDate, setSelectedDate] = useState('');
+    const [selectedTime, setSelectedTime] = useState('');
+    const [additionalNotes, setAdditionalNotes] = useState('');
     const sidebarMargin = useSidebarMargin(sidebarCollapsed);
 
     useEffect(() => {
@@ -18,15 +22,6 @@ const Inquiries = () => {
         });
         return unsubscribe;
     }, []);
-
-    const notifications = [
-        { id: 1, icon: '💬', text: 'New inquiry on your listing from John D.', time: 'Just now' },
-        { id: 2, icon: '👁️', text: 'Your listing got 32 new views today.', time: '30m ago' },
-        { id: 3, icon: '❤️', text: 'Your listing got 32 new views today.', time: '30m ago' },
-        { id: 4, icon: '🤝', text: 'You received an offer from a verified buyer.', time: '30m ago' },
-        { id: 5, icon: '✅', text: 'Congratulations! You have got a verified badge.', time: '30m ago' },
-        { id: 6, icon: '📊', text: 'Engagement increased by 12% this week.', time: '30m ago' }
-    ];
 
     const tabs = ['All', 'Pending', 'Verified', 'Closed'];
 
@@ -191,25 +186,60 @@ const Inquiries = () => {
 
                             {/* Time and Date Selectors */}
                             <div className="grid grid-cols-2 gap-3 mb-4">
-                                <button className="flex items-center gap-2 px-3 py-2 bg-gray-800/60 rounded-lg text-gray-300 text-sm hover:bg-gray-800 transition-colors">
-                                    <FaCalendar className="text-amber-500" size={14} />
-                                    <span>Select time</span>
-                                </button>
-                                <button className="flex items-center gap-2 px-3 py-2 bg-gray-800/60 rounded-lg text-gray-300 text-sm hover:bg-gray-800 transition-colors">
-                                    <FaCalendar className="text-amber-500" size={14} />
-                                    <span>Select date</span>
-                                </button>
+                                <div className="relative">
+                                    <input
+                                        type="time"
+                                        value={selectedTime}
+                                        onChange={(e) => setSelectedTime(e.target.value)}
+                                        className="w-full px-3 py-2 bg-gray-800/60 border border-gray-600 rounded-lg text-gray-300 text-sm hover:bg-gray-800 transition-colors focus:outline-none focus:border-amber-500 cursor-pointer"
+                                    />
+                                    {!selectedTime && (
+                                        <div className="absolute inset-0 flex items-center gap-2 px-1 pointer-events-none">
+                                            <FaCalendar className="text-amber-500" size={14} />
+                                            {/* <span className="text-gray-300 text-sm pl-5 ">Select time</span> */}
+                                        </div>
+                                    )}
+                                </div>
+                                <div className="relative">
+                                    <input
+                                        type="date"
+                                        value={selectedDate}
+                                        onChange={(e) => setSelectedDate(e.target.value)}
+                                        className="w-full px-3 py-2 bg-gray-800/60 border border-gray-600 rounded-lg text-gray-300 text-sm hover:bg-gray-800 transition-colors focus:outline-none focus:border-amber-500 cursor-pointer"
+                                    />
+                                    {!selectedDate && (
+                                        <div className="absolute inset-0 flex items-center gap-2 px-1 pointer-events-none">
+                                            <FaCalendar className="text-amber-500" size={14} />
+                                            {/* <span className="text-gray-300 text-sm">Select date</span> */}
+                                        </div>
+                                    )}
+                                </div>
                             </div>
 
                             {/* Additional Notes */}
                             <textarea
                                 placeholder="Additional Notes..."
+                                value={additionalNotes}
+                                onChange={(e) => setAdditionalNotes(e.target.value)}
                                 className="w-full px-3 py-3 bg-gray-800/60 border border-gray-600 rounded-lg text-white placeholder-gray-500 text-sm resize-none focus:outline-none focus:border-amber-500"
                                 rows="3"
                             ></textarea>
 
                             {/* Create Viewing Invite Button */}
-                            <button className="w-full mt-3 py-3  text-amber-500 font-semibold rounded-lg hover:opacity-90 transition-opacity">
+                            <button 
+                                onClick={() => {
+                                    if (selectedDate && selectedTime) {
+                                        alert(`Viewing scheduled for ${selectedDate} at ${selectedTime}\nNotes: ${additionalNotes || 'None'}`);
+                                        // Reset form
+                                        setSelectedDate('');
+                                        setSelectedTime('');
+                                        setAdditionalNotes('');
+                                    } else {
+                                        alert('Please select both date and time');
+                                    }
+                                }}
+                                className="w-full mt-3 py-3 text-amber-500 font-semibold rounded-lg hover:opacity-90 transition-opacity"
+                            >
                                 Create Viewing Invite
                             </button>
                         </div>
@@ -241,40 +271,10 @@ const Inquiries = () => {
             </div>
 
             {/* Notifications Panel */}
-            {showNotifications && (
-                <div className="fixed right-4 sm:right-8 top-20 sm:top-24 w-80 sm:w-96 bg-gray-800 rounded-2xl shadow-2xl z-50 overflow-hidden">
-                    <div className="flex items-center justify-between p-6 border-b border-gray-700">
-                        <h3 className="text-white font-semibold">Notifications</h3>
-                        <div className="flex items-center gap-4">
-                            <button className="text-amber-500 hover:text-amber-400 text-sm font-medium">
-                                Mark All Read
-                            </button>
-                            <button
-                                onClick={() => setShowNotifications(false)}
-                                className="text-gray-400 hover:text-white"
-                            >
-                                <FaTimes />
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="max-h-96 overflow-y-auto">
-                        {notifications.map((notif) => (
-                            <div key={notif.id} className="p-4 border-b border-gray-700/50 hover:bg-gray-700/30 transition-colors cursor-pointer">
-                                <div className="flex items-start gap-3">
-                                    <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-xl flex-shrink-0">
-                                        {notif.icon}
-                                    </div>
-                                    <div className="flex-1">
-                                        <p className="text-white text-sm mb-1">{notif.text}</p>
-                                        <span className="text-gray-400 text-xs">{notif.time}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            )}
+            <NotificationPanel
+                showNotifications={showNotifications}
+                onClose={() => setShowNotifications(false)}
+            />
         </>
     );
 };

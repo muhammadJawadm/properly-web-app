@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { FaDownload, FaUpload, FaCheckCircle, FaClock, FaExclamationCircle, FaCommentDots } from 'react-icons/fa';
 import SellerSidebar, { subscribeSidebarState } from '../../../components/Seller/SellerSidebar';
 import Header from '../../../components/common/Header';
+import NotificationPanel from '../../../components/common/NotificationPanel';
 import FicaComplianceModal from '../../../components/Seller/FicaComplianceModal';
 import RateAttorneyModal from '../../../components/Seller/RateAttorneyModal';
 import { useSidebarMargin } from '../../../hooks/useResponsive';
@@ -11,6 +12,7 @@ const Attorney = () => {
     const sidebarMargin = useSidebarMargin(sidebarCollapsed);
     const [showFicaModal, setShowFicaModal] = useState(false);
     const [showRateModal, setShowRateModal] = useState(false);
+    const [showNotifications, setShowNotifications] = useState(false);
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
@@ -68,7 +70,7 @@ const Attorney = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: sidebarMargin }}
             >
-                <Header title="Attorney" showNotifications={true} />
+                <Header title="Attorney" showNotifications={true} onNotificationClick={() => setShowNotifications(!showNotifications)} />
 
                 <div className="p-4 sm:p-6 md:p-8">
                     <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
@@ -270,6 +272,12 @@ const Attorney = () => {
             {/* Modals */}
             {showFicaModal && <FicaComplianceModal onClose={() => setShowFicaModal(false)} />}
             {showRateModal && <RateAttorneyModal attorneyName="William James" onClose={() => setShowRateModal(false)} />}
+
+            {/* Notifications Panel */}
+            <NotificationPanel
+                showNotifications={showNotifications}
+                onClose={() => setShowNotifications(false)}
+            />
         </>
     );
 };

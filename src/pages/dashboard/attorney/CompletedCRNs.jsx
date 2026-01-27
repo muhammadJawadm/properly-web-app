@@ -3,12 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { FaFolderMinus } from 'react-icons/fa';
 import AttorneySidebar, { subscribeSidebarState } from '../../../components/Attorney/AttorneySidebar';
 import Header from '../../../components/common/Header';
+import NotificationPanel from '../../../components/common/NotificationPanel';
 import { useSidebarMargin } from '../../../hooks/useResponsive';
 
 const CompletedCRNs = () => {
     const navigate = useNavigate();
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
     const sidebarMargin = useSidebarMargin(sidebarCollapsed);
+    const [showNotifications, setShowNotifications] = useState(false);
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
@@ -42,7 +44,7 @@ const CompletedCRNs = () => {
                 className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 transition-all duration-300"
                 style={{ marginLeft: sidebarMargin }}
             >
-                <Header title="Completed CRNs" showNotifications={true} />
+                <Header title="Completed CRNs" showNotifications={true} onNotificationClick={() => setShowNotifications(!showNotifications)} />
 
                 <div className="p-4 sm:p-6 md:p-8">
                     {/* Completed CRNs Card */}
@@ -69,6 +71,12 @@ const CompletedCRNs = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Notifications Panel */}
+            <NotificationPanel
+                showNotifications={showNotifications}
+                onClose={() => setShowNotifications(false)}
+            />
         </>
     );
 };

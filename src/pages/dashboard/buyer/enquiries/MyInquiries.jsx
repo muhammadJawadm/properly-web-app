@@ -5,6 +5,7 @@ import BuyerSidebar, { subscribeSidebarState } from '../../../../components/Buye
 import Header from '../../../../components/common/Header';
 import InquiryCard from '../../../../components/Buyer/InquiryCard';
 import ChatPanel from '../../../../components/Buyer/ChatPanel';
+import NotificationPanel from '../../../../components/common/NotificationPanel';
 import { useSidebarMargin } from '../../../../hooks/useResponsive';
 
 const MyInquiries = () => {
@@ -14,6 +15,7 @@ const MyInquiries = () => {
     const sidebarMargin = useSidebarMargin(sidebarCollapsed);
     const [selectedInquiry, setSelectedInquiry] = useState(null);
     const [messages, setMessages] = useState([]);
+    const [showNotifications, setShowNotifications] = useState(false);
 
     useEffect(() => {
         const unsubscribe = subscribeSidebarState((collapsed) => {
@@ -204,6 +206,7 @@ const MyInquiries = () => {
                 <Header
                     title="Inquiries"
                     showNotifications={true}
+                    onNotificationClick={() => setShowNotifications(!showNotifications)}
                 />
 
                 <div className="p-4 sm:p-6 md:p-8">
@@ -252,6 +255,12 @@ const MyInquiries = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Notifications Panel */}
+            <NotificationPanel
+                showNotifications={showNotifications}
+                onClose={() => setShowNotifications(false)}
+            />
         </>
     );
 };

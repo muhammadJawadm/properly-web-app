@@ -127,7 +127,7 @@ const Negotiations = () => {
                         </div>
 
                         {/* Two Column Layout: Revision Details (Left) + Chat (Right) */}
-                        <div className="grid grid-cols-1 h-[70vh] lg:grid-cols-2 gap-6 p-4 sm:p-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 sm:p-6">
                             {/* Left Column: Revision Details */}
                             <div className="space-y-4">
                                 {/* Price Comparison Card */}
@@ -136,13 +136,13 @@ const Negotiations = () => {
                                         {/* Buyer's Offered Price */}
                                         <div>
                                             <p className="text-gray-400 text-xs mb-2">Buyer's offered price</p>
-                                            <p className="text-white text-lg font-bold">R 1,250,000</p>
+                                            <p className="text-white text-base sm:text-lg font-bold">R 1,250,000</p>
                                         </div>
 
                                         {/* Your Listed Price */}
                                         <div>
                                             <p className="text-gray-400 text-xs mb-2">Your listed price</p>
-                                            <p className="text-white text-lg font-bold">R 1,300,000</p>
+                                            <p className="text-white text-base sm:text-lg font-bold">R 1,300,000</p>
                                         </div>
                                     </div>
 
@@ -164,19 +164,19 @@ const Negotiations = () => {
                                 <div className="grid grid-cols-3 gap-2">
                                     <button
                                         onClick={handleAcceptOffer}
-                                        className="py-2.5 px-3 border-2 border-green-600 text-green-400 hover:bg-green-600 hover:text-white font-semibold rounded-full transition-colors text-xs sm:text-sm"
+                                        className="py-2.5 px-2 sm:px-3 border-2 border-green-600 text-green-400 hover:bg-green-600 hover:text-white font-semibold rounded-full transition-colors text-xs sm:text-sm"
                                     >
                                         Accept
                                     </button>
                                     <button
                                         onClick={() => navigate(`/seller/offers/draft/${offerId}`)}
-                                        className="py-2.5 px-3 border-2 border-amber-600 text-amber-400 hover:bg-amber-600 hover:text-black font-semibold rounded-full transition-colors text-xs sm:text-sm"
+                                        className="py-2.5 px-2 sm:px-3 border-2 border-amber-600 text-amber-400 hover:bg-amber-600 hover:text-black font-semibold rounded-full transition-colors text-xs sm:text-sm"
                                     >
                                         Negotiate
                                     </button>
                                     <button
                                         onClick={handleCounterOffer}
-                                        className="py-2.5 px-3 border-2 border-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white font-semibold rounded-full transition-colors text-xs sm:text-sm"
+                                        className="py-2.5 px-2 sm:px-3 border-2 border-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white font-semibold rounded-full transition-colors text-xs sm:text-sm"
                                     >
                                         Counter offer
                                     </button>
@@ -184,11 +184,11 @@ const Negotiations = () => {
                             </div>
 
                             {/* Right Column: Messages */}
-                            <div className="flex flex-col h-full justify-end space-y-4">
+                            <div className="flex flex-col justify-end space-y-4 min-h-[200px] lg:min-h-[300px]">
                                 {/* Buyer Message Bubble */}
                                 <div className="flex justify-end">
-                                    <div className="bg-gray-700/50 backdrop-blur-sm rounded-2xl rounded-tr-none p-4 max-w-[85%] border-r-4 border-amber-500">
-                                        <p className="text-white text-sm">
+                                    <div className="bg-gray-700/50 backdrop-blur-sm rounded-2xl rounded-tr-none p-3 sm:p-4 max-w-[85%] border-r-4 border-amber-500">
+                                        <p className="text-white text-xs sm:text-sm">
                                             Let's settle at R 1,280,000 and I will share transfer cost for your convenience.
                                         </p>
                                     </div>
@@ -199,21 +199,21 @@ const Negotiations = () => {
                         </div>
 
                         {/* Message Input at Bottom */}
-                        <div className="border-t border-gray-700 p-4 sm:p-6">
-                            <div className="flex items-center gap-3">
+                        <div className="border-t border-gray-700 p-3 sm:p-4 lg:p-6">
+                            <div className="flex items-center gap-2 sm:gap-3">
                                 <input
                                     type="text"
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
                                     onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                                     placeholder="Write your message..."
-                                    className="flex-1 bg-gray-900/50 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/50 border border-gray-700"
+                                    className="flex-1 bg-gray-900/50 text-white placeholder-gray-500 rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50 border border-gray-700"
                                 />
                                 <button
                                     onClick={handleSendMessage}
-                                    className="bg-gray-700/50 hover:bg-gray-600 text-white p-3 rounded-xl transition-colors"
+                                    className="bg-gray-700/50 hover:bg-gray-600 text-white p-2 sm:p-3 rounded-xl transition-colors flex-shrink-0"
                                 >
-                                    <FaPaperPlane size={18} />
+                                    <FaPaperPlane size={16} className="sm:w-[18px] sm:h-[18px]" />
                                 </button>
                             </div>
                         </div>
