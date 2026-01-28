@@ -7,6 +7,7 @@ import { useSidebarMargin } from '../../../hooks/useResponsive';
 import EditProfileModal from '../../../components/Buyer/profile/EditProfileModal';
 import ChangePasswordModal from '../../../components/Buyer/profile/ChangePasswordModal';
 import OTPVerificationModal from '../../../components/Buyer/profile/OTPVerificationModal';
+import BuyerDocumentsModal from '../../../components/Buyer/profile/BuyerDocumentsModal';
 import LogoutModal from '../../../components/Buyer/profile/LogoutModal';
 
 const BuyerProfile = () => {
@@ -17,6 +18,7 @@ const BuyerProfile = () => {
     // Modal states
     const [activeModal, setActiveModal] = useState(null);
     const [showOTPModal, setShowOTPModal] = useState(false);
+    const [showBuyerDocsModal, setShowBuyerDocsModal] = useState(false);
     const [showLogoutModal, setShowLogoutModal] = useState(false);
 
     // User data (would come from API/context in production)
@@ -46,7 +48,7 @@ const BuyerProfile = () => {
             id: 'buyerDocuments',
             icon: FaFolder,
             label: 'Buyer type Documents',
-            onClick: () => navigate('/BuyerType')
+            onClick: () => setShowBuyerDocsModal(true)
         },
         {
             id: 'changePassword',
@@ -199,6 +201,11 @@ const BuyerProfile = () => {
                 isOpen={activeModal === 'changePassword'}
                 onClose={() => setActiveModal(null)}
                 onSubmit={handlePasswordChange}
+            />
+
+            <BuyerDocumentsModal
+                isOpen={showBuyerDocsModal}
+                onClose={() => setShowBuyerDocsModal(false)}
             />
 
             <OTPVerificationModal

@@ -1,48 +1,56 @@
 import { FaTimes, FaFileAlt, FaEye, FaDownload } from 'react-icons/fa';
 
-const SellerDocumentsModal = ({ isOpen, onClose }) => {
+const BuyerDocumentsModal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
-    // Mock data for uploaded documents
+    // Mock data for uploaded buyer documents
     const documents = [
         {
             id: 1,
-            name: 'Business Registration Certificate',
+            name: 'Proof of Income',
             type: 'PDF',
-            uploadDate: '2024-01-15',
-            size: '2.4 MB',
+            uploadDate: '2024-01-18',
+            size: '1.9 MB',
             status: 'verified'
         },
         {
             id: 2,
-            name: 'Tax Clearance Certificate',
+            name: 'Bank Statement',
             type: 'PDF',
-            uploadDate: '2024-01-14',
-            size: '1.8 MB',
+            uploadDate: '2024-01-17',
+            size: '2.2 MB',
             status: 'verified'
         },
         {
             id: 3,
-            name: 'Company Profile',
+            name: 'Employment Verification Letter',
             type: 'PDF',
-            uploadDate: '2024-01-12',
-            size: '3.2 MB',
-            status: 'pending'
-        },
-        {
-            id: 4,
-            name: 'Bank Statement',
-            type: 'PDF',
-            uploadDate: '2024-01-10',
-            size: '1.5 MB',
+            uploadDate: '2024-01-16',
+            size: '1.3 MB',
             status: 'verified'
         },
         {
-            id: 5,
-            name: 'Professional License',
+            id: 4,
+            name: 'Credit Report',
             type: 'PDF',
-            uploadDate: '2024-01-08',
-            size: '2.1 MB',
+            uploadDate: '2024-01-15',
+            size: '3.1 MB',
+            status: 'pending'
+        },
+        {
+            id: 5,
+            name: 'Identity Document',
+            type: 'PDF',
+            uploadDate: '2024-01-14',
+            size: '1.7 MB',
+            status: 'verified'
+        },
+        {
+            id: 6,
+            name: 'Proof of Address',
+            type: 'PDF',
+            uploadDate: '2024-01-13',
+            size: '1.4 MB',
             status: 'verified'
         }
     ];
@@ -74,7 +82,7 @@ const SellerDocumentsModal = ({ isOpen, onClose }) => {
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-600">
                     <h2 className="text-white text-xl sm:text-2xl font-semibold">
-                        Seller Type Documents
+                        Buyer Type Documents
                     </h2>
                     <button
                         onClick={onClose}
@@ -103,7 +111,7 @@ const SellerDocumentsModal = ({ isOpen, onClose }) => {
                                 No documents uploaded yet.
                             </p>
                             <p className="text-gray-400 text-sm">
-                                Upload your seller-specific documents to get verified.
+                                Upload your buyer-specific documents to get verified.
                             </p>
                         </div>
                     ) : (
@@ -173,4 +181,4 @@ const SellerDocumentsModal = ({ isOpen, onClose }) => {
     );
 };
 
-export default SellerDocumentsModal;
+export default BuyerDocumentsModal;

@@ -9,6 +9,7 @@ import ChangePasswordModal from '../../../components/Seller/profile/ChangePasswo
 import OTPVerificationModal from '../../../components/Seller/profile/OTPVerificationModal';
 import SocialMediaLinksModal from '../../../components/Seller/profile/SocialMediaLinksModal';
 import SellerDocumentsModal from '../../../components/Seller/profile/SellerDocumentsModal';
+import KycDocumentsModal from '../../../components/Seller/profile/KycDocumentsModal';
 import LogoutModal from '../../../components/Seller/profile/LogoutModal';
 
 const SellerProfile = () => {
@@ -19,6 +20,7 @@ const SellerProfile = () => {
     // Modal states
     const [activeModal, setActiveModal] = useState(null);
     const [showOTPModal, setShowOTPModal] = useState(false);
+    const [showKycModal, setShowKycModal] = useState(false);
     const [showLogoutModal, setShowLogoutModal] = useState(false);
 
     // User data (would come from API/context in production)
@@ -48,7 +50,7 @@ const SellerProfile = () => {
             id: 'kycVerification',
             icon: FaCheckCircle,
             label: 'KYC Verification',
-            onClick: () => navigate('/sellerkyc')
+            onClick: () => setShowKycModal(true)
         },
         {
             id: 'sellerDocuments',
@@ -230,6 +232,11 @@ const SellerProfile = () => {
             <SellerDocumentsModal
                 isOpen={activeModal === 'sellerDocuments'}
                 onClose={() => setActiveModal(null)}
+            />
+
+            <KycDocumentsModal
+                isOpen={showKycModal}
+                onClose={() => setShowKycModal(false)}
             />
 
             <OTPVerificationModal
