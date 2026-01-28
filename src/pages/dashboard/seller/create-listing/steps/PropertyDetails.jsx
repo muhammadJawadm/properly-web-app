@@ -784,7 +784,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                                                 className="flex-1 px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-white"
                                             />
                                             <button
-                                                className="p-2 bg-gray-800/60 rounded-lg hover:bg-gray-700 transition-colors"
+                                                className="p-2 bg-gray-800/60 rounded-lg hover:bg-gray-700 transition-colors hidden md:block"
                                             >
                                                 <FaMapMarkerAlt className="text-amber-500" size={16} />
                                             </button>
@@ -798,7 +798,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                                 <label className="block text-white mb-3 text-sm">Add Business Assets</label>
                                 <div className="space-y-3">
                                     {['Livestock', 'Equipment', 'Machinery', 'Water Rights', 'Infrastructure', 'Vehicles'].map((asset, index) => (
-                                        <div key={index} className="flex items-center gap-3">
+                                        <div key={index} className="flex lg:flex-row flex-col items-center gap-3">
                                             <label className="flex items-center gap-2 cursor-pointer min-w-[140px]">
                                                 <input
                                                     type="checkbox"

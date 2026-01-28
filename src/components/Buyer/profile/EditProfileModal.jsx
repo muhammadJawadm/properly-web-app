@@ -6,13 +6,13 @@ const EditProfileModal = ({ isOpen, onClose, onVerify }) => {
         name: 'Daniel Mthembu',
         email: 'Danielmthembu123@gmail.com',
         phone: '+ 456 546421',
-        sellerType: 'Individual seller'
+        buyerType: 'Individual Buyer'
     });
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    const sellerTypes = [
-        'Individual seller',
+    const buyerTypes = [
+        'Individual Buyer',
         'Agency',
         'Developer',
         'Property Manager'
@@ -25,8 +25,8 @@ const EditProfileModal = ({ isOpen, onClose, onVerify }) => {
         });
     };
 
-    const handleSellerTypeSelect = (type) => {
-        setFormData({ ...formData, sellerType: type });
+    const handleBuyerTypeSelect = (type) => {
+        setFormData({ ...formData, buyerType: type });
         setIsDropdownOpen(false);
     };
 
@@ -113,13 +113,13 @@ const EditProfileModal = ({ isOpen, onClose, onVerify }) => {
                             />
                         </div>
 
-                        {/* Seller Type Dropdown */}
+                        {/* Buyer Type Dropdown */}
                         <div className="relative">
-                            <label className="block text-white/70 text-sm mb-2">Seller Type</label>
+                            <label className="block text-white/70 text-sm mb-2">Buyer Type</label>
                             <span
                                 className="w-full px-4 py-3 bg-gray-400/50 text-white rounded-lg outline-none focus:ring-2 focus:ring-amber-500 transition-all flex items-center justify-between"
                             >
-                                {formData.sellerType}
+                                {formData.buyerType}
                             </span>
                         </div>
 

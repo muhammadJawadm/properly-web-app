@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import BuyerSidebar, { subscribeSidebarState } from '../../../components/Buyer/BuyerSidebar';
 import Header from '../../../components/common/Header';
 import { useSidebarMargin } from '../../../hooks/useResponsive';
-import EditProfileModal from '../../../components/Seller/profile/EditProfileModal';
-import ChangePasswordModal from '../../../components/Seller/profile/ChangePasswordModal';
-import OTPVerificationModal from '../../../components/Seller/profile/OTPVerificationModal';
-import LogoutModal from '../../../components/Seller/profile/LogoutModal';
+import EditProfileModal from '../../../components/Buyer/profile/EditProfileModal';
+import ChangePasswordModal from '../../../components/Buyer/profile/ChangePasswordModal';
+import OTPVerificationModal from '../../../components/Buyer/profile/OTPVerificationModal';
+import LogoutModal from '../../../components/Buyer/profile/LogoutModal';
 
 const BuyerProfile = () => {
     const navigate = useNavigate();
