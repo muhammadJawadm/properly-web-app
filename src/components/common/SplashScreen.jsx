@@ -65,7 +65,7 @@ const SplashScreen = () => {
                 {/* Desktop/Tablet Layout (hidden on mobile, visible sm and above) */}
                 <div className="hidden sm:flex flex-col items-center justify-center w-full h-full">
                     {/* Buttons Row - Positioned Above Logo */}
-                    <div className="absolute top-[20%] md:top-[32%] lg:top-[40%] lg:left-[5%] left-10 right-0 flex flex-row items-center justify-center sm:justify-between gap-10 px-8 md:px-16 lg:px-8 xl:px-0 max-w-6xl mx-auto">
+                    <div className="absolute top-[20%] md:top-[27%] lg:top-[32%] lg:left-[5%] left-10 right-0 flex flex-row items-center justify-center sm:justify-between gap-10 px-8 md:px-16 lg:px-8 xl:px-0 max-w-6xl mx-auto">
                         {/* Sell Property Button */}
                         <Link to="/SignupMethod">
                             <button
