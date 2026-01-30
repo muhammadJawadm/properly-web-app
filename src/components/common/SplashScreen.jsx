@@ -65,12 +65,12 @@ const SplashScreen = () => {
                 {/* Desktop/Tablet Layout (hidden on mobile, visible sm and above) */}
                 <div className="hidden sm:flex flex-col items-center justify-center w-full h-full">
                     {/* Buttons Row - Positioned Above Logo */}
-                    <div className="absolute top-[20%] md:top-[27%] lg:top-[32%] lg:left-[5%] left-10 right-0 flex flex-row items-center justify-center sm:justify-between gap-10 px-8 md:px-16 lg:px-8 xl:px-0 max-w-6xl mx-auto">
+                    <div className="absolute top-[20%] md:top-[32%] lg:top-[34%] xl:top-[40%] lg:left-[1%] left-10 right-0 flex flex-row items-center justify-center sm:justify-between gap-8 px-4 md:px-12 lg:px-6 xl:px-0  max-w-5xl xl:max-w-6xl mx-auto">
                         {/* Sell Property Button */}
                         <Link to="/SignupMethod">
                             <button
                                 onClick={() => handleRoleSelection('seller')}
-                                className="flex items-center gap-2 lg:px-10 xl:px-7 md:px-5 md:py-2.5 sm:px-6 sm:py-2 rounded-full text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 uppercase text-sm xl:text-2xl"
+                                className="flex items-center gap-2 lg:px-7 xl:px-6 md:px-4 md:py-2.5 sm:px-6 sm:py-2 rounded-full text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 uppercase text-sm md:text-sm lg:text-md"
                                 style={{ backgroundColor: '#EDBF6D' }}
                             >
                                 SELL PROPERTY
@@ -82,7 +82,7 @@ const SplashScreen = () => {
                         <Link to="/SignupMethod">
                             <button
                                 onClick={() => handleRoleSelection('buyer')}
-                                className="flex items-center gap-2 lg:px-10 xl:px-7 md:px-5 md:py-2.5 sm:px-6 sm:py-2 rounded-full text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 uppercase text-sm xl:text-2xl"
+                                className="flex items-center gap-2 lg:px-7 xl:px-6 md:px-4 md:py-2.5 sm:px-6 sm:py-2 rounded-full text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 uppercase text-sm md:text-sm lg:text-md"
                                 style={{ backgroundColor: '#EDBF6D' }}
                             >
                                 BUY PROPERTY
@@ -96,7 +96,7 @@ const SplashScreen = () => {
                         <img
                             src={SplashLogo}
                             alt="Properly Real Estate Logo"
-                            className="w-[800px] md:w-[1800px] lg:w-[2000px] h-[130vh] md:h-[140vh] lg:h-[150vh] object-contain"
+                            className="w-[800px] md:w-[1600px] lg:w-[1800px] h-[130vh] md:h-[130vh] lg:h-[130vh] object-contain"
                         />
                     </div>
                 </div>
