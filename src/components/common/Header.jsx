@@ -9,7 +9,8 @@ const Header = ({ title, showNotifications = true, onNotificationClick }) => {
     const location = useLocation();
     const navigate = useNavigate();
     const isBuyerPage = location.pathname.includes('/buyer');
-    const isAttorneyPage = location.pathname.includes('/attorney');
+    // Ensure we don't treat seller/attorney page as the main Attorney Dashboard
+    const isAttorneyPage = location.pathname.includes('/attorney') && !location.pathname.includes('/seller');
 
     const handleMenuToggle = () => {
         if (isBuyerPage) {

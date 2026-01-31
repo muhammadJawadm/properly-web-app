@@ -393,7 +393,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
                                 onChange={(e) => setOutbuildings(e.target.value)}
                             />
                             <FormInput
-                                label="Gates and Levies (Optional)"
+                                label="Rates and Levies (Optional)"
                                 placeholder="e.g R2000000"
                                 value={gatesLevies}
                                 onChange={(e) => setGatesLevies(e.target.value)}
