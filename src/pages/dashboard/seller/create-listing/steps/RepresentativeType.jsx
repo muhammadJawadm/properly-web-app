@@ -35,7 +35,7 @@ const RepresentativeType = ({ onContinue, onBack, formData }) => {
                 <h2 className="text-white text-2xl font-semibold mb-2">Representation</h2>
                 <p className="text-gray-400 text-sm mb-8">Please indicate your relation to the property.</p>
 
-                <div className="flex gap-5">
+                <div className=" flex flex-col md:flex-row gap-5">
                     {/* Left Side - Radio Options */}
                     <div className="flex-1 space-y-5">
                         {representativeOptions.map((option) => (
@@ -50,10 +50,10 @@ const RepresentativeType = ({ onContinue, onBack, formData }) => {
                                         value={option.value}
                                         checked={selectedType === option.value}
                                         onChange={(e) => setSelectedType(e.target.value)}
-                                        className="appearance-none w-5 h-5 border-2 border-gray-600 rounded-full checked:border-amber-500 transition-colors cursor-pointer"
+                                        className="appearance-none w-4 h-4 border-2 border-gray-600 rounded-full checked:border-amber-500 transition-colors cursor-pointer"
                                     />
                                     {selectedType === option.value && (
-                                        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-amber-500 rounded-full"></div>
+                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-amber-500 rounded-full"></div>
                                     )}
                                 </div>
                                 <span className={`text-sm transition-colors ${selectedType === option.value ? 'text-white' : 'text-gray-400'
@@ -66,7 +66,7 @@ const RepresentativeType = ({ onContinue, onBack, formData }) => {
 
                     {/* Right Side - Supporting Documents Panel */}
                     {needsDocumentation && (
-                        <div className="flex-1 bg-gray-700/50 rounded-xl p-8">
+                        <div className="flex-1 bg-gray-700/50 rounded-xl p-4 md:p-8">
                             <h3 className="text-white font-semibold mb-2">Supporting documents Required</h3>
                             <p className="text-gray-400 text-sm mb-16">
                                 Please upload relevant proof such as company registration, trust resolution, power of Attorney or executor letter.
