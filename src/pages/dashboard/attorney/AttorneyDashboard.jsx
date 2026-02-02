@@ -321,7 +321,7 @@ const AttorneyDashboard = () => {
                             <div className="flex gap-4 mb-6 border-b border-gray-700">
                                 <button
                                     onClick={() => setActiveTab('buyer')}
-                                    className={`pb-3 px-2 font-medium transition-colors ${activeTab === 'buyer'
+                                    className={`pb-3 px-4 font-medium transition-colors text-left ${activeTab === 'buyer'
                                         ? 'text-amber-500 border-b-2 border-amber-500'
                                         : 'text-gray-400 hover:text-white'
                                         }`}
@@ -330,7 +330,7 @@ const AttorneyDashboard = () => {
                                 </button>
                                 <button
                                     onClick={() => setActiveTab('seller')}
-                                    className={`pb-3 px-2 font-medium transition-colors ${activeTab === 'seller'
+                                    className={`pb-3 px-4 font-medium transition-colors text-left ${activeTab === 'seller'
                                         ? 'text-amber-500 border-b-2 border-amber-500'
                                         : 'text-gray-400 hover:text-white'
                                         }`}

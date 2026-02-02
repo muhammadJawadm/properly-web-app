@@ -15,7 +15,7 @@ const NotificationPanel = ({ showNotifications, onClose, notifications }) => {
     const notificationList = notifications || defaultNotifications;
 
     return (
-        <div className="fixed right-4 sm:right-8 top-20 sm:top-24 w-80 sm:w-96 bg-gray-800 rounded-2xl shadow-2xl z-50 overflow-hidden">
+        <div className="fixed right-4 sm:right-8 top-20 sm:top-24 w-80 max-h-[75%]  sm:w-96 bg-gray-800 rounded-2xl shadow-2xl z-50 overflow-hidden">
             <div className="flex items-center justify-between p-6 border-b border-gray-700">
                 <h3 className="text-white font-semibold">Notifications</h3>
                 <div className="flex items-center gap-4">
@@ -31,7 +31,20 @@ const NotificationPanel = ({ showNotifications, onClose, notifications }) => {
                 </div>
             </div>
 
-            <div className="max-h-96 overflow-y-auto">
+            <div
+                className="max-h-96 overflow-y-auto"
+                style={{
+                    scrollbarWidth: 'none',
+                    msOverflowStyle: 'none'
+                }}
+            >
+                <style>
+                    {`
+                        div::-webkit-scrollbar {
+                            display: none;
+                        }
+                    `}
+                </style>
                 {notificationList.map((notif) => (
                     <div key={notif.id} className="p-4 border-b border-gray-700/50 hover:bg-gray-700/30 transition-colors cursor-pointer">
                         <div className="flex items-start gap-3">

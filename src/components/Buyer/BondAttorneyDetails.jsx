@@ -43,12 +43,12 @@ const BondAttorneyDetails = () => {
             </div>
 
             {/* Back Button */}
-            <button
+            {/* <button
                 className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20 text-white hover:text-gray-300 transition-colors"
                 onClick={() => window.history.back()}
             >
                 <FaArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
+            </button> */}
 
             {/* Main Content Container */}
             <div className="relative z-10 w-full max-w-4xl">

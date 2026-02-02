@@ -56,7 +56,20 @@ const AttorneySelectionModal = ({ isOpen, onClose, crn, onConfirm }) => {
 
     return (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-gray-800 rounded-2xl max-w-md w-full p-6 sm:p-8 relative">
+            <div
+                className="bg-gray-800 rounded-2xl max-w-md w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto "
+                style={{
+                    scrollbarWidth: 'none',
+                    msOverflowStyle: 'none'
+                }}
+            >
+                <style>
+                    {`
+                        div::-webkit-scrollbar {
+                            display: none;
+                        }
+                    `}
+                </style>
                 {/* Close Button */}
                 <button
                     onClick={onClose}
@@ -66,7 +79,7 @@ const AttorneySelectionModal = ({ isOpen, onClose, crn, onConfirm }) => {
                 </button>
 
                 {/* Title */}
-                <h2 className="text-white text-xl sm:text-2xl font-bold text-center mb-6">
+                <h2 className="text-white text-xl sm:text-2xl font-bold text-center mb-6 mt-4">
                     Select your Attorney
                 </h2>
 
@@ -196,7 +209,7 @@ const AttorneySelectionModal = ({ isOpen, onClose, crn, onConfirm }) => {
                         <button
                             onClick={handleSendInvite}
                             disabled={!ownAttorneyForm.name || !ownAttorneyForm.email}
-                            className="w-full py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full py-3 mb-4 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             Send Invite
                         </button>

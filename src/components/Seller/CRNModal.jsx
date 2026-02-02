@@ -49,26 +49,26 @@ const CRNModal = ({ isOpen, onClose, crn, onSelectAttorney }) => {
                 </p>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
                     <button
                         onClick={handleCopy}
-                        className="flex-1 py-3 border-2 border-amber-500 text-amber-500 font-semibold rounded-xl hover:bg-amber-500/10 transition-all flex items-center justify-center gap-2"
+                        className="w-full sm:flex-1 py-3 border-2 border-amber-500 text-amber-500 font-semibold rounded-xl hover:bg-amber-500/10 transition-all flex items-center justify-center gap-2 group"
                     >
                         {copied ? (
                             <>
-                                <FaCheck size={16} />
-                                Copied!
+                                <FaCheck size={16} className="flex-shrink-0" />
+                                <span className="whitespace-nowrap">Copied!</span>
                             </>
                         ) : (
                             <>
-                                <FaCopy size={16} />
-                                Copy Reference
+                                <FaCopy size={16} className="flex-shrink-0" />
+                                <span className="whitespace-nowrap">Copy Reference</span>
                             </>
                         )}
                     </button>
                     <button
                         onClick={onSelectAttorney}
-                        className="flex-1 py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-xl hover:opacity-90 transition-opacity"
+                        className="w-full sm:flex-1 py-3 bg-gradient-to-r from-[#FCD66B] to-[#C28B33] text-black font-semibold rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap"
                     >
                         Select Attorney
                     </button>

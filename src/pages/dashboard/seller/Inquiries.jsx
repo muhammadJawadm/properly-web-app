@@ -195,7 +195,7 @@ const Inquiries = () => {
                                     />
                                     {!selectedTime && (
                                         <div className="absolute inset-0 flex items-center gap-2 px-1 pointer-events-none">
-                                            <FaCalendar className="text-amber-500" size={14} />
+                                            {/* <FaCalendar className="text-amber-500" size={14} /> */}
                                             {/* <span className="text-gray-300 text-sm pl-5 ">Select time</span> */}
                                         </div>
                                     )}
@@ -208,8 +208,8 @@ const Inquiries = () => {
                                         className="w-full px-3 py-2 bg-gray-800/60 border border-gray-600 rounded-lg text-gray-300 text-sm hover:bg-gray-800 transition-colors focus:outline-none focus:border-amber-500 cursor-pointer"
                                     />
                                     {!selectedDate && (
-                                        <div className="absolute inset-0 flex items-center gap-2 px-1 pointer-events-none">
-                                            <FaCalendar className="text-amber-500" size={14} />
+                                        <div className="absolute inset-0 flex items-center gap-2 px-1 pointer-events-none text-amber-500 ">
+                                            {/* <FaCalendar className="text-amber-500" size={14} /> */}
                                             {/* <span className="text-gray-300 text-sm">Select date</span> */}
                                         </div>
                                     )}
@@ -226,7 +226,7 @@ const Inquiries = () => {
                             ></textarea>
 
                             {/* Create Viewing Invite Button */}
-                            <button 
+                            <button
                                 onClick={() => {
                                     if (selectedDate && selectedTime) {
                                         alert(`Viewing scheduled for ${selectedDate} at ${selectedTime}\nNotes: ${additionalNotes || 'None'}`);

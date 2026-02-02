@@ -110,40 +110,52 @@ const BuyerDashboard = () => {
 
                                 {/* Property Card */}
                                 <div className="bg-gray-700/30 rounded-xl p-4 hover:bg-gray-700/40 transition-colors">
-                                    <div className="flex gap-4">
+                                    <div className="flex flex-col md:flex-row gap-4">
                                         {/* Property Image */}
-                                        <img
-                                            src={inquiry.property.image}
-                                            alt={inquiry.property.title}
-                                            className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-cover flex-shrink-0"
-                                        />
+                                        <div className="w-full md:w-auto shrink-0">
+                                            <img
+                                                src={inquiry.property.image}
+                                                alt={inquiry.property.title}
+                                                className="w-full h-48 md:w-24 md:h-24 rounded-lg object-cover"
+                                            />
+                                        </div>
 
                                         {/* Property Details */}
-                                        <div className="flex-1 min-w-0">
-                                            <h3 className="text-white font-semibold mb-2 truncate">
-                                                {inquiry.property.title}
-                                            </h3>
-                                            <p className="text-amber-500 font-bold text-lg mb-3">
-                                                R{inquiry.property.price.toLocaleString()}
-                                            </p>
+                                        <div className="flex-1 w-full min-w-0">
+                                            <div className="flex flex-col items-center md:items-start text-center md:text-left h-full justify-center">
+                                                <h3
+                                                    className="text-white font-semibold mb-2 text-base w-full"
+                                                    style={{
+                                                        overflowWrap: 'break-word',
+                                                        wordWrap: 'break-word',
+                                                        whiteSpace: 'normal',
+                                                        display: 'block'
+                                                    }}
+                                                >
+                                                    {inquiry.property.title}
+                                                </h3>
+                                                <p className="text-amber-500 font-bold text-lg mb-3">
+                                                    R{inquiry.property.price.toLocaleString()}
+                                                </p>
 
-                                            {/* Property Specs */}
-                                            <div className="flex flex-wrap items-center gap-3 text-gray-400 text-xs sm:text-sm">
-                                                <div className="flex items-center gap-1">
-                                                    <span>●</span>
-                                                    <span>{inquiry.property.beds} Beds</span>
-                                                </div>
-                                                <div className="flex items-center gap-1">
-                                                    <span>●</span>
-                                                    <span>{inquiry.property.bathrooms} Bathrooms</span>
-                                                </div>
-                                                <div className="flex items-center gap-1">
-                                                    <span>●</span>
-                                                    <span>{inquiry.property.garages} Garages</span>
-                                                </div>
-                                                <div className="flex items-center gap-1">
-                                                    <span>●</span>
-                                                    <span>{inquiry.property.size}sqm</span>
+                                                {/* Property Specs */}
+                                                <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 text-gray-400 text-xs sm:text-sm">
+                                                    <div className="flex items-center gap-1">
+                                                        <span>●</span>
+                                                        <span>{inquiry.property.beds} Beds</span>
+                                                    </div>
+                                                    <div className="flex items-center gap-1">
+                                                        <span>●</span>
+                                                        <span>{inquiry.property.bathrooms} Bathrooms</span>
+                                                    </div>
+                                                    <div className="flex items-center gap-1">
+                                                        <span>●</span>
+                                                        <span>{inquiry.property.garages} Garages</span>
+                                                    </div>
+                                                    <div className="flex items-center gap-1">
+                                                        <span>●</span>
+                                                        <span>{inquiry.property.size}sqm</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

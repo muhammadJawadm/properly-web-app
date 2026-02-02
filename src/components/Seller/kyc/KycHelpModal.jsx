@@ -5,8 +5,8 @@ const KycHelpModal = ({ isOpen, onClose }) => {
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-start justify-end p-8 z-50">
-            <div className="bg-gray-800 rounded-2xl p-8 max-w-md shadow-2xl">
-                <div className="flex justify-between items-center mb-6">
+            <div className="bg-gray-800 rounded-2xl p-8 max-w-md shadow-2xl max-h-[85vh] flex flex-col">
+                <div className="flex justify-between items-center mb-6 flex-shrink-0">
                     <h3 className="text-xl font-bold text-white">What is KYC Verification?</h3>
                     <button
                         onClick={onClose}
@@ -15,7 +15,20 @@ const KycHelpModal = ({ isOpen, onClose }) => {
                         <FaTimes size={20} />
                     </button>
                 </div>
-                <div className="space-y-4 text-gray-300 text-sm">
+                <div
+                    className="space-y-4 text-gray-300 text-sm overflow-y-auto"
+                    style={{
+                        scrollbarWidth: 'none',
+                        msOverflowStyle: 'none'
+                    }}
+                >
+                    <style>
+                        {`
+                            div::-webkit-scrollbar {
+                                display: none;
+                            }
+                        `}
+                    </style>
                     <p>
                         KYC Verification stands for "Know Your Customer" verification. It's a process used by digital platforms,
                         banks, and financial or property-related services to confirm the identity of their users and prevent fraud or

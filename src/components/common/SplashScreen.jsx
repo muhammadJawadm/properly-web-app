@@ -103,9 +103,9 @@ const SplashScreen = () => {
             </div>
 
             {/* Conveyor Login Link - Responsive Positioning */}
-            <div className="absolute bottom-4 bottom-0 sm:bottom-6 md:bottom-10 right-4 sm:right-6 md:right-10 z-20">
+            <div className="absolute bottom-1 md:bottom-10 right-4 sm:right-6 md:right-10 z-20">
                 <Link to="/attorney/access"
-                    className="px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-gray-400 text-xs sm:text-sm hover:bg-white hover:bg-opacity-10 transition-all duration-300 inline-block"
+                    className="px-3 sm:px-6 sm:py-1.5 py-1 rounded-full border border-gray-400 text-xs sm:text-sm hover:bg-white hover:bg-opacity-10 transition-all duration-300 inline-block"
                     style={{ color: '#EDBF6D' }}
                 >
                     Conveyor login

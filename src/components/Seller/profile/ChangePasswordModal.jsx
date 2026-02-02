@@ -81,7 +81,20 @@ const ChangePasswordModal = ({ isOpen, onClose, onSubmit }) => {
             />
 
             {/* Modal */}
-            <div className="relative bg-[#4a4a4a] rounded-2xl w-full max-w-md p-8">
+            <div
+                className="relative bg-[#4a4a4a] rounded-2xl w-full max-w-md px-8 py-10 max-h-[90vh] overflow-y-auto"
+                style={{
+                    scrollbarWidth: 'none',
+                    msOverflowStyle: 'none'
+                }}
+            >
+                <style>
+                    {`
+                        div::-webkit-scrollbar {
+                            display: none;
+                        }
+                    `}
+                </style>
                 {/* Close Button */}
                 <button
                     onClick={onClose}

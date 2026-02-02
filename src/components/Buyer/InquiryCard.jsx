@@ -23,29 +23,41 @@ const InquiryCard = ({ inquiry, isSelected, onClick }) => {
 
                 {/* Property Card */}
                 <div className="bg-gray-700/30 rounded-xl p-3 mb-3">
-                    <div className="flex gap-3">
+                    <div className="flex flex-col md:flex-row gap-3">
                         {/* Property Image */}
-                        <img
-                            src={inquiry.property.image}
-                            alt={inquiry.property.title}
-                            className="w-16 h-16 rounded-lg object-cover flex-shrink-0"
-                        />
+                        <div className="w-full md:w-auto shrink-0">
+                            <img
+                                src={inquiry.property.image}
+                                alt={inquiry.property.title}
+                                className="w-full h-40 md:w-20 md:h-20 rounded-lg object-cover"
+                            />
+                        </div>
 
                         {/* Property Details */}
-                        <div className="flex-1 min-w-0">
-                            <h4 className="text-white text-sm font-semibold mb-1 truncate">
-                                {inquiry.property.title}
-                            </h4>
-                            <p className="text-amber-500 font-bold text-sm mb-2">
-                                R{inquiry.property.price.toLocaleString()}
-                            </p>
+                        <div className="flex-1 w-full min-w-0">
+                            <div className="flex flex-col items-center md:items-start text-center md:text-left h-full justify-center">
+                                <h4
+                                    className="text-white text-sm font-semibold mb-1 w-full"
+                                    style={{
+                                        overflowWrap: 'break-word',
+                                        wordWrap: 'break-word',
+                                        whiteSpace: 'normal',
+                                        display: 'block'
+                                    }}
+                                >
+                                    {inquiry.property.title}
+                                </h4>
+                                <p className="text-amber-500 font-bold text-sm mb-2">
+                                    R{inquiry.property.price.toLocaleString()}
+                                </p>
 
-                            {/* Specs */}
-                            <div className="flex flex-wrap gap-2 text-gray-400 text-xs">
-                                <span>● {inquiry.property.beds} Beds</span>
-                                <span>● {inquiry.property.bathrooms} Bathrooms</span>
-                                <span>● {inquiry.property.garages} Garages</span>
-                                <span>● {inquiry.property.size}sqm</span>
+                                {/* Specs */}
+                                <div className="flex flex-wrap justify-center md:justify-start gap-2 text-gray-400 text-xs">
+                                    <span>● {inquiry.property.beds} Beds</span>
+                                    <span>● {inquiry.property.bathrooms} Bathrooms</span>
+                                    <span>● {inquiry.property.garages} Garages</span>
+                                    <span>● {inquiry.property.size}sqm</span>
+                                </div>
                             </div>
                         </div>
                     </div>
