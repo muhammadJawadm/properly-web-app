@@ -87,7 +87,7 @@ const RepresentativeType = ({ onContinue, onBack, formData }) => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex justify-between mt-16">
+                <div className="flex flex-col gap-5 md:flex-row justify-between mt-16">
                     <button
                         onClick={onBack}
                         className="px-8 py-3 bg-gray-700/50 text-white font-semibold rounded-full hover:bg-gray-700 transition-colors"
