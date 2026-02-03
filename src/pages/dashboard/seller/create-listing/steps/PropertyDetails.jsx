@@ -523,7 +523,7 @@ const PropertyDetails = ({ onContinue, onBack, formData }) => {
 
                         <div>
                             <label className="block text-white mb-3 text-sm">What business assets are included?</label>
-                            <div className="grid grid-cols-3 gap-3">
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                                 {['Furniture', 'Equipment', 'Stock', 'Vehicles', 'Licenses', 'Branding'].map((asset) => (
                                     <label key={asset} className="flex items-center gap-2 cursor-pointer">
                                         <input

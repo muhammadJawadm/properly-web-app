@@ -216,7 +216,7 @@ const LegalDisclosures = ({ onContinue, onBack, formData }) => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex justify-between pt-6">
+                <div className="flex flex-col justify-center gap-5 md:flex-row md:justify-between pt-6">
                     <button
                         onClick={onBack}
                         className="px-8 py-3 bg-gray-700/50 text-white font-semibold rounded-full hover:bg-gray-700 transition-colors"
